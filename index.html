@@ -50,6 +50,11 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -60,8 +65,6 @@
             color: #111827;
             font-family: 'Tajawal', sans-serif;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            width: 100%;
         }
 
         /* NAVIGATION */
@@ -91,18 +94,12 @@
             will-change: transform;
         }
 
-        /* TYPING HERO FIX - حجز ارتفاع محدد لمنع الاهتزاز */
-        .hero-title {
-            min-height: 2.2em;
+        /* TYPING HERO - تثبيت الارتفاع لمنع القفز والاهتزاز */
+        .hero-title-container {
+            min-height: 160px;
             display: flex;
             align-items: center;
-            justify-center;
-            flex-wrap: wrap;
-        }
-
-        #typingText {
-            display: inline-block;
-            transition: opacity 0.3s ease;
+            justify-content: center;
         }
 
         #typingCursor {
@@ -118,7 +115,7 @@
             50% { opacity: 0; }
         }
 
-        /* DEMO CHAT */
+        /* DEMO CHAT FIXED CONTAINER */
         .chat-window {
             background: rgba(255,255,255,.86);
             backdrop-filter: blur(18px);
@@ -127,19 +124,34 @@
             box-shadow: 0 35px 90px rgba(15,23,42,.12);
         }
 
+        /* تخصيص شريط التمرير داخل الشات ليصبح شكله أنيق جداً */
+        #chatBox::-webkit-scrollbar {
+            width: 5px;
+        }
+        #chatBox::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #chatBox::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        #chatBox::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
         .chat-message {
-            animation: messageIn .5s ease forwards;
+            animation: messageIn .4s ease forwards;
             will-change: transform, opacity;
         }
 
         @keyframes messageIn {
             from {
                 opacity: 0;
-                transform: translateY(12px) scale(.98);
+                transform: translateY(10px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: translateY(0);
             }
         }
 
@@ -181,10 +193,8 @@
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-                line-height: 1.2;
-                min-height: 2.8em;
+            .hero-title-container {
+                min-height: 120px;
             }
             .hero-grid {
                 background-size: 35px 35px;
@@ -233,12 +243,13 @@
             AI-Powered Business Automation
         </div>
 
-        <h1 class="hero-title text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950 max-w-5xl mx-auto">
-            <span id="typingText"></span>
-            <span id="typingCursor">|</span>
-        </h1>
+        <div class="hero-title-container">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950 max-w-5xl mx-auto">
+                <span id="typingText"></span><span id="typingCursor">|</span>
+            </h1>
+        </div>
 
-        <p class="mt-7 text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+        <p class="mt-4 text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
             نبني حلولًا ذكية تساعد الشركات على أتمتة العمليات، تحسين تجربة العملاء، وربط الأنظمة لتحقيق نمو أكثر كفاءة.
         </p>
 
@@ -286,8 +297,10 @@
             </p>
         </div>
 
-        <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden">
-            <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between">
+        <!-- الشات بطول ثابت ومحدد لحماية الصفحة من الصعود والنزول -->
+        <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden flex flex-col h-[560px]">
+            <!-- Header (ثابت) -->
+            <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
                         AI
@@ -300,13 +313,16 @@
                         </div>
                     </div>
                 </div>
-                <button onclick="restartDemo()" class="text-xs font-semibold text-blue-600 hover:text-blue-700">
+                <button onclick="restartDemo()" class="text-xs font-semibold text-blue-600 hover:text-blue-700 transition">
                     إعادة المحاكاة ↻
                 </button>
             </div>
 
-            <div id="chatBox" class="min-h-[430px] p-5 md:p-7 bg-gradient-to-b from-slate-50 to-white flex flex-col gap-4"></div>
-            <div class="px-5 py-3 bg-white border-t border-slate-100 text-center text-[11px] text-slate-400">
+            <!-- Chat Content Body (يتمدد ويتحرك داخله السكرول فقط بدون أثر على الصفحة) -->
+            <div id="chatBox" class="flex-1 p-5 md:p-7 bg-gradient-to-b from-slate-50 to-white flex flex-col gap-4 overflow-y-auto"></div>
+
+            <!-- Footer (ثابت) -->
+            <div class="px-5 py-3 bg-white border-t border-slate-100 text-center text-[11px] text-slate-400 shrink-0">
                 محاكاة توضيحية — يمكن تخصيص النظام حسب احتياجات عملك
             </div>
         </div>
@@ -441,39 +457,6 @@
     </div>
 </section>
 
-<!-- WHY AVENCHIE -->
-<section class="py-28 px-6 bg-white">
-    <div class="max-w-6xl mx-auto text-center">
-        <span class="text-blue-600 text-xs font-bold">WHY AVENCHIE</span>
-        <h2 class="mt-3 text-4xl font-black text-slate-950">
-            التقنية ليست الهدف.<br>
-            <span class="text-blue-600">النتيجة هي الهدف.</span>
-        </h2>
-        <p class="mt-6 max-w-2xl mx-auto text-slate-500 leading-relaxed">
-            نبني حلولًا هدفها تقليل العمل المتكرر، تحسين سرعة الاستجابة، تنظيم البيانات، ومساعدة الفريق على التركيز على الأعمال ذات القيمة.
-        </p>
-
-        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="p-7 rounded-3xl bg-slate-50">
-                <div class="text-3xl font-black text-blue-600">AI</div>
-                <p class="mt-3 text-sm font-semibold text-slate-600">ذكاء اصطناعي عملي</p>
-            </div>
-            <div class="p-7 rounded-3xl bg-slate-50">
-                <div class="text-3xl font-black text-blue-600">API</div>
-                <p class="mt-3 text-sm font-semibold text-slate-600">تكامل بين الأنظمة</p>
-            </div>
-            <div class="p-7 rounded-3xl bg-slate-50">
-                <div class="text-3xl font-black text-blue-600">CRM</div>
-                <p class="mt-3 text-sm font-semibold text-slate-600">إدارة أفضل للعملاء</p>
-            </div>
-            <div class="p-7 rounded-3xl bg-slate-50">
-                <div class="text-3xl font-black text-blue-600">∞</div>
-                <p class="mt-3 text-sm font-semibold text-slate-600">حلول قابلة للتوسع</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" class="py-28 px-6 bg-slate-50">
     <div class="max-w-3xl mx-auto">
@@ -510,16 +493,6 @@
                 </summary>
                 <p class="mt-5 text-sm text-slate-500 leading-relaxed">
                     كلاهما ممكن. لدينا حلول يمكن تهيئتها بسرعة، كما نقوم بتطوير حلول مخصصة عندما تتطلب العملية ذلك.
-                </p>
-            </details>
-
-            <details class="bg-white rounded-2xl border border-slate-200 p-6">
-                <summary class="font-bold flex items-center justify-between">
-                    هل يمكنني تجربة النظام قبل التعاقد؟
-                    <span class="text-blue-600">+</span>
-                </summary>
-                <p class="mt-5 text-sm text-slate-500 leading-relaxed">
-                    يمكن ترتيب عرض توضيحي للحل المناسب حسب طبيعة احتياجك والعملية التي ترغب في أتمتتها.
                 </p>
             </details>
         </div>
@@ -587,15 +560,14 @@
 
 <!-- JAVASCRIPT -->
 <script>
-/* HERO TYPING ANIMATION (FIXED LAYOUT SHIFT) */
+/* HERO TYPING ANIMATION (FIXED) */
 const typingText = document.getElementById('typingText');
-const typingCursor = document.getElementById('typingCursor');
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function typeText(text, speed = 85) {
+async function typeText(text, speed = 80) {
     for (let i = 0; i < text.length; i++) {
         const span = document.createElement('span');
         span.textContent = text[i];
@@ -604,7 +576,7 @@ async function typeText(text, speed = 85) {
     }
 }
 
-async function deleteText(speed = 40) {
+async function deleteText(speed = 35) {
     while (typingText.childNodes.length > 0) {
         typingText.removeChild(typingText.lastChild);
         await sleep(speed);
@@ -614,36 +586,30 @@ async function deleteText(speed = 40) {
 async function heroTypingLoop() {
     while (true) {
         typingText.innerHTML = '';
-        typingCursor.style.animation = 'cursorBlink .8s step-end infinite';
 
-        /* 1. طباعة القسم الأول */
-        await typeText('اجعل الذكاء الاصطناعي', 85);
-        await sleep(400);
+        await typeText('اجعل الذكاء الاصطناعي', 80);
+        await sleep(300);
 
-        /* 2. إضافة القسم الثاني بشكل متدرج */
         const second = document.createElement('span');
         second.className = 'text-blue-600';
         second.textContent = ' يعمل لصالحك';
         second.style.opacity = '0';
-        second.style.transition = 'opacity .45s ease';
+        second.style.transition = 'opacity .4s ease';
         typingText.appendChild(second);
 
         requestAnimationFrame(() => {
             second.style.opacity = '1';
         });
 
-        /* انتهاء الكتابة والانتظار */
         await sleep(3000);
-
-        /* مسح تدريجي لطيف بدلاً من الاختفاء المفاجئ لتجنب الاهتزاز */
-        await deleteText(30);
-        await sleep(400);
+        await deleteText(35);
+        await sleep(500);
     }
 }
 
 heroTypingLoop();
 
-/* AI CHAT DEMO */
+/* AI CHAT DEMO (SCROLL INSIDE CHATBOX ONLY) */
 const chatBox = document.getElementById('chatBox');
 const chatScript = [
     { sender: 'ai', text: 'مرحبًا 👋 كيف يمكنني مساعدتك اليوم؟' },
@@ -659,8 +625,12 @@ const chatScript = [
 let demoIndex = 0;
 let demoRunning = false;
 
-function scrollChat() {
-    chatBox.scrollTop = chatBox.scrollHeight;
+// التمرير السلس داخل صندوق الشات نفسه بدون تحريك الصفحة!
+function scrollChatSmoothly() {
+    chatBox.scrollTo({
+        top: chatBox.scrollHeight,
+        behavior: 'smooth'
+    });
 }
 
 function showTyping() {
@@ -677,7 +647,7 @@ function showTyping() {
         </span>
     `;
     chatBox.appendChild(typing);
-    scrollChat();
+    scrollChatSmoothly();
 }
 
 function removeTyping() {
@@ -718,7 +688,7 @@ function appendMessage(item) {
     }
 
     chatBox.appendChild(wrapper);
-    scrollChat();
+    scrollChatSmoothly();
 }
 
 async function runDemo() {
@@ -730,34 +700,34 @@ async function runDemo() {
     while (demoIndex < chatScript.length) {
         const item = chatScript[demoIndex];
         if (item.sender === 'ai') {
-            await sleep(850);
+            await sleep(700);
             showTyping();
-            await sleep(1200);
+            await sleep(1100);
             removeTyping();
             appendMessage(item);
-            await sleep(1400);
-        } else {
-            await sleep(1000);
-            appendMessage(item);
             await sleep(1300);
+        } else {
+            await sleep(900);
+            appendMessage(item);
+            await sleep(1200);
         }
         demoIndex++;
     }
 
-    await sleep(3500);
+    await sleep(4000);
     demoRunning = false;
     runDemo();
 }
 
 function restartDemo() {
-    if (demoRunning) demoRunning = false;
+    demoRunning = false;
     chatBox.innerHTML = '';
     demoIndex = 0;
     setTimeout(runDemo, 200);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(runDemo, 800);
+    setTimeout(runDemo, 600);
 });
 </script>
 
