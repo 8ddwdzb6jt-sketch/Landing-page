@@ -2,20 +2,54 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenchie | Enterprise AI Solutions</title>
-    <!-- Tailwind CSS CDN -->
+
+    <title>Avenchie | AI Automation & Software Solutions</title>
+
+    <meta name="description"
+          content="Avenchie تبني حلول الأتمتة بالذكاء الاصطناعي، Chatbots، WhatsApp Automation، CRM، Workflow Automation، وتطوير المواقع والبرمجيات المخصصة للشركات.">
+
+    <meta name="keywords"
+          content="AI Automation, AI Chatbot, WhatsApp Automation, CRM Automation, Workflow Automation, Custom Software, Avenchie">
+
+    <meta name="author" content="Avenchie">
+
+    <!-- Open Graph -->
+    <meta property="og:title"
+          content="Avenchie | AI Automation & Software Solutions">
+
+    <meta property="og:description"
+          content="Automate. Integrate. Grow. We build AI-powered solutions for modern businesses.">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://avenchie.com">
+
+    <meta property="og:image" content="logo.PNG">
+
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font: Tajawal & SF Pro display substitute -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+
                     fontFamily: {
                         sans: ['Tajawal', 'sans-serif'],
                     },
+
                     colors: {
+
                         apple: {
                             bg: '#fbfbfd',
                             blue: '#0071e3',
@@ -24,350 +58,3506 @@
                             card: '#ffffff',
                             gray: '#86868b'
                         }
+
                     },
+
                     boxShadow: {
-                        'apple-card': '0 8px 30px rgba(0, 0, 0, 0.04)',
-                        'apple-hover': '0 20px 40px rgba(0, 0, 0, 0.08)',
-                        'glow': '0 0 25px rgba(0, 113, 227, 0.15)'
+
+                        'apple-card':
+                            '0 8px 30px rgba(0, 0, 0, 0.04)',
+
+                        'apple-hover':
+                            '0 20px 40px rgba(0, 0, 0, 0.08)',
+
+                        'glow':
+                            '0 0 25px rgba(0, 113, 227, 0.15)'
+
                     }
+
                 }
             }
         }
     </script>
+
+
     <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+
             background-color: #fbfbfd;
+
             font-family: 'Tajawal', sans-serif;
+
             color: #1d1d1f;
+
             -webkit-font-smoothing: antialiased;
+
         }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
         .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+
+            background:
+                rgba(255, 255, 255, 0.82);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
         }
+
+
+        /* =========================
+           GLASS CARD
+        ========================== */
+
         .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+
+            background:
+                rgba(255, 255, 255, 0.88);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+            border:
+                1px solid rgba(0, 0, 0, 0.06);
+
         }
-        .typing-dot {
-            animation: blink 1.4s infinite both;
-        }
-        .typing-dot:nth-child(2) { animation-delay: .2s; }
-        .typing-dot:nth-child(3) { animation-delay: .4s; }
-        @keyframes blink {
-            0% { opacity: .2; }
-            20% { opacity: 1; }
-            100% { opacity: .2; }
-        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================== */
+
         .fade-in {
-            animation: fadeIn 0.4s ease-out forwards;
+
+            animation:
+                fadeIn 0.4s ease-out forwards;
+
         }
+
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
         }
+
+
+        .typing-dot {
+
+            animation:
+                blink 1.4s infinite both;
+
+        }
+
+
+        .typing-dot:nth-child(2) {
+
+            animation-delay:
+                .2s;
+
+        }
+
+
+        .typing-dot:nth-child(3) {
+
+            animation-delay:
+                .4s;
+
+        }
+
+
+        @keyframes blink {
+
+            0% {
+                opacity: .2;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: .2;
+            }
+
+        }
+
+
+        /* =========================
+           HERO GLOW
+        ========================== */
+
+        .hero-glow {
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,113,227,0.10)
+                    0%,
+                    rgba(0,113,227,0)
+                    70%
+                );
+
+            pointer-events:
+                none;
+
+            z-index:
+                -1;
+
+        }
+
+
+        /* =========================
+           SECTION LABEL
+        ========================== */
+
+        .section-label {
+
+            display:
+                inline-block;
+
+            padding:
+                6px 14px;
+
+            background:
+                #eff6ff;
+
+            color:
+                #0071e3;
+
+            border:
+                1px solid #dbeafe;
+
+            border-radius:
+                999px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* =========================
+           CHAT SCROLLBAR
+        ========================== */
+
+        #chat-box::-webkit-scrollbar {
+
+            width:
+                5px;
+
+        }
+
+
+        #chat-box::-webkit-scrollbar-track {
+
+            background:
+                transparent;
+
+        }
+
+
+        #chat-box::-webkit-scrollbar-thumb {
+
+            background:
+                #d1d5db;
+
+            border-radius:
+                999px;
+
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        .mobile-menu {
+
+            display:
+                none;
+
+        }
+
+
+        .mobile-menu.active {
+
+            display:
+                block;
+
+        }
+
+
     </style>
+
 </head>
+
+
 <body class="selection:bg-blue-500 selection:text-white">
 
-    <!-- Header Navigation (Apple Style) -->
-    <header class="glass-nav fixed top-0 w-full z-50 border-b border-gray-200/50 transition-all">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="logo.PNG" alt="Avenchie Logo" class="h-9 w-auto object-contain transition-transform group-hover:scale-105">
-            </a>
-            
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-                <a href="#services" class="hover:text-apple-blue transition-colors">الخدمات</a>
-                <a href="#demo" class="hover:text-apple-blue transition-colors">المحاكي التفاعلي</a>
-                <a href="#features" class="hover:text-apple-blue transition-colors">لماذا نحن</a>
-                <a href="#faq" class="hover:text-apple-blue transition-colors">الأسئلة الشائعة</a>
-            </nav>
 
-            <a href="https://wa.me/201278220294" target="_blank" class="bg-apple-blue hover:bg-apple-hover text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md shadow-blue-500/10">
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+    class="
+        glass-nav
+        fixed
+        top-0
+        w-full
+        z-50
+        border-b
+        border-gray-200/50
+    "
+>
+
+    <div
+        class="
+            max-w-6xl
+            mx-auto
+            px-6
+            h-16
+            flex
+            justify-between
+            items-center
+        "
+    >
+
+        <!-- Logo -->
+
+        <a
+            href="#"
+            class="flex items-center gap-3"
+        >
+
+            <img
+                src="logo.PNG"
+                alt="Avenchie Logo"
+                class="h-9 w-auto object-contain"
+            >
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+
+        <nav
+            class="
+                hidden
+                md:flex
+                items-center
+                gap-8
+                text-sm
+                font-medium
+                text-gray-600
+            "
+        >
+
+            <a
+                href="#services"
+                class="hover:text-apple-blue transition-colors"
+            >
+                الخدمات
+            </a>
+
+            <a
+                href="#demo"
+                class="hover:text-apple-blue transition-colors"
+            >
+                تجربة AI
+            </a>
+
+            <a
+                href="#automation"
+                class="hover:text-apple-blue transition-colors"
+            >
+                الأتمتة
+            </a>
+
+            <a
+                href="#process"
+                class="hover:text-apple-blue transition-colors"
+            >
+                كيف نعمل
+            </a>
+
+            <a
+                href="#faq"
+                class="hover:text-apple-blue transition-colors"
+            >
+                الأسئلة الشائعة
+            </a>
+
+        </nav>
+
+
+        <!-- Desktop CTA -->
+
+        <a
+            href="https://wa.me/201278220294"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="
+                hidden
+                md:inline-flex
+                bg-apple-blue
+                hover:bg-apple-hover
+                text-white
+                px-5
+                py-2
+                rounded-full
+                text-sm
+                font-medium
+                transition-all
+                shadow-md
+                shadow-blue-500/10
+            "
+        >
+            تواصل معنا
+        </a>
+
+
+        <!-- Mobile Button -->
+
+        <button
+            onclick="toggleMobileMenu()"
+            class="
+                md:hidden
+                text-gray-700
+                text-2xl
+            "
+            aria-label="فتح القائمة"
+        >
+            ☰
+        </button>
+
+    </div>
+
+
+    <!-- Mobile Menu -->
+
+    <div
+        id="mobile-menu"
+        class="
+            mobile-menu
+            md:hidden
+            bg-white
+            border-t
+            border-gray-100
+            px-6
+            py-5
+        "
+    >
+
+        <div class="flex flex-col gap-5 text-sm font-medium">
+
+            <a href="#services" onclick="toggleMobileMenu()">
+                الخدمات
+            </a>
+
+            <a href="#demo" onclick="toggleMobileMenu()">
+                تجربة AI
+            </a>
+
+            <a href="#automation" onclick="toggleMobileMenu()">
+                الأتمتة
+            </a>
+
+            <a href="#process" onclick="toggleMobileMenu()">
+                كيف نعمل
+            </a>
+
+            <a href="#faq" onclick="toggleMobileMenu()">
+                الأسئلة الشائعة
+            </a>
+
+            <a
+                href="https://wa.me/201278220294"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
+                    bg-apple-blue
+                    text-white
+                    text-center
+                    px-5
+                    py-3
+                    rounded-full
+                "
+            >
                 تواصل معنا
             </a>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <span class="inline-block px-4 py-1.5 bg-blue-50 text-apple-blue text-xs font-bold rounded-full mb-6 border border-blue-100">
-            جيل جديد من الأتمتة والذكاء الاصطناعي
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section
+    class="
+        relative
+        overflow-hidden
+        pt-36
+        pb-24
+        px-6
+        text-center
+    "
+>
+
+    <div class="hero-glow top-20 right-10"></div>
+
+    <div class="hero-glow bottom-0 left-0"></div>
+
+
+    <div class="max-w-4xl mx-auto">
+
+        <span class="section-label mb-6">
+
+            AI Automation & Software Solutions
+
         </span>
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-apple-dark leading-tight mb-6">
-            حوّل عملك بالذكاء الاصطناعي<span class="text-apple-blue">.</span>
+
+
+        <h1
+            class="
+                text-4xl
+                md:text-6xl
+                font-black
+                tracking-tight
+                text-apple-dark
+                leading-tight
+                mb-6
+            "
+        >
+
+            اجعل الذكاء الاصطناعي
+            <span class="text-apple-blue">
+                يعمل لصالحك.
+            </span>
+
         </h1>
-        <p class="text-lg md:text-xl text-apple-gray font-normal max-w-2xl mx-auto leading-relaxed mb-10">
-            نبني حلولاً رقمية متكاملة تجمع بين أتمتة الأنظمة، إدارة العملاء CRM، وتطوير المواقع الفاخرة للارتقاء بشركتك للمستقبل.
+
+
+        <p
+            class="
+                text-lg
+                md:text-xl
+                text-apple-gray
+                font-normal
+                max-w-2xl
+                mx-auto
+                leading-relaxed
+                mb-10
+            "
+        >
+
+            نبني حلولًا ذكية تساعد الشركات على أتمتة خدمة العملاء،
+            تأهيل العملاء المحتملين، إدارة الحجوزات،
+            ربط الأنظمة، وأتمتة العمليات اليومية.
+
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://wa.me/201278220294" target="_blank" class="w-full sm:w-auto bg-apple-blue hover:bg-apple-hover text-white px-8 py-3.5 rounded-full text-base font-medium shadow-glow transition-all hover:scale-105">
-                احجز استشارتك المجانية الآن ↗
+
+
+        <!-- CTA -->
+
+        <div
+            class="
+                flex
+                flex-col
+                sm:flex-row
+                gap-4
+                justify-center
+                items-center
+            "
+        >
+
+            <a
+                href="https://wa.me/201278220294"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
+                    w-full
+                    sm:w-auto
+                    bg-apple-blue
+                    hover:bg-apple-hover
+                    text-white
+                    px-8
+                    py-3.5
+                    rounded-full
+                    text-base
+                    font-medium
+                    shadow-glow
+                    transition-all
+                    hover:scale-105
+                "
+            >
+
+                احجز تقييم الأتمتة مجانًا ↗
+
             </a>
-            <a href="#demo" class="w-full sm:w-auto bg-gray-100 hover:bg-gray-200 text-apple-dark px-8 py-3.5 rounded-full text-base font-medium transition-all">
-                تجربة المحاكي المباشر ↓
+
+
+            <a
+                href="#demo"
+                class="
+                    w-full
+                    sm:w-auto
+                    bg-gray-100
+                    hover:bg-gray-200
+                    text-apple-dark
+                    px-8
+                    py-3.5
+                    rounded-full
+                    text-base
+                    font-medium
+                    transition-all
+                "
+            >
+
+                جرّب المحاكي التفاعلي ↓
+
             </a>
+
         </div>
 
-        <div class="flex justify-center gap-8 mt-12 text-xs font-semibold text-apple-gray">
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> حلول مخصصة</div>
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> ربط سلس مع أنظمتك</div>
-            <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> دعم فني مستمر</div>
-        </div>
-    </section>
 
-    <!-- Interactive AI Chat Demo Section (مثل الصور) -->
-    <section id="demo" class="py-20 px-4 bg-gradient-to-b from-transparent via-blue-50/40 to-transparent">
-        <div class="max-w-xl mx-auto">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-apple-dark mb-2">عرض حي للذكاء الاصطناعي</h2>
-                <p class="text-sm text-apple-gray">شاهد كيف يمكن للذكاء الاصطناعي التفاعل مع عملائك وتلقي طلباتهم مباشرة</p>
+        <!-- Trust Points -->
+
+        <div
+            class="
+                flex
+                flex-wrap
+                justify-center
+                gap-6
+                mt-12
+                text-xs
+                font-semibold
+                text-apple-gray
+            "
+        >
+
+            <div class="flex items-center gap-2">
+
+                <span
+                    class="
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-emerald-500
+                    "
+                ></span>
+
+                حلول مخصصة
+
             </div>
 
-            <!-- Chat Widget Window (Apple Style Glass Container) -->
-            <div class="glass-card rounded-3xl shadow-apple-hover border border-gray-200/80 overflow-hidden transition-all">
-                <!-- Chat Header -->
-                <div class="bg-white/90 p-4 border-b border-gray-100 flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
-                            🤖
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-sm text-apple-dark">Avenchie AI Assistant</h3>
-                            <div class="flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                <span class="text-xs text-apple-gray">Online • CRM System</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="restartDemo()" class="text-xs text-apple-blue font-semibold hover:underline">
-                        إعادة المحاكاة 🔄
-                    </button>
-                </div>
 
-                <!-- Chat Messages Body -->
-                <div id="chat-box" class="p-5 space-y-4 min-h-[380px] max-h-[420px] overflow-y-auto flex flex-col justify-start text-sm">
-                    <!-- Dynamic Messages will be injected by JavaScript -->
-                </div>
+            <div class="flex items-center gap-2">
 
-                <!-- Chat Footer Indicator -->
-                <div class="bg-gray-50/50 p-3 border-t border-gray-100 text-center text-xs text-apple-gray">
-                    محاكي تفاعلي أوتوماتيكي تلقائي ⚡
-                </div>
+                <span
+                    class="
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-emerald-500
+                    "
+                ></span>
+
+                ربط مع أنظمتك الحالية
+
             </div>
-        </div>
-    </section>
 
-    <!-- Services Grid (Apple Cards) -->
-    <section id="services" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold text-apple-dark mb-4">خدماتنا المتقدمة</h2>
-            <p class="text-apple-gray max-w-xl mx-auto">نقدم أحدث الحلول الرقمية لتسريع نمو مؤسستك رفع كفاءة فريقك.</p>
+
+            <div class="flex items-center gap-2">
+
+                <span
+                    class="
+                        w-2
+                        h-2
+                        rounded-full
+                        bg-emerald-500
+                    "
+                ></span>
+
+                دعم فني مستمر
+
+            </div>
+
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-apple-card hover:shadow-apple-hover transition-all duration-300">
-                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-apple-blue flex items-center justify-center text-xl font-bold mb-6">
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROBLEM / VALUE
+========================================================= -->
+
+<section
+    id="automation"
+    class="
+        py-20
+        px-6
+        bg-white
+        border-y
+        border-gray-100
+    "
+>
+
+    <div class="max-w-6xl mx-auto">
+
+        <div
+            class="
+                max-w-3xl
+                mx-auto
+                text-center
+                mb-14
+            "
+        >
+
+            <span class="section-label mb-5">
+
+                أين تبدأ الأتمتة؟
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    md:text-4xl
+                    font-extrabold
+                    text-apple-dark
+                    mb-5
+                "
+            >
+
+                لا تجعل فريقك يقوم بعمل
+                <span class="text-apple-blue">
+                    يمكن للنظام القيام به.
+                </span>
+
+            </h2>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                من الرد على الأسئلة المتكررة إلى تأهيل العملاء
+                وإدارة المواعيد وربط الأنظمة،
+                يمكننا تحويل العمليات المتكررة إلى سير عمل ذكي ومؤتمت.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="
+                grid
+                md:grid-cols-4
+                gap-5
+            "
+        >
+
+            <!-- Card 1 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-7
+                    border
+                    border-gray-100
+                    hover:shadow-apple-hover
+                    transition-all
+                "
+            >
+
+                <div class="text-3xl mb-5">
+                    💬
+                </div>
+
+                <h3 class="font-bold text-lg mb-2">
+                    خدمة العملاء
+                </h3>
+
+                <p class="text-sm text-apple-gray leading-relaxed">
+                    الرد على الاستفسارات المتكررة
+                    ومساعدة العملاء على مدار الساعة.
+                </p>
+
+            </div>
+
+
+            <!-- Card 2 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-7
+                    border
+                    border-gray-100
+                    hover:shadow-apple-hover
+                    transition-all
+                "
+            >
+
+                <div class="text-3xl mb-5">
+                    🎯
+                </div>
+
+                <h3 class="font-bold text-lg mb-2">
+                    تأهيل العملاء
+                </h3>
+
+                <p class="text-sm text-apple-gray leading-relaxed">
+                    جمع المعلومات وفهم احتياج العميل
+                    قبل وصوله إلى فريق المبيعات.
+                </p>
+
+            </div>
+
+
+            <!-- Card 3 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-7
+                    border
+                    border-gray-100
+                    hover:shadow-apple-hover
+                    transition-all
+                "
+            >
+
+                <div class="text-3xl mb-5">
+                    📅
+                </div>
+
+                <h3 class="font-bold text-lg mb-2">
+                    الحجوزات والمواعيد
+                </h3>
+
+                <p class="text-sm text-apple-gray leading-relaxed">
+                    أتمتة طلبات الحجز والتأكيد
+                    والتذكير والمتابعة.
+                </p>
+
+            </div>
+
+
+            <!-- Card 4 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-7
+                    border
+                    border-gray-100
+                    hover:shadow-apple-hover
+                    transition-all
+                "
+            >
+
+                <div class="text-3xl mb-5">
                     ⚙️
                 </div>
-                <h3 class="text-xl font-bold text-apple-dark mb-3">أتمتة العمليات</h3>
-                <p class="text-apple-gray text-sm leading-relaxed">نبني أنظمة أتمتة ذكية تقلل المهام اليدوية وتدير سير العمل بين التطبيقات بكفاءة 100%.</p>
-            </div>
 
-            <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-apple-card hover:shadow-apple-hover transition-all duration-300">
-                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl font-bold mb-6">
-                    📊
-                </div>
-                <h3 class="text-xl font-bold text-apple-dark mb-3">أنظمة CRM الذكية</h3>
-                <p class="text-apple-gray text-sm leading-relaxed">تخصيص كامل لأنظمة إدارة العملاء لمتابعة المبيعات، تحليلات الآداء، وإغلاق الصفقات أسرع.</p>
-            </div>
+                <h3 class="font-bold text-lg mb-2">
+                    العمليات الداخلية
+                </h3>
 
-            <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-apple-card hover:shadow-apple-hover transition-all duration-300">
-                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold mb-6">
-                    🌐
-                </div>
-                <h3 class="text-xl font-bold text-apple-dark mb-3">تطوير المواقع الفاخرة</h3>
-                <p class="text-apple-gray text-sm leading-relaxed">مواقع وتطبيقات ويب سريعة جداً بتصميم عصري ينافس كبرى الشركات العالمية.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us / Timeline -->
-    <section id="features" class="py-20 bg-white border-y border-gray-100">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-apple-dark mb-3">خطوات العمل معنا</h2>
-                <p class="text-apple-gray">رحلة واضحة ومحددة لضمان أعلى جودة لتنفيذ مشروعك</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-apple-bg rounded-2xl relative">
-                    <span class="text-3xl font-black text-blue-500/20 absolute top-4 left-4">01</span>
-                    <h4 class="font-bold text-lg mb-2">1. اكتشاف الاحتياجات</h4>
-                    <p class="text-xs text-apple-gray leading-relaxed">نحلل عملياتك الحالية ونحدد الفرص الأنسب لإدخال الذكاء الاصطناعي والأتمتة.</p>
-                </div>
-                <div class="p-6 bg-apple-bg rounded-2xl relative">
-                    <span class="text-3xl font-black text-blue-500/20 absolute top-4 left-4">02</span>
-                    <h4 class="font-bold text-lg mb-2">2. تصميم وتطوير الحل</h4>
-                    <p class="text-xs text-apple-gray leading-relaxed">نصمم النظام كاملاً ليتناسب خصيصاً مع هوية ومتطلبات شركتك.</p>
-                </div>
-                <div class="p-6 bg-apple-bg rounded-2xl relative">
-                    <span class="text-3xl font-black text-blue-500/20 absolute top-4 left-4">03</span>
-                    <h4 class="font-bold text-lg mb-2">3. التنفيذ والإطلاق</h4>
-                    <p class="text-xs text-apple-gray leading-relaxed">نطبق الحل وندرب فريقك مع تقديم الدعم المستمر لضمان أعلى أداء.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 px-6 max-w-3xl mx-auto">
-        <h2 class="text-3xl font-extrabold text-center text-apple-dark mb-12">الأسئلة الشائعة</h2>
-        <div class="space-y-4">
-            <details class="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm transition-all [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex justify-between items-center font-bold cursor-pointer text-apple-dark">
-                    <span>ما هي الخدمات التي تقدمها Avenchie؟</span>
-                    <span class="transition group-open:rotate-180">▼</span>
-                </summary>
-                <p class="mt-4 text-sm text-apple-gray leading-relaxed">
-                    نقدم خدمات متكاملة تتضمن أتمتة العمليات، تصميم وأنظمة إدارة العملاء (CRM)، وتطوير المواقع والتطبيقات الذكية.
+                <p class="text-sm text-apple-gray leading-relaxed">
+                    ربط التطبيقات وأتمتة المهام
+                    المتكررة وسير العمل.
                 </p>
-            </details>
 
-            <details class="group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm transition-all [&_summary::-webkit-details-marker]:hidden">
-                <summary class="flex justify-between items-center font-bold cursor-pointer text-apple-dark">
-                    <span>هل يمكن دمج الذكاء الاصطناعي مع أنظمتنا الحالية؟</span>
-                    <span class="transition group-open:rotate-180">▼</span>
-                </summary>
-                <p class="mt-4 text-sm text-apple-gray leading-relaxed">
-                    نعم، نقوم بربط الحلول الذكية مع أنظمتك الحالية عبر API بمرونة وسلاسة تامة دون تعطيل سير العمل.
-                </p>
-            </details>
+            </div>
+
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-apple-dark text-white py-12 border-t border-gray-800 text-center text-sm">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6">
-            <img src="logo.PNG" alt="Avenchie" class="h-10 w-auto brightness-200">
-            <p class="text-gray-400 text-xs max-w-md">
-                Avenchie — الحلول التقنية الفاخرة للشركات. جميع الحقوق محفوظة © 2026.
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     AI DEMO
+========================================================= -->
+
+<section
+    id="demo"
+    class="
+        py-24
+        px-4
+        bg-gradient-to-b
+        from-transparent
+        via-blue-50/40
+        to-transparent
+    "
+>
+
+    <div class="max-w-xl mx-auto">
+
+
+        <div class="text-center mb-8">
+
+            <span class="section-label mb-4">
+
+                Interactive AI Demo
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    font-extrabold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                شاهد كيف يمكن لمساعد ذكي
+                التعامل مع عملائك
+
+            </h2>
+
+
+            <p
+                class="
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                هذه محاكاة تفاعلية توضيحية لطريقة عمل
+                مساعد AI يمكن تخصيصه ليتناسب مع نشاطك وعملياتك.
+
             </p>
+
         </div>
-    </footer>
 
-    <!-- Script for Live Interactive Demo -->
-    <script>
-        const chatScript = [
-            { sender: 'ai', text: 'مرحباً 👋 كيف يمكنني مساعدتك اليوم؟' },
-            { sender: 'user', text: 'أحتاج نظام CRM لإدارة فريق المبيعات.' },
-            { sender: 'ai', text: 'كم عدد موظفي المبيعات لديك؟' },
-            { sender: 'user', text: '15 موظف.' },
-            { sender: 'ai', text: 'ممتاز! يسعدنا مساعدتك، رجاءً ادخل اسمك ورقم هاتفك لحجز الجلسة.' },
-            { sender: 'card', text: 'Request Sent Successfully\nOur team will contact you shortly\nOrder #1934' }
-        ];
 
-        let currentIndex = 0;
-        const chatBox = document.getElementById('chat-box');
 
-        function renderNextMessage() {
-            if (currentIndex >= chatScript.length) return;
+        <!-- Chat Container -->
 
-            const item = chatScript[currentIndex];
+        <div
+            class="
+                glass-card
+                rounded-3xl
+                shadow-apple-hover
+                border
+                border-gray-200/80
+                overflow-hidden
+            "
+        >
 
-            // Show Typing Indicator for AI
-            if (item.sender === 'ai' || item.sender === 'card') {
-                showTypingIndicator();
-                setTimeout(() => {
-                    removeTypingIndicator();
-                    appendMessage(item);
-                    currentIndex++;
-                    setTimeout(renderNextMessage, 1800);
-                }, 1000);
-            } else {
-                // User Message
-                setTimeout(() => {
-                    appendMessage(item);
-                    currentIndex++;
-                    setTimeout(renderNextMessage, 1000);
-                }, 1200);
-            }
-        }
 
-        function showTypingIndicator() {
-            const typingDiv = document.createElement('div');
-            typingDiv.id = 'typing-indicator';
-            typingDiv.className = 'flex items-center gap-2 self-start bg-gray-100 p-3 rounded-2xl text-xs text-gray-500 fade-in';
-            typingDiv.innerHTML = `
-                <span class="font-bold text-blue-600">AI</span> يكتب الان
-                <span class="flex gap-1">
-                    <span class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></span>
-                    <span class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></span>
-                    <span class="w-1.5 h-1.5 bg-gray-400 rounded-full typing-dot"></span>
+            <!-- Chat Header -->
+
+            <div
+                class="
+                    bg-white/90
+                    p-4
+                    border-b
+                    border-gray-100
+                    flex
+                    items-center
+                    justify-between
+                "
+            >
+
+                <div class="flex items-center gap-3">
+
+                    <div
+                        class="
+                            w-10
+                            h-10
+                            rounded-2xl
+                            bg-gradient-to-tr
+                            from-blue-600
+                            to-indigo-500
+                            flex
+                            items-center
+                            justify-center
+                            text-white
+                            shadow-md
+                        "
+                    >
+
+                        🤖
+
+                    </div>
+
+
+                    <div>
+
+                        <h3
+                            class="
+                                font-bold
+                                text-sm
+                                text-apple-dark
+                            "
+                        >
+
+                            Avenchie AI Assistant
+
+                        </h3>
+
+
+                        <div
+                            class="
+                                flex
+                                items-center
+                                gap-1.5
+                            "
+                        >
+
+                            <span
+                                class="
+                                    w-2
+                                    h-2
+                                    rounded-full
+                                    bg-emerald-500
+                                "
+                            ></span>
+
+                            <span
+                                class="
+                                    text-xs
+                                    text-apple-gray
+                                "
+                            >
+
+                                Interactive Demo
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    onclick="restartDemo()"
+                    class="
+                        text-xs
+                        text-apple-blue
+                        font-semibold
+                        hover:underline
+                    "
+                >
+
+                    إعادة المحاكاة 🔄
+
+                </button>
+
+            </div>
+
+
+            <!-- Chat Body -->
+
+            <div
+                id="chat-box"
+                class="
+                    p-5
+                    space-y-4
+                    min-h-[380px]
+                    max-h-[420px]
+                    overflow-y-auto
+                    flex
+                    flex-col
+                    justify-start
+                    text-sm
+                "
+            >
+
+            </div>
+
+
+            <!-- Footer -->
+
+            <div
+                class="
+                    bg-gray-50/50
+                    p-3
+                    border-t
+                    border-gray-100
+                    text-center
+                    text-xs
+                    text-apple-gray
+                "
+            >
+
+                محاكاة توضيحية لطريقة عمل AI Automation ⚡
+
+            </div>
+
+        </div>
+
+
+        <!-- Demo CTA -->
+
+        <div class="text-center mt-8">
+
+            <p
+                class="
+                    text-sm
+                    text-apple-gray
+                    mb-4
+                "
+            >
+
+                هل تريد بناء حل مشابه لنشاطك؟
+
+            </p>
+
+
+            <a
+                href="https://wa.me/201278220294"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
+                    inline-flex
+                    bg-apple-blue
+                    hover:bg-apple-hover
+                    text-white
+                    px-7
+                    py-3
+                    rounded-full
+                    text-sm
+                    font-medium
+                    transition-all
+                    hover:scale-105
+                "
+            >
+
+                تحدث مع فريق Avenchie
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section
+    id="services"
+    class="
+        py-24
+        px-6
+        max-w-6xl
+        mx-auto
+    "
+>
+
+    <div
+        class="
+            text-center
+            mb-16
+        "
+    >
+
+        <span class="section-label mb-5">
+
+            What We Build
+
+        </span>
+
+
+        <h2
+            class="
+                text-3xl
+                md:text-4xl
+                font-extrabold
+                text-apple-dark
+                mb-4
+            "
+        >
+
+            حلول تقنية مصممة لنشاطك
+
+        </h2>
+
+
+        <p
+            class="
+                text-apple-gray
+                max-w-2xl
+                mx-auto
+                leading-relaxed
+            "
+        >
+
+            لا نقدم نظامًا واحدًا للجميع.
+            نبني الحل وفق احتياجات عملك،
+            ونربطه بالأنظمة التي تستخدمها بالفعل.
+
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="
+            grid
+            md:grid-cols-3
+            gap-8
+        "
+    >
+
+
+        <!-- Service 1 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-blue-50
+                    text-apple-blue
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                🤖
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                AI Chatbots & Agents
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                مساعدين ذكيين للتعامل مع العملاء،
+                الإجابة على الأسئلة،
+                جمع البيانات،
+                وتأهيل العملاء.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Service 2 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-indigo-50
+                    text-indigo-600
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                💬
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                WhatsApp Automation
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                أتمتة التواصل عبر WhatsApp،
+                استقبال العملاء،
+                المتابعة،
+                الحجز،
+                وتحويل المحادثة للموظف عند الحاجة.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Service 3 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-purple-50
+                    text-purple-600
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                ⚙️
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                Workflow Automation
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                أتمتة العمليات المتكررة،
+                وربط التطبيقات والأنظمة،
+                وتقليل الأعمال اليدوية.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Service 4 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-emerald-50
+                    text-emerald-600
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                🎯
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                Lead Qualification
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                جمع معلومات العملاء،
+                فهم احتياجاتهم،
+                وتصنيف العملاء المحتملين
+                قبل وصولهم إلى فريق المبيعات.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Service 5 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-orange-50
+                    text-orange-600
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                📅
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                Appointment Automation
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                إدارة الحجوزات والمواعيد،
+                التأكيد،
+                التذكير،
+                والمتابعة بشكل مؤتمت.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Service 6 -->
+
+        <div
+            class="
+                bg-white
+                rounded-3xl
+                p-8
+                border
+                border-gray-100
+                shadow-apple-card
+                hover:shadow-apple-hover
+                transition-all
+                duration-300
+            "
+        >
+
+            <div
+                class="
+                    w-12
+                    h-12
+                    rounded-2xl
+                    bg-pink-50
+                    text-pink-600
+                    flex
+                    items-center
+                    justify-center
+                    text-xl
+                    mb-6
+                "
+            >
+
+                💻
+
+            </div>
+
+
+            <h3
+                class="
+                    text-xl
+                    font-bold
+                    text-apple-dark
+                    mb-3
+                "
+            >
+
+                Custom Software
+
+            </h3>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    text-sm
+                    leading-relaxed
+                "
+            >
+
+                تطوير المواقع،
+                تطبيقات الويب،
+                الأنظمة المخصصة،
+                والتكاملات البرمجية حسب احتياج شركتك.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     HOW AUTOMATION WORKS
+========================================================= -->
+
+<section
+    class="
+        py-24
+        px-6
+        bg-white
+        border-y
+        border-gray-100
+    "
+>
+
+    <div class="max-w-6xl mx-auto">
+
+        <div
+            class="
+                text-center
+                mb-16
+            "
+        >
+
+            <span class="section-label mb-5">
+
+                From Inquiry to Action
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    md:text-4xl
+                    font-extrabold
+                    text-apple-dark
+                    mb-4
+                "
+            >
+
+                ماذا يحدث عندما يتواصل معك العميل؟
+
+            </h2>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    max-w-2xl
+                    mx-auto
+                "
+            >
+
+                يمكننا تصميم رحلة مؤتمتة تبدأ من أول رسالة
+                وتنتهي بالإجراء المناسب.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="
+                grid
+                md:grid-cols-5
+                gap-4
+                items-stretch
+            "
+        >
+
+            <!-- Step 1 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-6
+                    text-center
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    💬
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    01
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    العميل يتواصل
+                </p>
+
+            </div>
+
+
+            <!-- Step 2 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-6
+                    text-center
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🤖
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    02
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    AI يفهم الطلب
+                </p>
+
+            </div>
+
+
+            <!-- Step 3 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-6
+                    text-center
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🎯
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    03
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    تأهيل العميل
+                </p>
+
+            </div>
+
+
+            <!-- Step 4 -->
+
+            <div
+                class="
+                    bg-apple-bg
+                    rounded-3xl
+                    p-6
+                    text-center
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    📅
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    04
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    حجز أو إجراء
+                </p>
+
+            </div>
+
+
+            <!-- Step 5 -->
+
+            <div
+                class="
+                    bg-blue-50
+                    rounded-3xl
+                    p-6
+                    text-center
+                    border
+                    border-blue-100
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    👨‍💼
+                </div>
+
+                <h3
+                    class="
+                        font-bold
+                        mb-2
+                        text-apple-blue
+                    "
+                >
+                    05
+                </h3>
+
+                <p
+                    class="
+                        text-sm
+                        text-blue-700
+                    "
+                >
+                    تحويل للموظف عند الحاجة
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section
+    id="process"
+    class="
+        py-24
+        px-6
+    "
+>
+
+    <div class="max-w-5xl mx-auto">
+
+
+        <div class="text-center mb-16">
+
+            <span class="section-label mb-5">
+
+                Our Process
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    md:text-4xl
+                    font-extrabold
+                    text-apple-dark
+                    mb-4
+                "
+            >
+
+                خطوات واضحة لتنفيذ الحل
+
+            </h2>
+
+
+            <p class="text-apple-gray">
+
+                نبدأ بفهم العمل، ثم نبني الحل المناسب،
+                ثم نطبقه وندعمه.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="
+                grid
+                md:grid-cols-3
+                gap-8
+            "
+        >
+
+            <!-- Step 1 -->
+
+            <div
+                class="
+                    p-8
+                    bg-white
+                    rounded-3xl
+                    border
+                    border-gray-100
+                    shadow-apple-card
+                "
+            >
+
+                <span
+                    class="
+                        text-5xl
+                        font-black
+                        text-blue-500/15
+                    "
+                >
+                    01
                 </span>
-            `;
-            chatBox.appendChild(typingDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
 
-        function removeTypingIndicator() {
-            const el = document.getElementById('typing-indicator');
-            if (el) el.remove();
-        }
 
-        function appendMessage(item) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = 'fade-in flex flex-col gap-1 max-w-[85%]';
+                <h3
+                    class="
+                        font-bold
+                        text-xl
+                        mt-4
+                        mb-3
+                    "
+                >
 
-            if (item.sender === 'ai') {
-                msgDiv.classList.add('self-start');
-                msgDiv.innerHTML = `
-                    <div class="flex items-start gap-2">
-                        <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mt-1">AI</div>
-                        <div class="bg-gray-100 text-apple-dark p-3.5 rounded-2xl rounded-tr-none text-xs leading-relaxed">
-                            ${item.text}
-                        </div>
-                    </div>
-                `;
-            } else if (item.sender === 'user') {
-                msgDiv.classList.add('self-end');
-                msgDiv.innerHTML = `
-                    <div class="flex items-start gap-2 flex-row-reverse">
-                        <div class="w-6 h-6 rounded-full bg-gray-300 text-gray-700 flex items-center justify-center text-[10px] font-bold mt-1">You</div>
-                        <div class="bg-apple-blue text-white p-3.5 rounded-2xl rounded-tl-none text-xs leading-relaxed shadow-sm">
-                            ${item.text}
-                        </div>
-                    </div>
-                `;
-            } else if (item.sender === 'card') {
-                msgDiv.classList.add('self-center', 'w-full');
-                msgDiv.innerHTML = `
-                    <div class="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-5 text-center my-2 shadow-sm">
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-2 text-sm">✓</div>
-                        <h4 class="font-bold text-emerald-900 text-xs mb-1">Request Sent Successfully</h4>
-                        <p class="text-[11px] text-emerald-700">Our team will contact you shortly</p>
-                        <span class="inline-block mt-2 text-[10px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Order #1934</span>
-                    </div>
-                `;
-            }
+                    اكتشاف الاحتياجات
 
-            chatBox.appendChild(msgDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+                </h3>
 
-        function restartDemo() {
-            chatBox.innerHTML = '';
-            currentIndex = 0;
-            renderNextMessage();
-        }
 
-        // Start Demo on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(renderNextMessage, 500);
-        });
-    </script>
+                <p
+                    class="
+                        text-sm
+                        text-apple-gray
+                        leading-relaxed
+                    "
+                >
+
+                    نفهم طريقة عمل شركتك،
+                    ونحدد العمليات التي يمكن تحسينها
+                    باستخدام الذكاء الاصطناعي والأتمتة.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Step 2 -->
+
+            <div
+                class="
+                    p-8
+                    bg-white
+                    rounded-3xl
+                    border
+                    border-gray-100
+                    shadow-apple-card
+                "
+            >
+
+                <span
+                    class="
+                        text-5xl
+                        font-black
+                        text-blue-500/15
+                    "
+                >
+                    02
+                </span>
+
+
+                <h3
+                    class="
+                        font-bold
+                        text-xl
+                        mt-4
+                        mb-3
+                    "
+                >
+
+                    تصميم وتطوير الحل
+
+                </h3>
+
+
+                <p
+                    class="
+                        text-sm
+                        text-apple-gray
+                        leading-relaxed
+                    "
+                >
+
+                    نبني الحل وفق احتياجاتك،
+                    ونربطه بالأنظمة والأدوات
+                    التي تستخدمها بالفعل.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- Step 3 -->
+
+            <div
+                class="
+                    p-8
+                    bg-white
+                    rounded-3xl
+                    border
+                    border-gray-100
+                    shadow-apple-card
+                "
+            >
+
+                <span
+                    class="
+                        text-5xl
+                        font-black
+                        text-blue-500/15
+                    "
+                >
+                    03
+                </span>
+
+
+                <h3
+                    class="
+                        font-bold
+                        text-xl
+                        mt-4
+                        mb-3
+                    "
+                >
+
+                    التنفيذ والدعم
+
+                </h3>
+
+
+                <p
+                    class="
+                        text-sm
+                        text-apple-gray
+                        leading-relaxed
+                    "
+                >
+
+                    نطلق الحل،
+                    نساعد فريقك على استخدامه،
+                    ونوفر الدعم والتطوير المستمر.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHO WE HELP
+========================================================= -->
+
+<section
+    class="
+        py-24
+        px-6
+        bg-white
+        border-y
+        border-gray-100
+    "
+>
+
+    <div class="max-w-6xl mx-auto">
+
+
+        <div class="text-center mb-14">
+
+            <span class="section-label mb-5">
+
+                Who We Help
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    md:text-4xl
+                    font-extrabold
+                    text-apple-dark
+                    mb-4
+                "
+            >
+
+                أين يمكن أن تبدأ الأتمتة؟
+
+            </h2>
+
+
+            <p
+                class="
+                    text-apple-gray
+                    max-w-2xl
+                    mx-auto
+                "
+            >
+
+                نعمل مع الشركات التي لديها تواصل متكرر مع العملاء
+                أو عمليات يمكن تحسينها وأتمتتها.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="
+                grid
+                md:grid-cols-4
+                gap-5
+            "
+        >
+
+            <div
+                class="
+                    p-7
+                    rounded-3xl
+                    bg-apple-bg
+                    border
+                    border-gray-100
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🏢
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    شركات الخدمات
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    إدارة الاستفسارات،
+                    المتابعة،
+                    وتأهيل العملاء.
+                </p>
+
+            </div>
+
+
+            <div
+                class="
+                    p-7
+                    rounded-3xl
+                    bg-apple-bg
+                    border
+                    border-gray-100
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🛒
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    المتاجر والشركات
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    WhatsApp،
+                    خدمة العملاء،
+                    والمتابعة الآلية.
+                </p>
+
+            </div>
+
+
+            <div
+                class="
+                    p-7
+                    rounded-3xl
+                    bg-apple-bg
+                    border
+                    border-gray-100
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🏥
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    العيادات والمراكز
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    المواعيد،
+                    الحجوزات،
+                    والتذكير والمتابعة.
+                </p>
+
+            </div>
+
+
+            <div
+                class="
+                    p-7
+                    rounded-3xl
+                    bg-apple-bg
+                    border
+                    border-gray-100
+                "
+            >
+
+                <div class="text-3xl mb-4">
+                    🔄
+                </div>
+
+                <h3 class="font-bold mb-2">
+                    الشركات ذات العمليات اليدوية
+                </h3>
+
+                <p class="text-sm text-apple-gray">
+                    ربط الأنظمة وتقليل
+                    الأعمال المتكررة.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FREE ASSESSMENT CTA
+========================================================= -->
+
+<section
+    class="
+        py-24
+        px-6
+    "
+>
+
+    <div
+        class="
+            max-w-5xl
+            mx-auto
+            rounded-[2rem]
+            bg-apple-dark
+            text-white
+            p-10
+            md:p-16
+            text-center
+            overflow-hidden
+            relative
+        "
+    >
+
+        <div
+            class="
+                absolute
+                w-72
+                h-72
+                rounded-full
+                bg-blue-500/10
+                blur-3xl
+                top-0
+                left-0
+            "
+        ></div>
+
+
+        <div class="relative z-10">
+
+            <span
+                class="
+                    inline-block
+                    px-4
+                    py-1.5
+                    rounded-full
+                    bg-white/10
+                    border
+                    border-white/10
+                    text-blue-300
+                    text-xs
+                    font-bold
+                    mb-6
+                "
+            >
+
+                Free Automation Assessment
+
+            </span>
+
+
+            <h2
+                class="
+                    text-3xl
+                    md:text-4xl
+                    font-extrabold
+                    mb-5
+                "
+            >
+
+                لا تعرف ما الذي يمكن أتمتته؟
+
+            </h2>
+
+
+            <p
+                class="
+                    text-gray-400
+                    max-w-2xl
+                    mx-auto
+                    leading-relaxed
+                    mb-8
+                "
+            >
+
+                أخبرنا كيف تعمل شركتك اليوم،
+                وسنساعدك على تحديد العمليات التي يمكن
+                تحسينها باستخدام الذكاء الاصطناعي والأتمتة.
+
+            </p>
+
+
+            <a
+                href="https://wa.me/201278220294"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="
+                    inline-flex
+                    bg-white
+                    text-apple-dark
+                    hover:bg-gray-100
+                    px-8
+                    py-3.5
+                    rounded-full
+                    font-bold
+                    transition-all
+                    hover:scale-105
+                "
+            >
+
+                ابدأ المحادثة على WhatsApp ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section
+    id="faq"
+    class="
+        py-24
+        px-6
+        max-w-3xl
+        mx-auto
+    "
+>
+
+    <div class="text-center mb-14">
+
+        <span class="section-label mb-5">
+
+            FAQ
+
+        </span>
+
+
+        <h2
+            class="
+                text-3xl
+                md:text-4xl
+                font-extrabold
+                text-apple-dark
+            "
+        >
+
+            الأسئلة الشائعة
+
+        </h2>
+
+    </div>
+
+
+
+    <div class="space-y-4">
+
+
+        <!-- FAQ 1 -->
+
+        <details
+            class="
+                group
+                bg-white
+                p-6
+                rounded-2xl
+                border
+                border-gray-100
+                shadow-sm
+            "
+        >
+
+            <summary
+                class="
+                    flex
+                    justify-between
+                    items-center
+                    font-bold
+                    cursor-pointer
+                    text-apple-dark
+                "
+            >
+
+                <span>
+                    ما هي الخدمات التي تقدمها Avenchie؟
+                </span>
+
+                <span
+                    class="
+                        transition
+                        group-open:rotate-180
+                    "
+                >
+                    ▼
+                </span>
+
+            </summary>
+
+
+            <p
+                class="
+                    mt-4
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                نقدم حلول AI Automation،
+                AI Chatbots،
+                WhatsApp Automation،
+                Lead Qualification،
+                Appointment Automation،
+                CRM Integration،
+                Workflow Automation،
+                وتطوير المواقع والبرمجيات المخصصة.
+
+            </p>
+
+        </details>
+
+
+
+        <!-- FAQ 2 -->
+
+        <details
+            class="
+                group
+                bg-white
+                p-6
+                rounded-2xl
+                border
+                border-gray-100
+                shadow-sm
+            "
+        >
+
+            <summary
+                class="
+                    flex
+                    justify-between
+                    items-center
+                    font-bold
+                    cursor-pointer
+                    text-apple-dark
+                "
+            >
+
+                <span>
+                    هل يمكن دمج الذكاء الاصطناعي مع أنظمتنا الحالية؟
+                </span>
+
+                <span
+                    class="
+                        transition
+                        group-open:rotate-180
+                    "
+                >
+                    ▼
+                </span>
+
+            </summary>
+
+
+            <p
+                class="
+                    mt-4
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                نعم. يمكن تصميم الحل ليتكامل مع الأنظمة
+                الحالية عبر APIs والتكاملات المناسبة،
+                حسب طبيعة النظام واحتياجات المشروع.
+
+            </p>
+
+        </details>
+
+
+
+        <!-- FAQ 3 -->
+
+        <details
+            class="
+                group
+                bg-white
+                p-6
+                rounded-2xl
+                border
+                border-gray-100
+                shadow-sm
+            "
+        >
+
+            <summary
+                class="
+                    flex
+                    justify-between
+                    items-center
+                    font-bold
+                    cursor-pointer
+                    text-apple-dark
+                "
+            >
+
+                <span>
+                    هل الحلول جاهزة أم يتم تطويرها حسب الطلب؟
+                </span>
+
+                <span
+                    class="
+                        transition
+                        group-open:rotate-180
+                    "
+                >
+                    ▼
+                </span>
+
+            </summary>
+
+
+            <p
+                class="
+                    mt-4
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                نستخدم حلولًا وتقنيات مختلفة حسب احتياجات المشروع.
+                لدينا Demo للـAI Chatbot،
+                بينما يتم تخصيص بقية المكونات وفق متطلبات كل شركة.
+
+            </p>
+
+        </details>
+
+
+
+        <!-- FAQ 4 -->
+
+        <details
+            class="
+                group
+                bg-white
+                p-6
+                rounded-2xl
+                border
+                border-gray-100
+                shadow-sm
+            "
+        >
+
+            <summary
+                class="
+                    flex
+                    justify-between
+                    items-center
+                    font-bold
+                    cursor-pointer
+                    text-apple-dark
+                "
+            >
+
+                <span>
+                    هل يمكن أن يبقى الموظف البشري جزءًا من العملية؟
+                </span>
+
+                <span
+                    class="
+                        transition
+                        group-open:rotate-180
+                    "
+                >
+                    ▼
+                </span>
+
+            </summary>
+
+
+            <p
+                class="
+                    mt-4
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                نعم. يمكن تصميم النظام بحيث يتولى AI
+                المهام المتكررة، ثم يحول المحادثة إلى موظف
+                عندما تحتاج الحالة إلى تدخل بشري.
+
+            </p>
+
+        </details>
+
+
+
+        <!-- FAQ 5 -->
+
+        <details
+            class="
+                group
+                bg-white
+                p-6
+                rounded-2xl
+                border
+                border-gray-100
+                shadow-sm
+            "
+        >
+
+            <summary
+                class="
+                    flex
+                    justify-between
+                    items-center
+                    font-bold
+                    cursor-pointer
+                    text-apple-dark
+                "
+            >
+
+                <span>
+                    كيف نبدأ؟
+                </span>
+
+                <span
+                    class="
+                        transition
+                        group-open:rotate-180
+                    "
+                >
+                    ▼
+                </span>
+
+            </summary>
+
+
+            <p
+                class="
+                    mt-4
+                    text-sm
+                    text-apple-gray
+                    leading-relaxed
+                "
+            >
+
+                ابدأ بالتواصل معنا عبر WhatsApp،
+                واشرح لنا بشكل مختصر طبيعة نشاطك
+                والعملية التي تريد تحسينها.
+                بعدها نحدد الحل المناسب.
+
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section
+    class="
+        pb-24
+        px-6
+        text-center
+    "
+>
+
+    <div class="max-w-3xl mx-auto">
+
+        <h2
+            class="
+                text-3xl
+                md:text-4xl
+                font-extrabold
+                text-apple-dark
+                mb-5
+            "
+        >
+
+            جاهز لأتمتة جزء من عملك؟
+
+        </h2>
+
+
+        <p
+            class="
+                text-apple-gray
+                mb-8
+            "
+        >
+
+            أخبرنا بالمشكلة،
+            ودعنا نحدد لك ما يمكن أتمتته.
+
+        </p>
+
+
+        <a
+            href="https://wa.me/201278220294"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="
+                inline-flex
+                bg-apple-blue
+                hover:bg-apple-hover
+                text-white
+                px-8
+                py-3.5
+                rounded-full
+                font-medium
+                shadow-glow
+                transition-all
+                hover:scale-105
+            "
+        >
+
+            تحدث مع Avenchie على WhatsApp ↗
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+    class="
+        bg-apple-dark
+        text-white
+        py-12
+        border-t
+        border-gray-800
+    "
+>
+
+    <div
+        class="
+            max-w-6xl
+            mx-auto
+            px-6
+            flex
+            flex-col
+            items-center
+            gap-6
+            text-center
+        "
+    >
+
+        <img
+            src="logo.PNG"
+            alt="Avenchie"
+            class="h-10 w-auto brightness-200"
+        >
+
+
+        <p
+            class="
+                text-gray-400
+                text-xs
+                max-w-md
+            "
+        >
+
+            Avenchie — AI Automation & Software Solutions.
+
+            <br>
+
+            Automate. Integrate. Grow.
+
+        </p>
+
+
+        <div
+            class="
+                flex
+                gap-6
+                text-xs
+                text-gray-500
+            "
+        >
+
+            <a
+                href="#services"
+                class="hover:text-white transition"
+            >
+                الخدمات
+            </a>
+
+            <a
+                href="#demo"
+                class="hover:text-white transition"
+            >
+                AI Demo
+            </a>
+
+            <a
+                href="#faq"
+                class="hover:text-white transition"
+            >
+                FAQ
+            </a>
+
+            <a
+                href="https://wa.me/201278220294"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-white transition"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <p class="text-gray-600 text-xs">
+
+            © 2026 Avenchie. All rights reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMobileMenu() {
+
+    const menu =
+        document.getElementById('mobile-menu');
+
+    menu.classList.toggle('active');
+
+}
+
+
+
+/* =========================================================
+   AI DEMO
+========================================================= */
+
+/*
+    ملاحظة:
+    هذا Demo تفاعلي توضيحي وليس AI حقيقيًا.
+    الرسائل التالية تمثل سيناريو محاكاة.
+*/
+
+const chatScript = [
+
+    {
+        sender: 'ai',
+        text:
+            'مرحباً 👋 كيف يمكنني مساعدتك اليوم؟'
+    },
+
+    {
+        sender: 'user',
+        text:
+            'أحتاج نظام CRM لإدارة فريق المبيعات.'
+    },
+
+    {
+        sender: 'ai',
+        text:
+            'بالتأكيد. كم عدد موظفي المبيعات لديك؟'
+    },
+
+    {
+        sender: 'user',
+        text:
+            '15 موظف.'
+    },
+
+    {
+        sender: 'ai',
+        text:
+            'ممتاز. يمكن تخصيص النظام ليتناسب مع فريقك. هل ترغب في حجز جلسة لمناقشة احتياجاتك؟'
+    },
+
+    {
+        sender: 'card',
+        text:
+            'Request Sent Successfully'
+    }
+
+];
+
+
+let currentIndex = 0;
+
+const chatBox =
+    document.getElementById('chat-box');
+
+
+
+/* =========================================================
+   RENDER NEXT MESSAGE
+========================================================= */
+
+function renderNextMessage() {
+
+    if (
+        currentIndex >=
+        chatScript.length
+    ) {
+
+        return;
+
+    }
+
+
+    const item =
+        chatScript[currentIndex];
+
+
+    /* AI / CARD */
+
+    if (
+        item.sender === 'ai' ||
+        item.sender === 'card'
+    ) {
+
+        showTypingIndicator();
+
+
+        setTimeout(() => {
+
+            removeTypingIndicator();
+
+            appendMessage(item);
+
+            currentIndex++;
+
+            setTimeout(
+                renderNextMessage,
+                1800
+            );
+
+        }, 1000);
+
+    }
+
+
+    /* USER */
+
+    else {
+
+        setTimeout(() => {
+
+            appendMessage(item);
+
+            currentIndex++;
+
+            setTimeout(
+                renderNextMessage,
+                1000
+            );
+
+        }, 1200);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   TYPING INDICATOR
+========================================================= */
+
+function showTypingIndicator() {
+
+    const typingDiv =
+        document.createElement('div');
+
+
+    typingDiv.id =
+        'typing-indicator';
+
+
+    typingDiv.className =
+        `
+        flex
+        items-center
+        gap-2
+        self-start
+        bg-gray-100
+        p-3
+        rounded-2xl
+        text-xs
+        text-gray-500
+        fade-in
+        `;
+
+
+    typingDiv.innerHTML = `
+
+        <span
+            class="
+                font-bold
+                text-blue-600
+            "
+        >
+            AI
+        </span>
+
+        يكتب الآن
+
+        <span
+            class="
+                flex
+                gap-1
+            "
+        >
+
+            <span
+                class="
+                    w-1.5
+                    h-1.5
+                    bg-gray-400
+                    rounded-full
+                    typing-dot
+                "
+            ></span>
+
+            <span
+                class="
+                    w-1.5
+                    h-1.5
+                    bg-gray-400
+                    rounded-full
+                    typing-dot
+                "
+            ></span>
+
+            <span
+                class="
+                    w-1.5
+                    h-1.5
+                    bg-gray-400
+                    rounded-full
+                    typing-dot
+                "
+            ></span>
+
+        </span>
+
+    `;
+
+
+    chatBox.appendChild(
+        typingDiv
+    );
+
+
+    chatBox.scrollTop =
+        chatBox.scrollHeight;
+
+}
+
+
+
+/* =========================================================
+   REMOVE TYPING
+========================================================= */
+
+function removeTypingIndicator() {
+
+    const element =
+        document.getElementById(
+            'typing-indicator'
+        );
+
+
+    if (element) {
+
+        element.remove();
+
+    }
+
+}
+
+
+
+/* =========================================================
+   APPEND MESSAGE
+========================================================= */
+
+function appendMessage(item) {
+
+    const msgDiv =
+        document.createElement('div');
+
+
+    msgDiv.className =
+        `
+        fade-in
+        flex
+        flex-col
+        gap-1
+        max-w-[85%]
+        `;
+
+
+
+    /* =========================
+       AI MESSAGE
+    ========================== */
+
+    if (
+        item.sender === 'ai'
+    ) {
+
+        msgDiv.classList.add(
+            'self-start'
+        );
+
+
+        msgDiv.innerHTML = `
+
+            <div
+                class="
+                    flex
+                    items-start
+                    gap-2
+                "
+            >
+
+                <div
+                    class="
+                        w-6
+                        h-6
+                        rounded-full
+                        bg-blue-600
+                        text-white
+                        flex
+                        items-center
+                        justify-center
+                        text-[10px]
+                        font-bold
+                        mt-1
+                    "
+                >
+                    AI
+                </div>
+
+
+                <div
+                    class="
+                        bg-gray-100
+                        text-apple-dark
+                        p-3.5
+                        rounded-2xl
+                        rounded-tr-none
+                        text-xs
+                        leading-relaxed
+                    "
+                >
+
+                    ${item.text}
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+
+    /* =========================
+       USER MESSAGE
+    ========================== */
+
+    else if (
+        item.sender === 'user'
+    ) {
+
+        msgDiv.classList.add(
+            'self-end'
+        );
+
+
+        msgDiv.innerHTML = `
+
+            <div
+                class="
+                    flex
+                    items-start
+                    gap-2
+                    flex-row-reverse
+                "
+            >
+
+                <div
+                    class="
+                        w-6
+                        h-6
+                        rounded-full
+                        bg-gray-300
+                        text-gray-700
+                        flex
+                        items-center
+                        justify-center
+                        text-[10px]
+                        font-bold
+                        mt-1
+                    "
+                >
+                    You
+                </div>
+
+
+                <div
+                    class="
+                        bg-apple-blue
+                        text-white
+                        p-3.5
+                        rounded-2xl
+                        rounded-tl-none
+                        text-xs
+                        leading-relaxed
+                        shadow-sm
+                    "
+                >
+
+                    ${item.text}
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+
+    /* =========================
+       SUCCESS CARD
+    ========================== */
+
+    else if (
+        item.sender === 'card'
+    ) {
+
+        msgDiv.classList.add(
+            'self-center',
+            'w-full'
+        );
+
+
+        msgDiv.innerHTML = `
+
+            <div
+                class="
+                    bg-emerald-50
+                    border
+                    border-emerald-200/80
+                    rounded-2xl
+                    p-5
+                    text-center
+                    my-2
+                    shadow-sm
+                "
+            >
+
+                <div
+                    class="
+                        w-8
+                        h-8
+                        rounded-full
+                        bg-emerald-500
+                        text-white
+                        flex
+                        items-center
+                        justify-center
+                        mx-auto
+                        mb-2
+                        text-sm
+                    "
+                >
+                    ✓
+                </div>
+
+
+                <h4
+                    class="
+                        font-bold
+                        text-emerald-900
+                        text-xs
+                        mb-1
+                    "
+                >
+
+                    Request Sent Successfully
+
+                </h4>
+
+
+                <p
+                    class="
+                        text-[11px]
+                        text-emerald-700
+                    "
+                >
+
+                    Our team will contact you shortly
+
+                </p>
+
+
+                <span
+                    class="
+                        inline-block
+                        mt-2
+                        text-[10px]
+                        font-mono
+                        bg-emerald-100
+                        text-emerald-800
+                        px-2
+                        py-0.5
+                        rounded
+                    "
+                >
+
+                    Automation Demo
+
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+
+    chatBox.appendChild(
+        msgDiv
+    );
+
+
+    chatBox.scrollTop =
+        chatBox.scrollHeight;
+
+}
+
+
+
+/* =========================================================
+   RESTART DEMO
+========================================================= */
+
+function restartDemo() {
+
+    chatBox.innerHTML = '';
+
+    currentIndex = 0;
+
+    renderNextMessage();
+
+}
+
+
+
+/* =========================================================
+   START DEMO
+========================================================= */
+
+window.addEventListener(
+    'DOMContentLoaded',
+    () => {
+
+        setTimeout(
+            renderNextMessage,
+            500
+        );
+
+    }
+);
+
+
+</script>
+
+
 </body>
 </html>
