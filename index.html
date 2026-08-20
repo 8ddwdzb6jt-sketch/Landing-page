@@ -69,10 +69,10 @@
 
         /* NAVIGATION */
         .glass-nav {
-            background: rgba(255,255,255,.78);
+            background: rgba(255,255,255,.90);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(15,23,42,.06);
+            border-bottom: 1px solid rgba(15,23,42,.08);
         }
 
         /* HERO BACKGROUND */
@@ -94,9 +94,9 @@
             will-change: transform;
         }
 
-        /* TYPING HERO - تثبيت المساحة أفقياً ورأسياً بصرامة لمنع الاهتزاز */
+        /* TYPING HERO - تثبيت المساحة أفقياً ورأسياً لمنع الاهتزاز */
         .hero-title-box {
-            height: 140px; /* ارتفاع ثابت يضمن عدم تحرك الصفحة مطلقاً */
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,7 +124,6 @@
             box-shadow: 0 35px 90px rgba(15,23,42,.12);
         }
 
-        /* تخصيص شريط التمرير داخل الشات */
         #chatBox::-webkit-scrollbar {
             width: 5px;
         }
@@ -208,12 +207,18 @@
 <!-- NAVIGATION -->
 <header class="glass-nav fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
-        <div class="h-[72px] flex items-center justify-between">
-            <a href="#" class="flex items-center">
-                <img src="logo.PNG" alt="Avenchie" class="h-10 w-auto">
+        <div class="h-[80px] flex items-center justify-between">
+            
+            <!-- LOGO & BRAND NAME BAR -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo.PNG" alt="Avenchie Logo" class="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition">Avenchie</span>
+                    <span class="text-[10px] font-bold text-blue-600 tracking-wider uppercase -mt-1">AI Solutions</span>
+                </div>
             </a>
 
-            <nav class="hidden lg:flex items-center gap-9 text-sm font-medium text-slate-600">
+            <nav class="hidden lg:flex items-center gap-9 text-base font-semibold text-slate-700">
                 <a href="#services" class="hover:text-blue-600 transition">الخدمات</a>
                 <a href="#demo" class="hover:text-blue-600 transition">التجربة التفاعلية</a>
                 <a href="#solutions" class="hover:text-blue-600 transition">الحلول</a>
@@ -222,7 +227,7 @@
             </nav>
 
             <a href="https://wa.me/201278220294" target="_blank"
-               class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-600/15">
+               class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-sm font-bold transition shadow-lg shadow-blue-600/20">
                 تواصل معنا
                 <span>↗</span>
             </a>
@@ -231,19 +236,21 @@
 </header>
 
 <!-- HERO -->
-<section class="relative min-h-screen pt-36 pb-20 overflow-hidden">
+<section class="relative min-h-screen pt-40 pb-20 overflow-hidden">
     <div class="hero-grid absolute inset-0 pointer-events-none"></div>
 
     <div class="orb w-[350px] h-[350px] bg-blue-300/20 -top-32 right-[-100px]"></div>
     <div class="orb w-[250px] h-[250px] bg-cyan-300/10 top-[40%] left-[-100px]"></div>
 
     <div class="relative max-w-6xl mx-auto px-6 text-center">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold mb-8">
-            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-            AI-Powered Business Automation
+        
+        <!-- TAG WITH COMPANY NAME -->
+        <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-extrabold mb-8 shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+            Avenchie — AI-Powered Business Automation
         </div>
 
-        <!-- صندوق ذو ارتفاع ثابت يمنع اهتزاز الصفحة بالكامل -->
+        <!-- HERO TITLE -->
         <div class="hero-title-box max-w-5xl mx-auto">
             <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950">
                 <span id="typingText"></span><span id="typingCursor">|</span>
@@ -298,13 +305,13 @@
             </p>
         </div>
 
-        <!-- الشات ثابت الحجم ومحمي بالكامل -->
+        <!-- CHAT CONTAINER -->
         <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden flex flex-col h-[560px]">
             <!-- Header -->
             <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                        AI
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-blue-500/20">
+                        A
                     </div>
                     <div>
                         <h3 class="font-bold text-sm text-slate-900">Avenchie AI Assistant</h3>
@@ -346,37 +353,37 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-7">AI</div>
+                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl mb-7">AI</div>
                 <h3 class="text-xl font-black mb-3">AI Chatbots</h3>
                 <p class="text-sm text-slate-500 leading-relaxed">مساعدين ذكيين يفهمون أسئلة العملاء، يقدمون الإجابات، يجمعون البيانات ويحولون المحادثة إلى فرصة مبيعات.</p>
             </div>
 
             <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-7">WA</div>
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl mb-7">WA</div>
                 <h3 class="text-xl font-black mb-3">WhatsApp Business API</h3>
                 <p class="text-sm text-slate-500 leading-relaxed">ربط WhatsApp بعمليات المبيعات وخدمة العملاء والأتمتة والأنظمة الداخلية.</p>
             </div>
 
             <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-7">CRM</div>
+                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-xl mb-7">CRM</div>
                 <h3 class="text-xl font-black mb-3">CRM Automation</h3>
                 <p class="text-sm text-slate-500 leading-relaxed">أتمتة دورة العميل من أول تواصل حتى المتابعة وإدارة المبيعات.</p>
             </div>
 
             <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-7">⚡</div>
+                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center font-black text-xl mb-7">⚡</div>
                 <h3 class="text-xl font-black mb-3">Workflow Automation</h3>
                 <p class="text-sm text-slate-500 leading-relaxed">ربط التطبيقات والأنظمة وتقليل الأعمال اليدوية المتكررة داخل الشركة.</p>
             </div>
 
             <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl mb-7">WEB</div>
+                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center font-black text-xl mb-7">WEB</div>
                 <h3 class="text-xl font-black mb-3">Websites & Web Apps</h3>
                 <p class="text-sm text-slate-500 leading-relaxed">مواقع وتطبيقات ويب حديثة مصممة لتقديم تجربة احترافية وتحقيق أهداف العمل.</p>
             </div>
 
             <div class="service-card bg-slate-950 text-white border border-slate-800 rounded-3xl p-8">
-                <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-xl mb-7">+</div>
+                <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center font-black text-xl mb-7">+</div>
                 <h3 class="text-xl font-black mb-3">Custom Software</h3>
                 <p class="text-sm text-slate-400 leading-relaxed">حلول برمجية مخصصة عندما لا تكون الأدوات الجاهزة كافية لتلبية احتياجات الشركة.</p>
             </div>
@@ -528,7 +535,10 @@
     <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
             <div>
-                <img src="logo.PNG" alt="Avenchie" class="h-10 w-auto mb-6">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="logo.PNG" alt="Avenchie Logo" class="h-10 w-auto">
+                    <span class="text-2xl font-black tracking-tight text-white">Avenchie</span>
+                </div>
                 <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
                     Avenchie — AI-powered automation and custom digital solutions for smarter businesses.
                 </p>
@@ -561,7 +571,7 @@
 
 <!-- JAVASCRIPT -->
 <script>
-/* HERO TYPING ANIMATION (STABLE NO-REFLEX) */
+/* HERO TYPING ANIMATION */
 const typingText = document.getElementById('typingText');
 
 async function sleep(ms) {
@@ -583,22 +593,17 @@ async function heroTypingLoop() {
     while (true) {
         typingText.innerHTML = '';
 
-        // كتابة الجزء الأول
         await typePart('اجعل الذكاء الاصطناعي ', '', 75);
         await sleep(200);
 
-        // كتابة الجزء الثاني باللون الأزرق
         await typePart('يعمل لصالحك', 'text-blue-600', 75);
 
-        // الانتظار بعد اكتمال الجملة
         await sleep(3500);
 
-        // اختفاء ناعم جداً للجملة دون مسح مفاجئ يحرك الصفحة
         typingText.style.transition = 'opacity 0.5s ease';
         typingText.style.opacity = '0';
         await sleep(500);
 
-        // إعادة الضبط للبدء من جديد
         typingText.innerHTML = '';
         typingText.style.opacity = '1';
         await sleep(300);
@@ -607,7 +612,7 @@ async function heroTypingLoop() {
 
 heroTypingLoop();
 
-/* AI CHAT DEMO (SCROLL INSIDE CHATBOX ONLY) */
+/* AI CHAT DEMO */
 const chatBox = document.getElementById('chatBox');
 const chatScript = [
     { sender: 'ai', text: 'مرحبًا 👋 كيف يمكنني مساعدتك اليوم؟' },
@@ -635,7 +640,7 @@ function showTyping() {
     typing.id = 'typingIndicator';
     typing.className = 'self-start bg-white border border-slate-100 rounded-2xl px-4 py-3 shadow-sm chat-message flex items-center gap-3 text-xs text-slate-400';
     typing.innerHTML = `
-        <span class="font-bold text-blue-600">AI</span>
+        <span class="font-bold text-blue-600">Avenchie AI</span>
         <span>يكتب</span>
         <span class="typing-dots flex gap-1">
             <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
@@ -660,7 +665,7 @@ function appendMessage(item) {
         wrapper.classList.add('self-start');
         wrapper.innerHTML = `
             <div class="max-w-[88%] flex items-start gap-2">
-                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-black shrink-0">AI</div>
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-black shrink-0">A</div>
                 <div class="bg-white border border-slate-100 rounded-2xl rounded-tr-sm px-4 py-3 text-xs leading-relaxed text-slate-700 shadow-sm">
                     ${item.text}
                 </div>
