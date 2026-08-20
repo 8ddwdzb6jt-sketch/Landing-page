@@ -3,48 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Avenchie — AI-powered automation, intelligent chatbots, CRM integration and custom software solutions for modern businesses.">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avenchie — AI-powered automation, intelligent chatbots, CRM integration and custom software solutions for modern businesses.">
     <meta name="theme-color" content="#f8fafc">
 
     <title>Avenchie | AI-Powered Automation for Smarter Business</title>
 
-    <!-- =========================================================
-         FONTS
-    ========================================================== -->
-
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
-
-
-    <!-- =========================================================
-         TAILWIND
-    ========================================================== -->
-
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <script>
-
         tailwind.config = {
-
             theme: {
-
                 extend: {
-
                     fontFamily: {
                         sans: ['Tajawal', 'sans-serif']
                     },
-
                     colors: {
-
                         avenchie: {
                             blue: '#2563eb',
                             blueDark: '#1d4ed8',
@@ -54,124 +33,19 @@
                             muted: '#64748b',
                             light: '#f8fafc'
                         }
-
                     },
-
                     boxShadow: {
-
-                        soft:
-                            '0 10px 40px rgba(15, 23, 42, 0.06)',
-
-                        card:
-                            '0 20px 60px rgba(15, 23, 42, 0.08)',
-
-                        blue:
-                            '0 15px 50px rgba(37, 99, 235, 0.20)'
-
-                    },
-
-                    animation: {
-
-                        float:
-                            'float 6s ease-in-out infinite',
-
-                        pulseSoft:
-                            'pulseSoft 3s ease-in-out infinite',
-
-                        fadeUp:
-                            'fadeUp .8s ease-out forwards',
-
-                        glow:
-                            'glow 3s ease-in-out infinite',
-
-                        blink:
-                            'blink 1s step-end infinite'
-
-                    },
-
-                    keyframes: {
-
-                        float: {
-
-                            '0%,100%': {
-                                transform: 'translateY(0)'
-                            },
-
-                            '50%': {
-                                transform: 'translateY(-10px)'
-                            }
-
-                        },
-
-                        pulseSoft: {
-
-                            '0%,100%': {
-                                opacity: '.45'
-                            },
-
-                            '50%': {
-                                opacity: '.8'
-                            }
-
-                        },
-
-                        fadeUp: {
-
-                            from: {
-                                opacity: '0',
-                                transform: 'translateY(25px)'
-                            },
-
-                            to: {
-                                opacity: '1',
-                                transform: 'translateY(0)'
-                            }
-
-                        },
-
-                        glow: {
-
-                            '0%,100%': {
-                                boxShadow:
-                                    '0 0 0 rgba(37,99,235,0)'
-                            },
-
-                            '50%': {
-                                boxShadow:
-                                    '0 0 45px rgba(37,99,235,.16)'
-                            }
-
-                        },
-
-                        blink: {
-
-                            '0%,100%': {
-                                opacity: '1'
-                            },
-
-                            '50%': {
-                                opacity: '0'
-                            }
-
-                        }
-
+                        soft: '0 10px 40px rgba(15, 23, 42, 0.06)',
+                        card: '0 20px 60px rgba(15, 23, 42, 0.08)',
+                        blue: '0 15px 50px rgba(37, 99, 235, 0.20)'
                     }
-
                 }
-
             }
-
         }
-
     </script>
 
-
-    <!-- =========================================================
-         CUSTOM CSS
-    ========================================================== -->
-
+    <!-- CUSTOM CSS -->
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -181,3206 +55,711 @@
         }
 
         body {
-
             margin: 0;
-
-            background:
-                radial-gradient(
-                    circle at 50% -20%,
-                    rgba(59,130,246,.08),
-                    transparent 35%
-                ),
-                #f8fafc;
-
+            background: radial-gradient(circle at 50% -20%, rgba(59,130,246,.08), transparent 35%), #f8fafc;
             color: #111827;
-
             font-family: 'Tajawal', sans-serif;
-
             -webkit-font-smoothing: antialiased;
-
             overflow-x: hidden;
-
+            width: 100%;
         }
 
-
-        /* =====================================================
-           NAVIGATION
-        ====================================================== */
-
+        /* NAVIGATION */
         .glass-nav {
-
-            background:
-                rgba(255,255,255,.78);
-
-            backdrop-filter:
-                blur(20px);
-
-            -webkit-backdrop-filter:
-                blur(20px);
-
-            border-bottom:
-                1px solid rgba(15,23,42,.06);
-
+            background: rgba(255,255,255,.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(15,23,42,.06);
         }
 
-
-        /* =====================================================
-           HERO BACKGROUND
-        ====================================================== */
-
+        /* HERO BACKGROUND */
         .hero-grid {
-
             background-image:
-
-                linear-gradient(
-                    rgba(37,99,235,.045) 1px,
-                    transparent 1px
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(37,99,235,.045) 1px,
-                    transparent 1px
-                );
-
-            background-size:
-                50px 50px;
-
-            mask-image:
-                linear-gradient(
-                    to bottom,
-                    black 0%,
-                    transparent 90%
-                );
-
-            -webkit-mask-image:
-                linear-gradient(
-                    to bottom,
-                    black 0%,
-                    transparent 90%
-                );
-
+                linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
         }
 
-
-        /* =====================================================
-           BLUE ORB
-        ====================================================== */
-
+        /* ORB */
         .orb {
-
             position: absolute;
-
             border-radius: 999px;
-
             filter: blur(70px);
-
             pointer-events: none;
-
+            will-change: transform;
         }
 
-
-        /* =====================================================
-           TYPING HERO
-        ====================================================== */
+        /* TYPING HERO FIX - حجز ارتفاع محدد لمنع الاهتزاز */
+        .hero-title {
+            min-height: 2.2em;
+            display: flex;
+            align-items: center;
+            justify-center;
+            flex-wrap: wrap;
+        }
 
         #typingText {
-
-            min-height: 1.25em;
-
             display: inline-block;
-
+            transition: opacity 0.3s ease;
         }
-
 
         #typingCursor {
-
             display: inline-block;
-
             margin-right: 3px;
-
             color: #2563eb;
-
             font-weight: 300;
-
-            animation:
-                cursorBlink .8s step-end infinite;
-
+            animation: cursorBlink .8s step-end infinite;
         }
-
 
         @keyframes cursorBlink {
-
-            0%, 100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
-
-        /* =====================================================
-           DEMO CHAT
-        ====================================================== */
-
+        /* DEMO CHAT */
         .chat-window {
-
-            background:
-                rgba(255,255,255,.86);
-
-            backdrop-filter:
-                blur(18px);
-
-            -webkit-backdrop-filter:
-                blur(18px);
-
-            border:
-                1px solid rgba(15,23,42,.08);
-
-            box-shadow:
-                0 35px 90px rgba(15,23,42,.12);
-
+            background: rgba(255,255,255,.86);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(15,23,42,.08);
+            box-shadow: 0 35px 90px rgba(15,23,42,.12);
         }
-
 
         .chat-message {
-
-            animation:
-                messageIn .5s ease forwards;
-
+            animation: messageIn .5s ease forwards;
+            will-change: transform, opacity;
         }
-
 
         @keyframes messageIn {
-
             from {
-
                 opacity: 0;
-
-                transform:
-                    translateY(12px)
-                    scale(.98);
-
+                transform: translateY(12px) scale(.98);
             }
-
             to {
-
                 opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1);
-
+                transform: translateY(0) scale(1);
             }
-
         }
-
 
         .typing-dots span {
-
-            animation:
-                dotPulse 1.3s infinite;
-
+            animation: dotPulse 1.3s infinite;
         }
-
-        .typing-dots span:nth-child(2) {
-            animation-delay: .15s;
-        }
-
-        .typing-dots span:nth-child(3) {
-            animation-delay: .30s;
-        }
-
+        .typing-dots span:nth-child(2) { animation-delay: .15s; }
+        .typing-dots span:nth-child(3) { animation-delay: .30s; }
 
         @keyframes dotPulse {
-
-            0%,100% {
-                opacity: .25;
-                transform: translateY(0);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-2px);
-            }
-
+            0%,100% { opacity: .25; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-2px); }
         }
 
-
-        /* =====================================================
-           SERVICE CARD
-        ====================================================== */
-
+        /* SERVICE CARD */
         .service-card {
-
-            transition:
-                transform .35s ease,
-                box-shadow .35s ease,
-                border-color .35s ease;
-
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            will-change: transform;
         }
-
 
         .service-card:hover {
-
-            transform:
-                translateY(-7px);
-
-            box-shadow:
-                0 25px 60px rgba(15,23,42,.09);
-
-            border-color:
-                rgba(37,99,235,.18);
-
+            transform: translateY(-7px);
+            box-shadow: 0 25px 60px rgba(15,23,42,.09);
+            border-color: rgba(37,99,235,.18);
         }
-
-
-        /* =====================================================
-           NUMBER
-        ====================================================== */
 
         .step-number {
-
-            color:
-                rgba(37,99,235,.10);
-
-            font-size:
-                5rem;
-
-            line-height:
-                1;
-
+            color: rgba(37,99,235,.10);
+            font-size: 5rem;
+            line-height: 1;
         }
-
-
-        /* =====================================================
-           FAQ
-        ====================================================== */
 
         details summary {
-
-            list-style:
-                none;
-
-            cursor:
-                pointer;
-
+            list-style: none;
+            cursor: pointer;
         }
-
         details summary::-webkit-details-marker {
             display: none;
         }
 
-
-        /* =====================================================
-           MOBILE
-        ====================================================== */
-
         @media (max-width: 768px) {
-
             .hero-title {
-
-                font-size:
-                    2.7rem;
-
-                line-height:
-                    1.2;
-
+                font-size: 2.5rem;
+                line-height: 1.2;
+                min-height: 2.8em;
             }
-
             .hero-grid {
-
-                background-size:
-                    35px 35px;
-
+                background-size: 35px 35px;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ============================================================
-     NAVIGATION
-============================================================= -->
-
+<!-- NAVIGATION -->
 <header class="glass-nav fixed top-0 left-0 w-full z-50">
-
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
         <div class="h-[72px] flex items-center justify-between">
-
-            <!-- LOGO -->
-
-            <a href="#"
-               class="flex items-center">
-
-                <img
-                    src="logo.PNG"
-                    alt="Avenchie"
-                    class="h-10 w-auto">
-
+            <a href="#" class="flex items-center">
+                <img src="logo.PNG" alt="Avenchie" class="h-10 w-auto">
             </a>
-
-
-            <!-- DESKTOP NAV -->
 
             <nav class="hidden lg:flex items-center gap-9 text-sm font-medium text-slate-600">
-
-                <a href="#services"
-                   class="hover:text-blue-600 transition">
-                    الخدمات
-                </a>
-
-                <a href="#demo"
-                   class="hover:text-blue-600 transition">
-                    التجربة التفاعلية
-                </a>
-
-                <a href="#solutions"
-                   class="hover:text-blue-600 transition">
-                    الحلول
-                </a>
-
-                <a href="#process"
-                   class="hover:text-blue-600 transition">
-                    كيف نعمل
-                </a>
-
-                <a href="#faq"
-                   class="hover:text-blue-600 transition">
-                    الأسئلة الشائعة
-                </a>
-
+                <a href="#services" class="hover:text-blue-600 transition">الخدمات</a>
+                <a href="#demo" class="hover:text-blue-600 transition">التجربة التفاعلية</a>
+                <a href="#solutions" class="hover:text-blue-600 transition">الحلول</a>
+                <a href="#process" class="hover:text-blue-600 transition">كيف نعمل</a>
+                <a href="#faq" class="hover:text-blue-600 transition">الأسئلة الشائعة</a>
             </nav>
 
-
-            <!-- CTA -->
-
-            <a
-                href="https://wa.me/201278220294"
-                target="_blank"
-
-                class="
-                    inline-flex
-                    items-center
-                    gap-2
-                    bg-blue-600
-                    hover:bg-blue-700
-                    text-white
-                    px-5
-                    py-2.5
-                    rounded-full
-                    text-sm
-                    font-semibold
-                    transition
-                    shadow-lg
-                    shadow-blue-600/15
-                ">
-
+            <a href="https://wa.me/201278220294" target="_blank"
+               class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-600/15">
                 تواصل معنا
-
                 <span>↗</span>
-
             </a>
-
         </div>
-
     </div>
-
 </header>
 
+<!-- HERO -->
+<section class="relative min-h-screen pt-36 pb-20 overflow-hidden">
+    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
 
+    <div class="orb w-[350px] h-[350px] bg-blue-300/20 -top-32 right-[-100px]"></div>
+    <div class="orb w-[250px] h-[250px] bg-cyan-300/10 top-[40%] left-[-100px]"></div>
 
-<!-- ============================================================
-     HERO
-============================================================= -->
-
-<section
-    class="
-        relative
-        min-h-screen
-        pt-36
-        pb-20
-        overflow-hidden
-    ">
-
-
-    <!-- GRID -->
-
-    <div
-        class="
-            hero-grid
-            absolute
-            inset-0
-            pointer-events-none
-        ">
-    </div>
-
-
-    <!-- ORBS -->
-
-    <div
-        class="
-            orb
-            w-[350px]
-            h-[350px]
-            bg-blue-300/20
-            -top-32
-            right-[-100px]
-        ">
-    </div>
-
-
-    <div
-        class="
-            orb
-            w-[250px]
-            h-[250px]
-            bg-cyan-300/10
-            top-[40%]
-            left-[-100px]
-        ">
-    </div>
-
-
-    <div class="
-        relative
-        max-w-6xl
-        mx-auto
-        px-6
-        text-center
-    ">
-
-
-        <!-- BADGE -->
-
-        <div
-            class="
-                inline-flex
-                items-center
-                gap-2
-                px-4
-                py-2
-                rounded-full
-                bg-blue-50
-                border
-                border-blue-100
-                text-blue-700
-                text-xs
-                font-bold
-                mb-8
-            ">
-
-            <span
-                class="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-blue-600
-                    animate-pulse
-                ">
-            </span>
-
+    <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold mb-8">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
             AI-Powered Business Automation
-
         </div>
 
-
-
-        <!-- MAIN HEADING -->
-
-        <h1
-            class="
-                hero-title
-                text-5xl
-                md:text-7xl
-                font-black
-                tracking-tight
-                leading-tight
-                text-slate-950
-                max-w-5xl
-                mx-auto
-            ">
-
+        <h1 class="hero-title text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950 max-w-5xl mx-auto">
             <span id="typingText"></span>
-
             <span id="typingCursor">|</span>
-
         </h1>
 
-
-        <!-- SUBTITLE -->
-
-        <p
-            class="
-                mt-7
-                text-lg
-                md:text-xl
-                text-slate-500
-                max-w-3xl
-                mx-auto
-                leading-relaxed
-            ">
-
-            نبني حلولًا ذكية تساعد الشركات على أتمتة العمليات،
-            تحسين تجربة العملاء، وربط الأنظمة لتحقيق نمو أكثر كفاءة.
-
+        <p class="mt-7 text-lg md:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+            نبني حلولًا ذكية تساعد الشركات على أتمتة العمليات، تحسين تجربة العملاء، وربط الأنظمة لتحقيق نمو أكثر كفاءة.
         </p>
 
-
-
-        <!-- CTA BUTTONS -->
-
-        <div
-            class="
-                mt-10
-                flex
-                flex-col
-                sm:flex-row
-                justify-center
-                gap-4
-            ">
-
-
-            <a
-                href="https://wa.me/201278220294"
-                target="_blank"
-
-                class="
-                    px-8
-                    py-4
-                    rounded-full
-                    bg-blue-600
-                    hover:bg-blue-700
-                    text-white
-                    font-bold
-                    shadow-xl
-                    shadow-blue-600/20
-                    transition
-                    hover:-translate-y-1
-                ">
-
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://wa.me/201278220294" target="_blank"
+               class="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-xl shadow-blue-600/20 transition hover:-translate-y-1">
                 احجز استشارتك المجانية
-
-                <span class="mr-2">
-                    ↗
-                </span>
-
+                <span class="mr-2">↗</span>
             </a>
-
-
-            <a
-                href="#demo"
-
-                class="
-                    px-8
-                    py-4
-                    rounded-full
-                    bg-white
-                    hover:bg-slate-50
-                    text-slate-800
-                    font-bold
-                    border
-                    border-slate-200
-                    transition
-                ">
-
+            <a href="#demo"
+               class="px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-bold border border-slate-200 transition">
                 شاهد كيف يعمل الذكاء الاصطناعي
-
-                <span class="mr-2">
-                    ↓
-                </span>
-
+                <span class="mr-2">↓</span>
             </a>
-
         </div>
 
-
-
-        <!-- TRUST POINTS -->
-
-        <div
-            class="
-                mt-12
-                flex
-                flex-wrap
-                justify-center
-                gap-x-8
-                gap-y-3
-                text-xs
-                font-semibold
-                text-slate-500
-            ">
-
+        <div class="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs font-semibold text-slate-500">
             <span class="flex items-center gap-2">
-
-                <span class="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-emerald-500
-                "></span>
-
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 حلول مخصصة
-
             </span>
-
-
             <span class="flex items-center gap-2">
-
-                <span class="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-emerald-500
-                "></span>
-
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 تكامل مع الأنظمة الحالية
-
             </span>
-
-
             <span class="flex items-center gap-2">
-
-                <span class="
-                    w-2
-                    h-2
-                    rounded-full
-                    bg-emerald-500
-                "></span>
-
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 دعم مستمر
-
             </span>
-
         </div>
-
-
     </div>
-
-
 </section>
 
-
-
-<!-- ============================================================
-     DEMO SECTION
-============================================================= -->
-
-<section
-    id="demo"
-    class="
-        py-28
-        px-5
-        relative
-        bg-white
-    ">
-
-    <div
-        class="
-            max-w-6xl
-            mx-auto
-        ">
-
-
-        <!-- SECTION HEADER -->
-
-        <div
-            class="
-                text-center
-                max-w-2xl
-                mx-auto
-                mb-14
-            ">
-
-            <span
-                class="
-                    text-blue-600
-                    text-xs
-                    font-bold
-                    uppercase
-                    tracking-wider
-                ">
-
-                LIVE EXPERIENCE
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-3
-                    text-3xl
-                    md:text-4xl
-                    font-black
-                    text-slate-950
-                ">
-
-                لا تشرح ما يستطيع الذكاء الاصطناعي فعله.
-                <br>
-                <span class="text-blue-600">
-                    دعنا نريك.
-                </span>
-
+<!-- DEMO SECTION -->
+<section id="demo" class="py-28 px-5 relative bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-blue-600 text-xs font-bold uppercase tracking-wider">LIVE EXPERIENCE</span>
+            <h2 class="mt-3 text-3xl md:text-4xl font-black text-slate-950">
+                لا تشرح ما يستطيع الذكاء الاصطناعي فعله.<br>
+                <span class="text-blue-600">دعنا نريك.</span>
             </h2>
-
-
-            <p
-                class="
-                    mt-5
-                    text-slate-500
-                    leading-relaxed
-                ">
-
-                شاهد محاكاة مبسطة لكيفية استقبال النظام لعميل،
-                فهم طلبه، تأهيله، ثم تحويله إلى فريق المبيعات.
-
+            <p class="mt-5 text-slate-500 leading-relaxed">
+                شاهد محاكاة مبسطة لكيفية استقبال النظام لعميل، فهم طلبه، تأهيله، ثم تحويله إلى فريق المبيعات.
             </p>
-
         </div>
 
-
-
-        <!-- CHAT -->
-
-        <div
-            class="
-                max-w-2xl
-                mx-auto
-                chat-window
-                rounded-[28px]
-                overflow-hidden
-            ">
-
-
-            <!-- CHAT HEADER -->
-
-            <div
-                class="
-                    px-5
-                    py-4
-                    border-b
-                    border-slate-100
-                    bg-white
-                    flex
-                    items-center
-                    justify-between
-                ">
-
-
+        <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden">
+            <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between">
                 <div class="flex items-center gap-3">
-
-                    <div
-                        class="
-                            w-11
-                            h-11
-                            rounded-2xl
-                            bg-gradient-to-br
-                            from-blue-600
-                            to-indigo-600
-                            flex
-                            items-center
-                            justify-center
-                            text-white
-                            shadow-lg
-                            shadow-blue-500/20
-                        ">
-
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
                         AI
-
                     </div>
-
-
                     <div>
-
-                        <h3
-                            class="
-                                font-bold
-                                text-sm
-                                text-slate-900
-                            ">
-
-                            Avenchie AI Assistant
-
-                        </h3>
-
-
-                        <div
-                            class="
-                                flex
-                                items-center
-                                gap-1.5
-                                mt-1
-                            ">
-
-                            <span
-                                class="
-                                    w-2
-                                    h-2
-                                    rounded-full
-                                    bg-emerald-500
-                                ">
-                            </span>
-
-                            <span
-                                class="
-                                    text-xs
-                                    text-slate-400
-                                ">
-
-                                Online
-
-                            </span>
-
+                        <h3 class="font-bold text-sm text-slate-900">Avenchie AI Assistant</h3>
+                        <div class="flex items-center gap-1.5 mt-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            <span class="text-xs text-slate-400">Online</span>
                         </div>
-
                     </div>
-
                 </div>
-
-
-                <button
-                    onclick="restartDemo()"
-
-                    class="
-                        text-xs
-                        font-semibold
-                        text-blue-600
-                        hover:text-blue-700
-                    ">
-
+                <button onclick="restartDemo()" class="text-xs font-semibold text-blue-600 hover:text-blue-700">
                     إعادة المحاكاة ↻
-
                 </button>
-
             </div>
 
-
-
-            <!-- CHAT BODY -->
-
-            <div
-                id="chatBox"
-
-                class="
-                    min-h-[430px]
-                    p-5
-                    md:p-7
-                    bg-gradient-to-b
-                    from-slate-50
-                    to-white
-                    flex
-                    flex-col
-                    gap-4
-                ">
-            </div>
-
-
-
-            <!-- FOOTER -->
-
-            <div
-                class="
-                    px-5
-                    py-3
-                    bg-white
-                    border-t
-                    border-slate-100
-                    text-center
-                    text-[11px]
-                    text-slate-400
-                ">
-
+            <div id="chatBox" class="min-h-[430px] p-5 md:p-7 bg-gradient-to-b from-slate-50 to-white flex flex-col gap-4"></div>
+            <div class="px-5 py-3 bg-white border-t border-slate-100 text-center text-[11px] text-slate-400">
                 محاكاة توضيحية — يمكن تخصيص النظام حسب احتياجات عملك
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     SERVICES
-============================================================= -->
-
-<section
-    id="services"
-    class="
-        py-28
-        px-6
-        bg-slate-50
-    ">
-
-    <div
-        class="
-            max-w-7xl
-            mx-auto
-        ">
-
-
-        <div
-            class="
-                max-w-2xl
-                mb-16
-            ">
-
-            <span
-                class="
-                    text-blue-600
-                    text-xs
-                    font-bold
-                ">
-
-                WHAT WE BUILD
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-3
-                    text-4xl
-                    font-black
-                    text-slate-950
-                ">
-
-                حلول تقنية مصممة
-                <br>
-                <span class="text-blue-600">
-                    لأعمال حقيقية.
-                </span>
-
+<!-- SERVICES -->
+<section id="services" class="py-28 px-6 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-16">
+            <span class="text-blue-600 text-xs font-bold">WHAT WE BUILD</span>
+            <h2 class="mt-3 text-4xl font-black text-slate-950">
+                حلول تقنية مصممة<br>
+                <span class="text-blue-600">لأعمال حقيقية.</span>
             </h2>
-
-
-            <p
-                class="
-                    mt-5
-                    text-slate-500
-                    leading-relaxed
-                ">
-
-                لا نقدم منتجًا واحدًا للجميع.
-                ندرس احتياجات العمل ونبني الحل المناسب للعملية التي تريد تطويرها.
-
+            <p class="mt-5 text-slate-500 leading-relaxed">
+                لا نقدم منتجًا واحدًا للجميع. ندرس احتياجات العمل ونبني الحل المناسب للعملية التي تريد تطويرها.
             </p>
-
         </div>
 
-
-
-        <div
-            class="
-                grid
-                md:grid-cols-2
-                lg:grid-cols-3
-                gap-6
-            ">
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-blue-50
-                        text-blue-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    AI
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    AI Chatbots
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    مساعدين ذكيين يفهمون أسئلة العملاء،
-                    يقدمون الإجابات، يجمعون البيانات ويحولون المحادثة إلى فرصة مبيعات.
-
-                </p>
-
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl mb-7">AI</div>
+                <h3 class="text-xl font-black mb-3">AI Chatbots</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">مساعدين ذكيين يفهمون أسئلة العملاء، يقدمون الإجابات، يجمعون البيانات ويحولون المحادثة إلى فرصة مبيعات.</p>
             </div>
 
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-emerald-50
-                        text-emerald-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    WA
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    WhatsApp Business API
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    ربط WhatsApp بعمليات المبيعات وخدمة العملاء
-                    والأتمتة والأنظمة الداخلية.
-
-                </p>
-
+            <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-7">WA</div>
+                <h3 class="text-xl font-black mb-3">WhatsApp Business API</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">ربط WhatsApp بعمليات المبيعات وخدمة العملاء والأتمتة والأنظمة الداخلية.</p>
             </div>
 
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-indigo-50
-                        text-indigo-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    CRM
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    CRM Automation
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    أتمتة دورة العميل من أول تواصل حتى المتابعة
-                    وإدارة المبيعات.
-
-                </p>
-
+            <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-7">CRM</div>
+                <h3 class="text-xl font-black mb-3">CRM Automation</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">أتمتة دورة العميل من أول تواصل حتى المتابعة وإدارة المبيعات.</p>
             </div>
 
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-purple-50
-                        text-purple-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    ⚡
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    Workflow Automation
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    ربط التطبيقات والأنظمة وتقليل الأعمال اليدوية
-                    المتكررة داخل الشركة.
-
-                </p>
-
+            <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-7">⚡</div>
+                <h3 class="text-xl font-black mb-3">Workflow Automation</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">ربط التطبيقات والأنظمة وتقليل الأعمال اليدوية المتكررة داخل الشركة.</p>
             </div>
 
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-white
-                    border
-                    border-slate-200
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-orange-50
-                        text-orange-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    WEB
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    Websites & Web Apps
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    مواقع وتطبيقات ويب حديثة مصممة لتقديم تجربة
-                    احترافية وتحقيق أهداف العمل.
-
-                </p>
-
+            <div class="service-card bg-white border border-slate-200 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-xl mb-7">WEB</div>
+                <h3 class="text-xl font-black mb-3">Websites & Web Apps</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">مواقع وتطبيقات ويب حديثة مصممة لتقديم تجربة احترافية وتحقيق أهداف العمل.</p>
             </div>
 
-
-
-            <!-- CARD -->
-
-            <div
-                class="
-                    service-card
-                    bg-slate-950
-                    text-white
-                    border
-                    border-slate-800
-                    rounded-3xl
-                    p-8
-                ">
-
-                <div
-                    class="
-                        w-12
-                        h-12
-                        rounded-2xl
-                        bg-blue-600
-                        flex
-                        items-center
-                        justify-center
-                        text-xl
-                        mb-7
-                    ">
-
-                    +
-
-                </div>
-
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mb-3
-                    ">
-
-                    Custom Software
-
-                </h3>
-
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-400
-                        leading-relaxed
-                    ">
-
-                    حلول برمجية مخصصة عندما لا تكون الأدوات الجاهزة
-                    كافية لتلبية احتياجات الشركة.
-
-                </p>
-
+            <div class="service-card bg-slate-950 text-white border border-slate-800 rounded-3xl p-8">
+                <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-xl mb-7">+</div>
+                <h3 class="text-xl font-black mb-3">Custom Software</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">حلول برمجية مخصصة عندما لا تكون الأدوات الجاهزة كافية لتلبية احتياجات الشركة.</p>
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     SOLUTIONS / USE CASES
-============================================================= -->
-
-<section
-    id="solutions"
-    class="
-        py-28
-        px-6
-        bg-white
-    ">
-
-    <div
-        class="
-            max-w-7xl
-            mx-auto
-        ">
-
-
-        <div
-            class="
-                text-center
-                max-w-2xl
-                mx-auto
-                mb-16
-            ">
-
-            <span
-                class="
-                    text-blue-600
-                    text-xs
-                    font-bold
-                ">
-
-                BUILT FOR BUSINESS
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-3
-                    text-4xl
-                    font-black
-                    text-slate-950
-                ">
-
-                أين يمكن للأتمتة
-                <span class="text-blue-600">
-                    أن تعمل لصالحك؟
-                </span>
-
+<!-- SOLUTIONS -->
+<section id="solutions" class="py-28 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-blue-600 text-xs font-bold">BUILT FOR BUSINESS</span>
+            <h2 class="mt-3 text-4xl font-black text-slate-950">
+                أين يمكن للأتمتة <span class="text-blue-600">أن تعمل لصالحك؟</span>
             </h2>
-
         </div>
 
-
-
-        <div
-            class="
-                grid
-                md:grid-cols-2
-                lg:grid-cols-4
-                gap-5
-            ">
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                    border
-                    border-slate-100
-                ">
-
-                <div class="text-2xl mb-5">
-                    🏢
-                </div>
-
-                <h3 class="font-black mb-2">
-                    شركات الخدمات
-                </h3>
-
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    استقبال العملاء، التأهيل، المتابعة وإدارة الطلبات.
-                </p>
-
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="p-7 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="text-2xl mb-5">🏢</div>
+                <h3 class="font-black mb-2">شركات الخدمات</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">استقبال العملاء، التأهيل، المتابعة وإدارة الطلبات.</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                    border
-                    border-slate-100
-                ">
-
-                <div class="text-2xl mb-5">
-                    🛒
-                </div>
-
-                <h3 class="font-black mb-2">
-                    المتاجر
-                </h3>
-
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    الرد على العملاء، الطلبات، الأسئلة والمتابعة.
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="text-2xl mb-5">🛒</div>
+                <h3 class="font-black mb-2">المتاجر</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">الرد على العملاء، الطلبات، الأسئلة والمتابعة.</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                    border
-                    border-slate-100
-                ">
-
-                <div class="text-2xl mb-5">
-                    📅
-                </div>
-
-                <h3 class="font-black mb-2">
-                    الحجوزات
-                </h3>
-
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    حجز المواعيد وإعادة جدولة العملاء والتذكير الآلي.
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="text-2xl mb-5">📅</div>
+                <h3 class="font-black mb-2">الحجوزات</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">حجز المواعيد وإعادة جدولة العملاء والتذكير الآلي.</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                    border
-                    border-slate-100
-                ">
-
-                <div class="text-2xl mb-5">
-                    💬
-                </div>
-
-                <h3 class="font-black mb-2">
-                    خدمة العملاء
-                </h3>
-
-                <p class="text-sm text-slate-500 leading-relaxed">
-                    إجابات فورية وتحويل الحالات المعقدة للموظفين.
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50 border border-slate-100">
+                <div class="text-2xl mb-5">💬</div>
+                <h3 class="font-black mb-2">خدمة العملاء</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">إجابات فورية وتحويل الحالات المعقدة للموظفين.</p>
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     PROCESS
-============================================================= -->
-
-<section
-    id="process"
-    class="
-        py-28
-        px-6
-        bg-slate-950
-        text-white
-        overflow-hidden
-    ">
-
-    <div
-        class="
-            max-w-7xl
-            mx-auto
-        ">
-
-
-        <div
-            class="
-                max-w-2xl
-                mb-16
-            ">
-
-            <span
-                class="
-                    text-blue-400
-                    text-xs
-                    font-bold
-                ">
-
-                OUR PROCESS
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-3
-                    text-4xl
-                    font-black
-                ">
-
-                من المشكلة
-                <span class="text-blue-400">
-                    إلى الحل.
-                </span>
-
+<!-- PROCESS -->
+<section id="process" class="py-28 px-6 bg-slate-950 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-16">
+            <span class="text-blue-400 text-xs font-bold">OUR PROCESS</span>
+            <h2 class="mt-3 text-4xl font-black">
+                من المشكلة <span class="text-blue-400">إلى الحل.</span>
             </h2>
-
-
-            <p
-                class="
-                    mt-5
-                    text-slate-400
-                    leading-relaxed
-                ">
-
-                لا نبدأ بالبرمجة مباشرة.
-                نبدأ بفهم العملية التي تريد تحسينها ثم نصمم الحل المناسب لها.
-
+            <p class="mt-5 text-slate-400 leading-relaxed">
+                لا نبدأ بالبرمجة مباشرة. نبدأ بفهم العملية التي تريد تحسينها ثم نصمم الحل المناسب لها.
             </p>
-
         </div>
 
-
-
-        <div
-            class="
-                grid
-                md:grid-cols-3
-                gap-6
-            ">
-
-
-            <div
-                class="
-                    relative
-                    rounded-3xl
-                    border
-                    border-slate-800
-                    bg-slate-900
-                    p-8
-                ">
-
-                <div class="step-number">
-                    01
-                </div>
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mt-5
-                    ">
-
-                    اكتشاف الاحتياجات
-
-                </h3>
-
-                <p
-                    class="
-                        mt-4
-                        text-sm
-                        text-slate-400
-                        leading-relaxed
-                    ">
-
-                    نفهم العمليات الحالية ونحدد أين يمكن للأتمتة
-                    والذكاء الاصطناعي أن يضيفا قيمة حقيقية.
-
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="relative rounded-3xl border border-slate-800 bg-slate-900 p-8">
+                <div class="step-number">01</div>
+                <h3 class="text-xl font-black mt-5">اكتشاف الاحتياجات</h3>
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+                    نفهم العمليات الحالية ونحدد أين يمكن للأتمتة والذكاء الاصطناعي أن يضيفا قيمة حقيقية.
                 </p>
-
             </div>
-
-
-
-            <div
-                class="
-                    relative
-                    rounded-3xl
-                    border
-                    border-slate-800
-                    bg-slate-900
-                    p-8
-                ">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mt-5
-                    ">
-
-                    التصميم والتطوير
-
-                </h3>
-
-                <p
-                    class="
-                        mt-4
-                        text-sm
-                        text-slate-400
-                        leading-relaxed
-                    ">
-
-                    نصمم الحل ونربطه بالأنظمة الحالية ونطوره
-                    وفق المتطلبات الفعلية للشركة.
-
+            <div class="relative rounded-3xl border border-slate-800 bg-slate-900 p-8">
+                <div class="step-number">02</div>
+                <h3 class="text-xl font-black mt-5">التصميم والتطوير</h3>
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+                    نصمم الحل ونربطه بالأنظمة الحالية ونطوره وفق المتطلبات الفعلية للشركة.
                 </p>
-
             </div>
-
-
-
-            <div
-                class="
-                    relative
-                    rounded-3xl
-                    border
-                    border-slate-800
-                    bg-slate-900
-                    p-8
-                ">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <h3
-                    class="
-                        text-xl
-                        font-black
-                        mt-5
-                    ">
-
-                    التنفيذ والتحسين
-
-                </h3>
-
-                <p
-                    class="
-                        mt-4
-                        text-sm
-                        text-slate-400
-                        leading-relaxed
-                    ">
-
-                    نطلق الحل، نتابع الأداء، ونقوم بالتحسينات
-                    اللازمة لضمان استمرارية العمل بكفاءة.
-
+            <div class="relative rounded-3xl border border-slate-800 bg-slate-900 p-8">
+                <div class="step-number">03</div>
+                <h3 class="text-xl font-black mt-5">التنفيذ والتحسين</h3>
+                <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+                    نطلق الحل، نتابع الأداء، ونقوم بالتحسينات اللازمة لضمان استمرارية العمل بكفاءة.
                 </p>
-
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     WHY AVENCHIE
-============================================================= -->
-
-<section
-    class="
-        py-28
-        px-6
-        bg-white
-    ">
-
-    <div
-        class="
-            max-w-6xl
-            mx-auto
-            text-center
-        ">
-
-
-        <span
-            class="
-                text-blue-600
-                text-xs
-                font-bold
-            ">
-
-            WHY AVENCHIE
-
-        </span>
-
-
-        <h2
-            class="
-                mt-3
-                text-4xl
-                font-black
-                text-slate-950
-            ">
-
-            التقنية ليست الهدف.
-            <br>
-
-            <span class="text-blue-600">
-                النتيجة هي الهدف.
-            </span>
-
+<!-- WHY AVENCHIE -->
+<section class="py-28 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+        <span class="text-blue-600 text-xs font-bold">WHY AVENCHIE</span>
+        <h2 class="mt-3 text-4xl font-black text-slate-950">
+            التقنية ليست الهدف.<br>
+            <span class="text-blue-600">النتيجة هي الهدف.</span>
         </h2>
-
-
-        <p
-            class="
-                mt-6
-                max-w-2xl
-                mx-auto
-                text-slate-500
-                leading-relaxed
-            ">
-
-            نبني حلولًا هدفها تقليل العمل المتكرر،
-            تحسين سرعة الاستجابة، تنظيم البيانات،
-            ومساعدة الفريق على التركيز على الأعمال ذات القيمة.
-
+        <p class="mt-6 max-w-2xl mx-auto text-slate-500 leading-relaxed">
+            نبني حلولًا هدفها تقليل العمل المتكرر، تحسين سرعة الاستجابة، تنظيم البيانات، ومساعدة الفريق على التركيز على الأعمال ذات القيمة.
         </p>
 
-
-
-        <div
-            class="
-                mt-16
-                grid
-                sm:grid-cols-2
-                lg:grid-cols-4
-                gap-6
-            ">
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                ">
-
-                <div
-                    class="
-                        text-3xl
-                        font-black
-                        text-blue-600
-                    ">
-
-                    AI
-
-                </div>
-
-                <p
-                    class="
-                        mt-3
-                        text-sm
-                        font-semibold
-                        text-slate-600
-                    ">
-
-                    ذكاء اصطناعي عملي
-
-                </p>
-
+        <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-7 rounded-3xl bg-slate-50">
+                <div class="text-3xl font-black text-blue-600">AI</div>
+                <p class="mt-3 text-sm font-semibold text-slate-600">ذكاء اصطناعي عملي</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                ">
-
-                <div
-                    class="
-                        text-3xl
-                        font-black
-                        text-blue-600
-                    ">
-
-                    API
-
-                </div>
-
-                <p
-                    class="
-                        mt-3
-                        text-sm
-                        font-semibold
-                        text-slate-600
-                    ">
-
-                    تكامل بين الأنظمة
-
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50">
+                <div class="text-3xl font-black text-blue-600">API</div>
+                <p class="mt-3 text-sm font-semibold text-slate-600">تكامل بين الأنظمة</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                ">
-
-                <div
-                    class="
-                        text-3xl
-                        font-black
-                        text-blue-600
-                    ">
-
-                    CRM
-
-                </div>
-
-                <p
-                    class="
-                        mt-3
-                        text-sm
-                        font-semibold
-                        text-slate-600
-                    ">
-
-                    إدارة أفضل للعملاء
-
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50">
+                <div class="text-3xl font-black text-blue-600">CRM</div>
+                <p class="mt-3 text-sm font-semibold text-slate-600">إدارة أفضل للعملاء</p>
             </div>
-
-
-            <div
-                class="
-                    p-7
-                    rounded-3xl
-                    bg-slate-50
-                ">
-
-                <div
-                    class="
-                        text-3xl
-                        font-black
-                        text-blue-600
-                    ">
-
-                    ∞
-
-                </div>
-
-                <p
-                    class="
-                        mt-3
-                        text-sm
-                        font-semibold
-                        text-slate-600
-                    ">
-
-                    حلول قابلة للتوسع
-
-                </p>
-
+            <div class="p-7 rounded-3xl bg-slate-50">
+                <div class="text-3xl font-black text-blue-600">∞</div>
+                <p class="mt-3 text-sm font-semibold text-slate-600">حلول قابلة للتوسع</p>
             </div>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     FAQ
-============================================================= -->
-
-<section
-    id="faq"
-    class="
-        py-28
-        px-6
-        bg-slate-50
-    ">
-
-    <div
-        class="
-            max-w-3xl
-            mx-auto
-        ">
-
-
+<!-- FAQ -->
+<section id="faq" class="py-28 px-6 bg-slate-50">
+    <div class="max-w-3xl mx-auto">
         <div class="text-center mb-14">
-
-            <span
-                class="
-                    text-blue-600
-                    text-xs
-                    font-bold
-                ">
-
-                FAQ
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-3
-                    text-4xl
-                    font-black
-                ">
-
-                الأسئلة الشائعة
-
-            </h2>
-
+            <span class="text-blue-600 text-xs font-bold">FAQ</span>
+            <h2 class="mt-3 text-4xl font-black">الأسئلة الشائعة</h2>
         </div>
-
-
 
         <div class="space-y-4">
-
-
-            <details
-                class="
-                    bg-white
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    p-6
-                ">
-
-                <summary
-                    class="
-                        font-bold
-                        flex
-                        items-center
-                        justify-between
-                    ">
-
+            <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                <summary class="font-bold flex items-center justify-between">
                     ما الخدمات التي تقدمها Avenchie؟
-
-                    <span class="text-blue-600">
-                        +
-                    </span>
-
+                    <span class="text-blue-600">+</span>
                 </summary>
-
-
-                <p
-                    class="
-                        mt-5
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    نقدم حلول أتمتة الأعمال، AI Chatbots،
-                    WhatsApp Business API، CRM Automation،
-                    Workflow Automation، تطوير المواقع والتطبيقات
-                    والحلول البرمجية المخصصة.
-
+                <p class="mt-5 text-sm text-slate-500 leading-relaxed">
+                    نقدم حلول أتمتة الأعمال، AI Chatbots، WhatsApp Business API، CRM Automation، Workflow Automation، تطوير المواقع والتطبيقات والحلول البرمجية المخصصة.
                 </p>
-
             </details>
 
-
-
-            <details
-                class="
-                    bg-white
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    p-6
-                ">
-
-                <summary
-                    class="
-                        font-bold
-                        flex
-                        items-center
-                        justify-between
-                    ">
-
+            <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                <summary class="font-bold flex items-center justify-between">
                     هل يمكن ربط الذكاء الاصطناعي بأنظمتنا الحالية؟
-
-                    <span class="text-blue-600">
-                        +
-                    </span>
-
+                    <span class="text-blue-600">+</span>
                 </summary>
-
-
-                <p
-                    class="
-                        mt-5
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    نعم. يمكن ربط الحلول مع الأنظمة الحالية
-                    من خلال APIs والتكاملات المناسبة حسب البنية التقنية
-                    المستخدمة في الشركة.
-
+                <p class="mt-5 text-sm text-slate-500 leading-relaxed">
+                    نعم. يمكن ربط الحلول مع الأنظمة الحالية من خلال APIs والتكاملات المناسبة حسب البنية التقنية المستخدمة في الشركة.
                 </p>
-
             </details>
 
-
-
-            <details
-                class="
-                    bg-white
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    p-6
-                ">
-
-                <summary
-                    class="
-                        font-bold
-                        flex
-                        items-center
-                        justify-between
-                    ">
-
+            <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                <summary class="font-bold flex items-center justify-between">
                     هل الحلول جاهزة أم يتم تطويرها حسب الطلب؟
-
-                    <span class="text-blue-600">
-                        +
-                    </span>
-
+                    <span class="text-blue-600">+</span>
                 </summary>
-
-
-                <p
-                    class="
-                        mt-5
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    كلاهما ممكن. لدينا حلول يمكن تهيئتها بسرعة،
-                    كما نقوم بتطوير حلول مخصصة عندما تتطلب العملية
-                    ذلك.
-
+                <p class="mt-5 text-sm text-slate-500 leading-relaxed">
+                    كلاهما ممكن. لدينا حلول يمكن تهيئتها بسرعة، كما نقوم بتطوير حلول مخصصة عندما تتطلب العملية ذلك.
                 </p>
-
             </details>
 
-
-
-            <details
-                class="
-                    bg-white
-                    rounded-2xl
-                    border
-                    border-slate-200
-                    p-6
-                ">
-
-                <summary
-                    class="
-                        font-bold
-                        flex
-                        items-center
-                        justify-between
-                    ">
-
+            <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                <summary class="font-bold flex items-center justify-between">
                     هل يمكنني تجربة النظام قبل التعاقد؟
-
-                    <span class="text-blue-600">
-                        +
-                    </span>
-
+                    <span class="text-blue-600">+</span>
                 </summary>
-
-
-                <p
-                    class="
-                        mt-5
-                        text-sm
-                        text-slate-500
-                        leading-relaxed
-                    ">
-
-                    يمكن ترتيب عرض توضيحي للحل المناسب حسب طبيعة
-                    احتياجك والعملية التي ترغب في أتمتتها.
-
+                <p class="mt-5 text-sm text-slate-500 leading-relaxed">
+                    يمكن ترتيب عرض توضيحي للحل المناسب حسب طبيعة احتياجك والعملية التي ترغب في أتمتتها.
                 </p>
-
             </details>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     FINAL CTA
-============================================================= -->
-
-<section
-    class="
-        py-28
-        px-6
-        bg-white
-    ">
-
-    <div
-        class="
-            max-w-5xl
-            mx-auto
-            rounded-[40px]
-            bg-gradient-to-br
-            from-slate-950
-            to-blue-950
-            p-10
-            md:p-16
-            text-center
-            relative
-            overflow-hidden
-        ">
-
-
-        <div
-            class="
-                absolute
-                w-72
-                h-72
-                rounded-full
-                bg-blue-500/20
-                blur-3xl
-                -top-32
-                right-[-60px]
-            ">
-        </div>
-
-
-        <div
-            class="
-                absolute
-                w-72
-                h-72
-                rounded-full
-                bg-cyan-500/10
-                blur-3xl
-                bottom-[-150px]
-                left-[-80px]
-            ">
-        </div>
-
-
+<!-- FINAL CTA -->
+<section class="py-28 px-6 bg-white">
+    <div class="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-br from-slate-950 to-blue-950 p-10 md:p-16 text-center relative overflow-hidden">
+        <div class="absolute w-72 h-72 rounded-full bg-blue-500/20 blur-3xl -top-32 right-[-60px]"></div>
+        <div class="absolute w-72 h-72 rounded-full bg-cyan-500/10 blur-3xl bottom-[-150px] left-[-80px]"></div>
 
         <div class="relative">
-
-
-            <span
-                class="
-                    text-blue-300
-                    text-xs
-                    font-bold
-                ">
-
-                START YOUR AUTOMATION JOURNEY
-
-            </span>
-
-
-            <h2
-                class="
-                    mt-5
-                    text-4xl
-                    md:text-5xl
-                    font-black
-                    text-white
-                    leading-tight
-                ">
-
-                هل لديك عملية
-                <br>
-                يمكن جعلها أكثر ذكاءً؟
-
+            <span class="text-blue-300 text-xs font-bold">START YOUR AUTOMATION JOURNEY</span>
+            <h2 class="mt-5 text-4xl md:text-5xl font-black text-white leading-tight">
+                هل لديك عملية<br>يمكن جعلها أكثر ذكاءً؟
             </h2>
-
-
-            <p
-                class="
-                    mt-5
-                    text-slate-300
-                    max-w-xl
-                    mx-auto
-                    leading-relaxed
-                ">
-
-                أخبرنا عن التحدي الذي تواجهه،
-                وسنبحث معك عن الطريقة المناسبة لأتمتته.
-
+            <p class="mt-5 text-slate-300 max-w-xl mx-auto leading-relaxed">
+                أخبرنا عن التحدي الذي تواجهه، وسنبحث معك عن الطريقة المناسبة لأتمتته.
             </p>
-
-
-            <a
-                href="https://wa.me/201278220294"
-                target="_blank"
-
-                class="
-                    inline-flex
-                    mt-8
-                    bg-white
-                    hover:bg-slate-100
-                    text-slate-950
-                    px-8
-                    py-4
-                    rounded-full
-                    font-black
-                    transition
-                    hover:-translate-y-1
-                ">
-
+            <a href="https://wa.me/201278220294" target="_blank"
+               class="inline-flex mt-8 bg-white hover:bg-slate-100 text-slate-950 px-8 py-4 rounded-full font-black transition hover:-translate-y-1">
                 تحدث مع Avenchie
-
-                <span class="mr-2">
-                    ↗
-                </span>
-
+                <span class="mr-2">↗</span>
             </a>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- ============================================================
-     FOOTER
-============================================================= -->
-
-<footer
-    class="
-        bg-slate-950
-        text-white
-        pt-16
-        pb-8
-        px-6
-    ">
-
-    <div
-        class="
-            max-w-7xl
-            mx-auto
-        ">
-
-
-        <div
-            class="
-                grid
-                md:grid-cols-3
-                gap-12
-                pb-12
-                border-b
-                border-slate-800
-            ">
-
-
+<!-- FOOTER -->
+<footer class="bg-slate-950 text-white pt-16 pb-8 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
             <div>
-
-                <img
-                    src="logo.PNG"
-                    alt="Avenchie"
-                    class="h-10 w-auto mb-6">
-
-                <p
-                    class="
-                        text-sm
-                        text-slate-400
-                        leading-relaxed
-                        max-w-sm
-                    ">
-
-                    Avenchie — AI-powered automation
-                    and custom digital solutions for smarter businesses.
-
+                <img src="logo.PNG" alt="Avenchie" class="h-10 w-auto mb-6">
+                <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+                    Avenchie — AI-powered automation and custom digital solutions for smarter businesses.
                 </p>
-
             </div>
 
-
-
             <div>
-
-                <h3
-                    class="
-                        font-bold
-                        mb-5
-                    ">
-
-                    الخدمات
-
-                </h3>
-
-
-                <div
-                    class="
-                        space-y-3
-                        text-sm
-                        text-slate-400
-                    ">
-
-                    <div>
-                        AI Chatbots
-                    </div>
-
-                    <div>
-                        WhatsApp Automation
-                    </div>
-
-                    <div>
-                        CRM Automation
-                    </div>
-
-                    <div>
-                        Custom Software
-                    </div>
-
+                <h3 class="font-bold mb-5">الخدمات</h3>
+                <div class="space-y-3 text-sm text-slate-400">
+                    <div>AI Chatbots</div>
+                    <div>WhatsApp Automation</div>
+                    <div>CRM Automation</div>
+                    <div>Custom Software</div>
                 </div>
-
             </div>
-
-
 
             <div>
-
-                <h3
-                    class="
-                        font-bold
-                        mb-5
-                    ">
-
-                    تواصل معنا
-
-                </h3>
-
-
-                <a
-                    href="https://wa.me/201278220294"
-                    target="_blank"
-
-                    class="
-                        text-slate-400
-                        hover:text-white
-                        text-sm
-                        transition
-                    ">
-
+                <h3 class="font-bold mb-5">تواصل معنا</h3>
+                <a href="https://wa.me/201278220294" target="_blank" class="text-slate-400 hover:text-white text-sm transition">
                     WhatsApp
-
                 </a>
-
             </div>
-
-
         </div>
 
-
-
-        <div
-            class="
-                pt-7
-                flex
-                flex-col
-                md:flex-row
-                justify-between
-                gap-4
-                text-xs
-                text-slate-500
-            ">
-
-            <span>
-                © 2026 Avenchie. All rights reserved.
-            </span>
-
-
-            <span>
-                AI-Powered Automation for Smarter Business.
-            </span>
-
+        <div class="pt-7 flex flex-col md:flex-row justify-between gap-4 text-xs text-slate-500">
+            <span>© 2026 Avenchie. All rights reserved.</span>
+            <span>AI-Powered Automation for Smarter Business.</span>
         </div>
-
     </div>
-
 </footer>
 
-
-
-<!-- ============================================================
-     JAVASCRIPT
-============================================================= -->
-
+<!-- JAVASCRIPT -->
 <script>
-
-
-/* =============================================================
-   HERO TYPING ANIMATION
-============================================================= */
-
-const typingText =
-    document.getElementById('typingText');
-
-const typingCursor =
-    document.getElementById('typingCursor');
-
-
-const heroParts = [
-
-    {
-        text: 'اجعل الذكاء الاصطناعي',
-        className: ''
-    },
-
-    {
-        text: ' يعمل لصالحك',
-        className: 'highlight'
-    }
-
-];
-
+/* HERO TYPING ANIMATION (FIXED LAYOUT SHIFT) */
+const typingText = document.getElementById('typingText');
+const typingCursor = document.getElementById('typingCursor');
 
 async function sleep(ms) {
-
-    return new Promise(
-        resolve => setTimeout(resolve, ms)
-    );
-
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
-async function typeText(
-    text,
-    speed = 90
-) {
-
-    for (
-        let i = 0;
-        i < text.length;
-        i++
-    ) {
-
-        const char =
-            text[i];
-
-        const span =
-            document.createElement('span');
-
-        span.textContent =
-            char;
-
+async function typeText(text, speed = 85) {
+    for (let i = 0; i < text.length; i++) {
+        const span = document.createElement('span');
+        span.textContent = text[i];
         typingText.appendChild(span);
-
         await sleep(speed);
-
     }
-
 }
 
+async function deleteText(speed = 40) {
+    while (typingText.childNodes.length > 0) {
+        typingText.removeChild(typingText.lastChild);
+        await sleep(speed);
+    }
+}
 
 async function heroTypingLoop() {
-
     while (true) {
-
         typingText.innerHTML = '';
+        typingCursor.style.animation = 'cursorBlink .8s step-end infinite';
 
-        typingCursor.style.opacity = '1';
+        /* 1. طباعة القسم الأول */
+        await typeText('اجعل الذكاء الاصطناعي', 85);
+        await sleep(400);
 
-
-        /* -------------------------------------------
-           FIRST PHRASE
-        ------------------------------------------- */
-
-        await typeText(
-            'اجعل الذكاء الاصطناعي',
-            85
-        );
-
-
-        await sleep(700);
-
-
-        /* -------------------------------------------
-           PAUSE
-        ------------------------------------------- */
-
-        typingCursor.style.animation =
-            'none';
-
-        typingCursor.style.opacity =
-            '1';
-
-
-        await sleep(500);
-
-
-        /* -------------------------------------------
-           SECOND PHRASE
-        ------------------------------------------- */
-
-        const second =
-            document.createElement('span');
-
-
-        second.className =
-            'text-blue-600';
-
-
-        second.textContent =
-            ' يعمل لصالحك';
-
-
-        second.style.opacity =
-            '0';
-
-
-        second.style.transform =
-            'translateY(10px)';
-
-
-        second.style.display =
-            'inline-block';
-
-
-        second.style.transition =
-            'all .45s ease';
-
-
-        typingText.appendChild(
-            second
-        );
-
-
-        /* -------------------------------------------
-           SUDDEN APPEARANCE
-        ------------------------------------------- */
+        /* 2. إضافة القسم الثاني بشكل متدرج */
+        const second = document.createElement('span');
+        second.className = 'text-blue-600';
+        second.textContent = ' يعمل لصالحك';
+        second.style.opacity = '0';
+        second.style.transition = 'opacity .45s ease';
+        typingText.appendChild(second);
 
         requestAnimationFrame(() => {
-
-            second.style.opacity =
-                '1';
-
-            second.style.transform =
-                'translateY(0)';
-
+            second.style.opacity = '1';
         });
 
+        /* انتهاء الكتابة والانتظار */
+        await sleep(3000);
 
-        await sleep(1800);
-
-
-        /* -------------------------------------------
-           HOLD
-        ------------------------------------------- */
-
-        typingCursor.style.animation =
-            'none';
-
-        typingCursor.style.opacity =
-            '1';
-
-
-        await sleep(1600);
-
-
-        /* -------------------------------------------
-           RESET
-        ------------------------------------------- */
-
-        typingCursor.style.animation =
-            'cursorBlink .8s step-end infinite';
-
-
-        typingText.style.opacity =
-            '0';
-
-
-        await sleep(350);
-
-
-        typingText.style.opacity =
-            '1';
-
+        /* مسح تدريجي لطيف بدلاً من الاختفاء المفاجئ لتجنب الاهتزاز */
+        await deleteText(30);
+        await sleep(400);
     }
-
 }
-
 
 heroTypingLoop();
 
-
-
-/* =============================================================
-   AI CHAT DEMO
-============================================================= */
-
-
-const chatBox =
-    document.getElementById('chatBox');
-
-
+/* AI CHAT DEMO */
+const chatBox = document.getElementById('chatBox');
 const chatScript = [
-
-    {
-        sender: 'ai',
-        text: 'مرحبًا 👋 كيف يمكنني مساعدتك اليوم؟'
-    },
-
-    {
-        sender: 'user',
-        text: 'أريد معرفة كيف يمكنكم مساعدتي في أتمتة خدمة العملاء.'
-    },
-
-    {
-        sender: 'ai',
-        text: 'بالتأكيد. هل تعتمد شركتك على WhatsApp في التواصل مع العملاء؟'
-    },
-
-    {
-        sender: 'user',
-        text: 'نعم، لدينا عدد كبير من المحادثات يوميًا.'
-    },
-
-    {
-        sender: 'ai',
-        text: 'ممتاز. يمكننا بناء مساعد AI يرد على العملاء، يؤهل العملاء المحتملين، ويحوّل الحالات التي تحتاج موظفًا إلى فريقك.'
-    },
-
-    {
-        sender: 'user',
-        text: 'وهل يمكن ربطه بنظام CRM؟'
-    },
-
-    {
-        sender: 'ai',
-        text: 'نعم. يمكن ربط المحادثات والبيانات وسير العمل مع نظام CRM والأنظمة الأخرى المستخدمة لديكم.'
-    },
-
-    {
-        sender: 'success',
-        text: 'تم تأهيل العميل بنجاح'
-    }
-
+    { sender: 'ai', text: 'مرحبًا 👋 كيف يمكنني مساعدتك اليوم؟' },
+    { sender: 'user', text: 'أريد معرفة كيف يمكنكم مساعدتي في أتمتة خدمة العملاء.' },
+    { sender: 'ai', text: 'بالتأكيد. هل تعتمد شركتك على WhatsApp في التواصل مع العملاء؟' },
+    { sender: 'user', text: 'نعم، لدينا عدد كبير من المحادثات يوميًا.' },
+    { sender: 'ai', text: 'ممتاز. يمكننا بناء مساعد AI يرد على العملاء، يؤهل العملاء المحتملين، ويحوّل الحالات التي تحتاج موظفًا إلى فريقك.' },
+    { sender: 'user', text: 'وهل يمكن ربطه بنظام CRM؟' },
+    { sender: 'ai', text: 'نعم. يمكن ربط المحادثات والبيانات وسير العمل مع نظام CRM والأنظمة الأخرى المستخدمة لديكم.' },
+    { sender: 'success', text: 'تم تأهيل العميل بنجاح' }
 ];
 
-
-let demoIndex =
-    0;
-
-
-let demoRunning =
-    false;
-
-
+let demoIndex = 0;
+let demoRunning = false;
 
 function scrollChat() {
-
-    chatBox.scrollTop =
-        chatBox.scrollHeight;
-
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
-
-
-
-/* =============================================================
-   TYPING INDICATOR
-============================================================= */
 
 function showTyping() {
-
-    const typing =
-        document.createElement('div');
-
-
-    typing.id =
-        'typingIndicator';
-
-
-    typing.className =
-        `
-        self-start
-        bg-white
-        border
-        border-slate-100
-        rounded-2xl
-        px-4
-        py-3
-        shadow-sm
-        chat-message
-        flex
-        items-center
-        gap-3
-        text-xs
-        text-slate-400
-        `;
-
-
+    const typing = document.createElement('div');
+    typing.id = 'typingIndicator';
+    typing.className = 'self-start bg-white border border-slate-100 rounded-2xl px-4 py-3 shadow-sm chat-message flex items-center gap-3 text-xs text-slate-400';
     typing.innerHTML = `
-
-        <span class="
-            font-bold
-            text-blue-600
-        ">
-            AI
+        <span class="font-bold text-blue-600">AI</span>
+        <span>يكتب</span>
+        <span class="typing-dots flex gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
         </span>
-
-        <span>
-            يكتب
-        </span>
-
-        <span class="
-            typing-dots
-            flex
-            gap-1
-        ">
-
-            <span class="
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-slate-400
-            "></span>
-
-            <span class="
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-slate-400
-            "></span>
-
-            <span class="
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-slate-400
-            "></span>
-
-        </span>
-
     `;
-
-
-    chatBox.appendChild(
-        typing
-    );
-
-
+    chatBox.appendChild(typing);
     scrollChat();
-
 }
-
-
-
-/* =============================================================
-   REMOVE TYPING
-============================================================= */
 
 function removeTyping() {
-
-    const indicator =
-        document.getElementById(
-            'typingIndicator'
-        );
-
-
-    if (indicator) {
-
-        indicator.remove();
-
-    }
-
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
 }
-
-
-
-/* =============================================================
-   APPEND MESSAGE
-============================================================= */
 
 function appendMessage(item) {
-
-    const wrapper =
-        document.createElement('div');
-
-
-    wrapper.className =
-        'chat-message flex';
-
+    const wrapper = document.createElement('div');
+    wrapper.className = 'chat-message flex';
 
     if (item.sender === 'ai') {
-
-        wrapper.classList.add(
-            'self-start'
-        );
-
-
+        wrapper.classList.add('self-start');
         wrapper.innerHTML = `
-
-            <div class="
-                max-w-[88%]
-                flex
-                items-start
-                gap-2
-            ">
-
-                <div class="
-                    w-7
-                    h-7
-                    rounded-full
-                    bg-blue-600
-                    text-white
-                    flex
-                    items-center
-                    justify-center
-                    text-[9px]
-                    font-black
-                    shrink-0
-                ">
-                    AI
-                </div>
-
-
-                <div class="
-                    bg-white
-                    border
-                    border-slate-100
-                    rounded-2xl
-                    rounded-tr-sm
-                    px-4
-                    py-3
-                    text-xs
-                    leading-relaxed
-                    text-slate-700
-                    shadow-sm
-                ">
-
+            <div class="max-w-[88%] flex items-start gap-2">
+                <div class="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-black shrink-0">AI</div>
+                <div class="bg-white border border-slate-100 rounded-2xl rounded-tr-sm px-4 py-3 text-xs leading-relaxed text-slate-700 shadow-sm">
                     ${item.text}
-
                 </div>
-
             </div>
-
         `;
-
-    }
-
-
-    else if (item.sender === 'user') {
-
-        wrapper.classList.add(
-            'self-end'
-        );
-
-
+    } else if (item.sender === 'user') {
+        wrapper.classList.add('self-end');
         wrapper.innerHTML = `
-
-            <div class="
-                max-w-[88%]
-                bg-blue-600
-                text-white
-                rounded-2xl
-                rounded-tl-sm
-                px-4
-                py-3
-                text-xs
-                leading-relaxed
-                shadow-md
-                shadow-blue-600/10
-            ">
-
+            <div class="max-w-[88%] bg-blue-600 text-white rounded-2xl rounded-tl-sm px-4 py-3 text-xs leading-relaxed shadow-md shadow-blue-600/10">
                 ${item.text}
-
             </div>
-
         `;
-
-    }
-
-
-    else if (item.sender === 'success') {
-
-        wrapper.classList.add(
-            'self-center',
-            'w-full'
-        );
-
-
+    } else if (item.sender === 'success') {
+        wrapper.classList.add('self-center', 'w-full');
         wrapper.innerHTML = `
-
-            <div class="
-                w-full
-                bg-emerald-50
-                border
-                border-emerald-100
-                rounded-2xl
-                p-5
-                text-center
-            ">
-
-                <div class="
-                    w-9
-                    h-9
-                    rounded-full
-                    bg-emerald-500
-                    text-white
-                    flex
-                    items-center
-                    justify-center
-                    mx-auto
-                    mb-3
-                ">
-
-                    ✓
-
-                </div>
-
-
-                <h4 class="
-                    text-xs
-                    font-black
-                    text-emerald-900
-                ">
-
-                    ${item.text}
-
-                </h4>
-
-
-                <p class="
-                    mt-1
-                    text-[11px]
-                    text-emerald-700
-                ">
-
-                    تم تسجيل البيانات وإرسالها إلى فريق المبيعات.
-
-                </p>
-
+            <div class="w-full bg-emerald-50 border border-emerald-100 rounded-2xl p-5 text-center">
+                <div class="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-3">✓</div>
+                <h4 class="text-xs font-black text-emerald-900">${item.text}</h4>
+                <p class="mt-1 text-[11px] text-emerald-700">تم تسجيل البيانات وإرسالها إلى فريق المبيعات.</p>
             </div>
-
         `;
-
     }
 
-
-    chatBox.appendChild(
-        wrapper
-    );
-
-
+    chatBox.appendChild(wrapper);
     scrollChat();
-
 }
-
-
-
-/* =============================================================
-   RUN DEMO
-============================================================= */
 
 async function runDemo() {
+    if (demoRunning) return;
+    demoRunning = true;
+    chatBox.innerHTML = '';
+    demoIndex = 0;
 
-    if (demoRunning) {
-        return;
-    }
-
-
-    demoRunning =
-        true;
-
-
-    chatBox.innerHTML =
-        '';
-
-
-    demoIndex =
-        0;
-
-
-    while (
-        demoIndex <
-        chatScript.length
-    ) {
-
-        const item =
-            chatScript[demoIndex];
-
-
-        if (
-            item.sender === 'ai'
-        ) {
-
+    while (demoIndex < chatScript.length) {
+        const item = chatScript[demoIndex];
+        if (item.sender === 'ai') {
             await sleep(850);
-
             showTyping();
-
             await sleep(1200);
-
             removeTyping();
-
             appendMessage(item);
-
             await sleep(1400);
-
-        }
-
-
-        else {
-
+        } else {
             await sleep(1000);
-
             appendMessage(item);
-
             await sleep(1300);
-
         }
-
-
         demoIndex++;
-
     }
-
 
     await sleep(3500);
-
-
-    demoRunning =
-        false;
-
-
+    demoRunning = false;
     runDemo();
-
 }
-
-
-
-/* =============================================================
-   RESTART
-============================================================= */
 
 function restartDemo() {
-
-    if (demoRunning) {
-
-        demoRunning =
-            false;
-
-    }
-
-
-    chatBox.innerHTML =
-        '';
-
-    demoIndex =
-        0;
-
-
-    setTimeout(
-        runDemo,
-        200
-    );
-
+    if (demoRunning) demoRunning = false;
+    chatBox.innerHTML = '';
+    demoIndex = 0;
+    setTimeout(runDemo, 200);
 }
 
-
-
-/* =============================================================
-   START
-============================================================= */
-
-window.addEventListener(
-    'DOMContentLoaded',
-    () => {
-
-        setTimeout(
-            runDemo,
-            800
-        );
-
-    }
-);
-
-
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(runDemo, 800);
+});
 </script>
 
-
 </body>
-
 </html>
