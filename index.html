@@ -94,9 +94,9 @@
             will-change: transform;
         }
 
-        /* TYPING HERO - تثبيت الارتفاع لمنع القفز والاهتزاز */
-        .hero-title-container {
-            min-height: 160px;
+        /* TYPING HERO - تثبيت المساحة أفقياً ورأسياً بصرامة لمنع الاهتزاز */
+        .hero-title-box {
+            height: 140px; /* ارتفاع ثابت يضمن عدم تحرك الصفحة مطلقاً */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,7 +124,7 @@
             box-shadow: 0 35px 90px rgba(15,23,42,.12);
         }
 
-        /* تخصيص شريط التمرير داخل الشات ليصبح شكله أنيق جداً */
+        /* تخصيص شريط التمرير داخل الشات */
         #chatBox::-webkit-scrollbar {
             width: 5px;
         }
@@ -193,8 +193,8 @@
         }
 
         @media (max-width: 768px) {
-            .hero-title-container {
-                min-height: 120px;
+            .hero-title-box {
+                height: 110px;
             }
             .hero-grid {
                 background-size: 35px 35px;
@@ -243,8 +243,9 @@
             AI-Powered Business Automation
         </div>
 
-        <div class="hero-title-container">
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950 max-w-5xl mx-auto">
+        <!-- صندوق ذو ارتفاع ثابت يمنع اهتزاز الصفحة بالكامل -->
+        <div class="hero-title-box max-w-5xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight text-slate-950">
                 <span id="typingText"></span><span id="typingCursor">|</span>
             </h1>
         </div>
@@ -297,9 +298,9 @@
             </p>
         </div>
 
-        <!-- الشات بطول ثابت ومحدد لحماية الصفحة من الصعود والنزول -->
+        <!-- الشات ثابت الحجم ومحمي بالكامل -->
         <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden flex flex-col h-[560px]">
-            <!-- Header (ثابت) -->
+            <!-- Header -->
             <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
@@ -318,10 +319,10 @@
                 </button>
             </div>
 
-            <!-- Chat Content Body (يتمدد ويتحرك داخله السكرول فقط بدون أثر على الصفحة) -->
+            <!-- Chat Content Body -->
             <div id="chatBox" class="flex-1 p-5 md:p-7 bg-gradient-to-b from-slate-50 to-white flex flex-col gap-4 overflow-y-auto"></div>
 
-            <!-- Footer (ثابت) -->
+            <!-- Footer -->
             <div class="px-5 py-3 bg-white border-t border-slate-100 text-center text-[11px] text-slate-400 shrink-0">
                 محاكاة توضيحية — يمكن تخصيص النظام حسب احتياجات عملك
             </div>
@@ -560,25 +561,20 @@
 
 <!-- JAVASCRIPT -->
 <script>
-/* HERO TYPING ANIMATION (FIXED) */
+/* HERO TYPING ANIMATION (STABLE NO-REFLEX) */
 const typingText = document.getElementById('typingText');
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function typeText(text, speed = 80) {
-    for (let i = 0; i < text.length; i++) {
-        const span = document.createElement('span');
-        span.textContent = text[i];
-        typingText.appendChild(span);
-        await sleep(speed);
-    }
-}
+async function typePart(text, className = '', speed = 75) {
+    const span = document.createElement('span');
+    if (className) span.className = className;
+    typingText.appendChild(span);
 
-async function deleteText(speed = 35) {
-    while (typingText.childNodes.length > 0) {
-        typingText.removeChild(typingText.lastChild);
+    for (let i = 0; i < text.length; i++) {
+        span.textContent += text[i];
         await sleep(speed);
     }
 }
@@ -587,23 +583,25 @@ async function heroTypingLoop() {
     while (true) {
         typingText.innerHTML = '';
 
-        await typeText('اجعل الذكاء الاصطناعي', 80);
-        await sleep(300);
+        // كتابة الجزء الأول
+        await typePart('اجعل الذكاء الاصطناعي ', '', 75);
+        await sleep(200);
 
-        const second = document.createElement('span');
-        second.className = 'text-blue-600';
-        second.textContent = ' يعمل لصالحك';
-        second.style.opacity = '0';
-        second.style.transition = 'opacity .4s ease';
-        typingText.appendChild(second);
+        // كتابة الجزء الثاني باللون الأزرق
+        await typePart('يعمل لصالحك', 'text-blue-600', 75);
 
-        requestAnimationFrame(() => {
-            second.style.opacity = '1';
-        });
+        // الانتظار بعد اكتمال الجملة
+        await sleep(3500);
 
-        await sleep(3000);
-        await deleteText(35);
+        // اختفاء ناعم جداً للجملة دون مسح مفاجئ يحرك الصفحة
+        typingText.style.transition = 'opacity 0.5s ease';
+        typingText.style.opacity = '0';
         await sleep(500);
+
+        // إعادة الضبط للبدء من جديد
+        typingText.innerHTML = '';
+        typingText.style.opacity = '1';
+        await sleep(300);
     }
 }
 
@@ -625,7 +623,6 @@ const chatScript = [
 let demoIndex = 0;
 let demoRunning = false;
 
-// التمرير السلس داخل صندوق الشات نفسه بدون تحريك الصفحة!
 function scrollChatSmoothly() {
     chatBox.scrollTo({
         top: chatBox.scrollHeight,
