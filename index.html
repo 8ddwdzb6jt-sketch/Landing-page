@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Avenchie — Enterprise AI Solutions, Intelligent Automation & CRM Integration">
-    <meta name="theme-color" content="#0b1220">
+    <meta name="description" content="Avenchie — Enterprise AI Solutions, Business Automation & CRM Integration">
+    <meta name="theme-color" content="#030712">
 
     <title>Avenchie | Enterprise AI Solutions & Automation</title>
 
@@ -26,8 +26,8 @@
                             blue: '#2563eb',
                             blueDark: '#1d4ed8',
                             cyan: '#38bdf8',
-                            dark: '#080d1a',
-                            cardBg: '#0f172a'
+                            dark: '#030712',
+                            cardBg: '#0b1329'
                         }
                     }
                 }
@@ -35,81 +35,97 @@
         }
     </script>
 
-    <!-- CUSTOM STYLES & FIXES -->
+    <!-- APPLE / MICROSOFT STYLE GLOBAL CSS -->
     <style>
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            background-color: #f8fafc;
-            color: #0f172a;
+            background-color: #030712;
+            color: #f8fafc;
             font-family: 'Tajawal', sans-serif;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* GLASS NAVIGATION */
+        /* GLASS NAVIGATION (APPLE STYLE) */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            background: rgba(3, 7, 18, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* MOBILE DRAWER */
+        /* MOBILE DRAWER MENU */
         #mobileMenu {
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         #mobileMenu.closed { transform: translateX(100%); }
         #mobileMenu.open { transform: translateX(0); }
 
-        /* HERO BACKGROUND & GRID */
-        .hero-bg {
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 60%),
-                linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
-        }
-        .hero-grid {
-            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-            background-size: 36px 36px;
+        /* AMBIENT GLOW EFFECTS */
+        .glow-bg {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            opacity: 0.25;
         }
 
         /* TYPING CURSOR */
         #typingCursor { animation: blink 0.8s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* CARD HOVER EFFECTS */
-        .pro-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(226, 232, 240, 0.9);
+        /* ENTERPRISE CARD WITH UNIFORM IMAGE CONTAINER */
+        .enterprise-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
         }
-        .pro-card:hover {
+        .enterprise-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.12);
-            border-color: rgba(37, 99, 235, 0.3);
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
         }
 
-        /* REALISTIC PHONE MOCKUP (STABLE NO SHAKE) */
-        .phone-frame {
-            border: 12px solid #0f172a;
-            border-radius: 40px;
-            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+        /* STRICT ASPECT RATIO FOR UNIFORM IMAGES */
+        .card-image-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            position: relative;
+        }
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .enterprise-card:hover .card-image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        /* REALISTIC STABLE PHONE MOCKUP */
+        .phone-mockup {
+            border: 10px solid #1e293b;
+            border-radius: 44px;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(37, 99, 235, 0.15);
             background: #080d1a;
         }
 
         /* CHAT BUBBLE ANIMATION */
         .chat-bubble {
-            animation: fadeIn 0.4s cubic-bezier(0, 0, 0.2, 1) forwards;
+            animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(6px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PREVENT SHAKE IN CHAT CONTAINER */
-        #liveChatBox {
-            scroll-behavior: smooth;
-        }
+        #liveChatBox { scroll-behavior: smooth; }
     </style>
 </head>
 
@@ -118,31 +134,31 @@
 <!-- NAVIGATION HEADER -->
 <header class="glass-nav fixed top-0 left-0 w-full z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-[75px] flex items-center justify-between">
+        <div class="h-[80px] flex items-center justify-between">
             
             <!-- LOGO ONLY -->
             <a href="#" class="flex items-center">
-                <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-9 sm:h-11 w-auto object-contain">
+                <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-10 sm:h-11 w-auto object-contain">
             </a>
 
             <!-- DESKTOP NAV LINKS -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
-                <a href="#demo" class="hover:text-blue-600 transition">الشات الحي التفاعلي</a>
-                <a href="#services" class="hover:text-blue-600 transition">الخدمات</a>
-                <a href="#solutions" class="hover:text-blue-600 transition">الحلول المؤسسية</a>
-                <a href="#faq" class="hover:text-blue-600 transition">الأسئلة الشائعة</a>
+            <nav class="hidden md:flex items-center gap-9 text-sm font-bold text-slate-300">
+                <a href="#demo" class="hover:text-blue-400 transition">التجربة التفاعلية</a>
+                <a href="#services" class="hover:text-blue-400 transition">الخدمات</a>
+                <a href="#solutions" class="hover:text-blue-400 transition">الحلول المؤسسية</a>
+                <a href="#faq" class="hover:text-blue-400 transition">الأسئلة الشائعة</a>
             </nav>
 
-            <!-- CTA & HAMBURGER -->
-            <div class="flex items-center gap-3">
+            <!-- CTA BUTTON & MOBILE HAMBURGER -->
+            <div class="flex items-center gap-4">
                 <a href="https://wa.me/201278220294" target="_blank"
-                   class="hidden sm:inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md shadow-blue-600/20">
+                   class="hidden sm:inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-xs font-black transition shadow-lg shadow-blue-600/30">
                     <span>استشارة مجانية</span>
                     <span>↗</span>
                 </a>
 
-                <!-- HAMBURGER BUTTON -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition focus:outline-none" aria-label="Toggle Menu">
+                <!-- HAMBURGER BUTTON FOR MOBILE -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-2xl bg-slate-800/80 text-white border border-slate-700/50 hover:bg-slate-700 transition focus:outline-none" aria-label="Toggle Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -154,112 +170,118 @@
 </header>
 
 <!-- MOBILE DRAWER MENU -->
-<div id="mobileBackdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-<aside id="mobileMenu" class="closed fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+<div id="mobileBackdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden transition-opacity"></div>
+<aside id="mobileMenu" class="closed fixed top-0 right-0 h-full w-[290px] sm:w-[320px] bg-slate-950 border-l border-slate-800 z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
     <div>
-        <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+        <div class="flex items-center justify-between pb-6 border-b border-slate-800">
             <img src="logo.PNG?v=5" alt="Avenchie" class="h-8 w-auto">
-            <button onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-400 hover:text-slate-800 hover:bg-slate-100">✕</button>
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition">✕</button>
         </div>
 
-        <nav class="mt-8 flex flex-col gap-5 text-base font-bold text-slate-800">
-            <a href="#demo" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-600 transition">
-                <span>الشات الحي التفاعلي</span>
-                <span class="text-xs text-slate-400">←</span>
+        <nav class="mt-8 flex flex-col gap-6 text-base font-bold text-slate-200">
+            <a href="#demo" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-400 transition">
+                <span>التجربة التفاعلية</span>
+                <span class="text-xs text-slate-500">←</span>
             </a>
-            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-600 transition">
+            <a href="#services" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-400 transition">
                 <span>الخدمات</span>
-                <span class="text-xs text-slate-400">←</span>
+                <span class="text-xs text-slate-500">←</span>
             </a>
-            <a href="#solutions" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-600 transition">
-                <span>الحلول القطاعية</span>
-                <span class="text-xs text-slate-400">←</span>
+            <a href="#solutions" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-400 transition">
+                <span>الحلول المؤسسية</span>
+                <span class="text-xs text-slate-500">←</span>
             </a>
-            <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-600 transition">
+            <a href="#faq" onclick="toggleMobileMenu()" class="flex items-center justify-between hover:text-blue-400 transition">
                 <span>الأسئلة الشائعة</span>
-                <span class="text-xs text-slate-400">←</span>
+                <span class="text-xs text-slate-500">←</span>
             </a>
         </nav>
     </div>
 
-    <div class="pt-6 border-t border-slate-100">
-        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-bold py-3 rounded-xl text-sm shadow-lg shadow-blue-600/20">
+    <div class="pt-6 border-t border-slate-800">
+        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 rounded-xl text-sm shadow-lg shadow-blue-600/30 transition">
             <span>تواصل معنا عبر واتساب</span>
             <span>↗</span>
         </a>
     </div>
 </aside>
 
-<!-- HERO SECTION WITH INTEGRATED DYNAMIC PHONE CHAT -->
-<section class="hero-bg relative pt-32 sm:pt-40 pb-20 overflow-hidden">
-    <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+<!-- HERO SECTION -->
+<section class="relative pt-36 sm:pt-44 pb-24 overflow-hidden bg-slate-950">
+    <!-- LIGHT GLOWS -->
+    <div class="glow-bg w-[500px] h-[500px] bg-blue-600 top-[-100px] right-[-100px]"></div>
+    <div class="glow-bg w-[400px] h-[400px] bg-sky-500 bottom-[0px] left-[-100px]"></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
             
             <!-- HERO TEXT CONTENT -->
             <div class="lg:col-span-6 text-right">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-black mb-6 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
-                    أنظمة الذكاء الاصطناعي والأتمتة الذكية
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-400 text-xs font-black mb-6 shadow-sm backdrop-blur">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                    منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي
                 </div>
 
-                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight min-h-[110px]">
-                    <span id="typingText"></span><span id="typingCursor" class="text-blue-600">|</span>
+                <!-- FIXED TYPING ANIMATION CONTAINER -->
+                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-tight min-h-[110px]">
+                    <span id="typingText"></span><span id="typingCursor" class="text-blue-500">|</span>
                 </h1>
 
-                <p class="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
-                    نصمم مساعدين افتراضيين يعملون على مدار 24 ساعة للرد على الاستفسارات، تأهيل المبيعات، وأتمتة المهام اليومية لشركتك بأعلى معايير الدقة والأمان.
+                <p class="mt-6 text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
+                    نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
                 </p>
 
                 <div class="mt-8 flex flex-wrap items-center gap-4">
                     <a href="https://wa.me/201278220294" target="_blank"
-                       class="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold shadow-xl shadow-blue-600/25 transition hover:-translate-y-0.5 text-sm">
+                       class="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold shadow-xl shadow-blue-600/30 transition hover:-translate-y-0.5 text-sm">
                         احجز استشارة تقنية مجانية
                     </a>
-                    <a href="#services" class="px-7 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-800 font-bold border border-slate-200 transition text-sm">
+                    <a href="#services" class="px-7 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold border border-slate-800 transition text-sm">
                         استكشف خدماتنا ↓
                     </a>
                 </div>
 
-                <div class="mt-10 pt-8 border-t border-slate-200/60 flex items-center gap-6 text-xs font-bold text-slate-500">
+                <div class="mt-10 pt-8 border-t border-slate-800/80 flex items-center gap-6 text-xs font-bold text-slate-400">
                     <div class="flex items-center gap-2">
-                        <span class="text-emerald-500 text-base">✓</span> بدون اهتزاز أو بطء
+                        <span class="text-blue-400 text-base">✓</span> أمان وتشفير بيانات عالٍ
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="text-emerald-500 text-base">✓</span> دعم كامل للغة العربية
+                        <span class="text-blue-400 text-base">✓</span> تكامل مع أنظمة CRM
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-blue-400 text-base">✓</span> دعم فني مستمر
                     </div>
                 </div>
             </div>
 
             <!-- DYNAMIC REALISTIC MOBILE CHAT MOCKUP -->
             <div id="demo" class="lg:col-span-6 flex justify-center">
-                <div class="phone-frame w-full max-w-[360px] h-[580px] flex flex-col relative overflow-hidden">
+                <div class="phone-mockup w-full max-w-[360px] h-[580px] flex flex-col relative overflow-hidden">
                     
-                    <!-- PHONE TOP NOTCH & STATUS BAR -->
-                    <div class="bg-slate-900 px-6 pt-3 pb-2 flex items-center justify-between border-b border-slate-800/80">
-                        <div class="flex items-center gap-2">
+                    <!-- PHONE STATUS BAR -->
+                    <div class="bg-slate-950 px-6 pt-3.5 pb-3 flex items-center justify-between border-b border-slate-800/80">
+                        <div class="flex items-center gap-2.5">
                             <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white font-black text-xs shadow-md shadow-blue-500/20">
                                 A
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-white leading-none">مساعد Avenchie</h4>
-                                <span class="text-[10px] text-emerald-400 flex items-center gap-1 mt-1">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> نشط الآن
+                                <span class="text-[10px] text-emerald-400 flex items-center gap-1 mt-1 font-medium">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> متصل الآن
                                 </span>
                             </div>
                         </div>
-                        <span class="text-[10px] font-mono text-slate-400">AI LIVE</span>
+                        <span class="text-[10px] font-mono text-slate-500">AI LIVE</span>
                     </div>
 
-                    <!-- CHAT MESSAGES CONTAINER (FIXED HEIGHT NO SHAKE) -->
-                    <div id="liveChatBox" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3.5 bg-[#080d1a]">
-                        <!-- Messages injected via JS dynamically -->
+                    <!-- CHAT MESSAGES CONTAINER -->
+                    <div id="liveChatBox" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3.5 bg-[#030712]">
+                        <!-- Injected via JavaScript -->
                     </div>
 
-                    <!-- PHONE FOOTER INPUT FIELD (REALISTIC MOCKUP) -->
-                    <div class="p-3 bg-slate-900/90 border-t border-slate-800 backdrop-blur flex items-center gap-2">
-                        <div class="flex-1 bg-slate-800/80 rounded-full px-4 py-2 text-[11px] text-slate-400 border border-slate-700/50 flex items-center justify-between">
+                    <!-- PHONE FOOTER INPUT FIELD -->
+                    <div class="p-3 bg-slate-950 border-t border-slate-800/80 flex items-center gap-2">
+                        <div class="flex-1 bg-slate-900 rounded-full px-4 py-2 text-[11px] text-slate-400 border border-slate-800 flex items-center justify-between">
                             <span>جاري معالجة الرد تلقائياً...</span>
                             <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
                         </div>
@@ -275,48 +297,69 @@
     </div>
 </section>
 
-<!-- SERVICES SECTION (TECHNICAL & PROFESSIONAL ONLY - NO FEMALE IMAGES) -->
-<section id="services" class="py-24 px-4 bg-slate-50">
+<!-- SERVICES SECTION WITH PERFECTLY UNIFORM IMAGES -->
+<section id="services" class="py-28 px-4 bg-slate-900/50 relative border-t border-slate-800/60">
     <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-blue-600 text-xs font-black uppercase tracking-widest">ENTERPRISE SOLUTIONS</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-black text-slate-950">
-                حلول الذكاء الاصطناعي للشركات الفخمة
+            <span class="text-blue-500 text-xs font-black uppercase tracking-widest">ENTERPRISE SOLUTIONS</span>
+            <h2 class="mt-3 text-3xl sm:text-4xl font-black text-white">
+                حلول رقمية متكاملة للارتقاء بأداء الشركات
             </h2>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- SERVICE 1 -->
-            <div class="pro-card bg-white rounded-3xl p-8 relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center font-black text-xl mb-6">🤖</div>
-                <h3 class="text-xl font-black text-slate-900 mb-3">شات بوت ذكي جداً</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">مساعدين افتراضيين مدرّبين على قواعد بيانات شركتك للرد الفوري بدقة واحترافية متناهية.</p>
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="AI Analytics Dashboard" class="w-full h-36 object-cover rounded-xl border border-slate-100">
+            <!-- SERVICE CARD 1 -->
+            <div class="enterprise-card flex flex-col justify-between">
+                <!-- UNIFORM IMAGE WRAPPER (16:9) -->
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="AI Analytics Dashboard">
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-400 border border-blue-500/20 flex items-center justify-center font-black text-xl mb-5">🤖</div>
+                        <h3 class="text-xl font-black text-white mb-3">شات بوت ذكي (AI Chatbots)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- SERVICE 2 -->
-            <div class="pro-card bg-white rounded-3xl p-8 relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-black text-xl mb-6">💬</div>
-                <h3 class="text-xl font-black text-slate-900 mb-3">ربط WhatsApp API</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">أتمتة الرسائل والتأكيدات عبر واتساب الموثق وتأهيل المبيعات تلقائياً دون أي تأخير.</p>
-                <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=600&q=80" alt="Messaging System" class="w-full h-36 object-cover rounded-xl border border-slate-100">
+            <!-- SERVICE CARD 2 -->
+            <div class="enterprise-card flex flex-col justify-between">
+                <!-- UNIFORM IMAGE WRAPPER (16:9) -->
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80" alt="WhatsApp Automation System">
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-black text-xl mb-5">💬</div>
+                        <h3 class="text-xl font-black text-white mb-3">ربط WhatsApp API</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- SERVICE 3 -->
-            <div class="pro-card bg-white rounded-3xl p-8 relative overflow-hidden">
-                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-xl mb-6">⚡</div>
-                <h3 class="text-xl font-black text-slate-900 mb-3">تكامل CRM والأنظمة</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">ربط مباشر بين قنوات المحادثة وبرامج إدارة المبيعات وتوجيه البيانات لفريقك تلقائياً.</p>
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="CRM Dashboard" class="w-full h-36 object-cover rounded-xl border border-slate-100">
+            <!-- SERVICE CARD 3 -->
+            <div class="enterprise-card flex flex-col justify-between">
+                <!-- UNIFORM IMAGE WRAPPER (16:9) -->
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="CRM Business Integration">
+                </div>
+                <div class="p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center font-black text-xl mb-5">⚡</div>
+                        <h3 class="text-xl font-black text-white mb-3">أتمتة إدارية و CRM</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-slate-950 text-white pt-16 pb-8 px-4 border-t border-slate-800">
+<footer class="bg-slate-950 text-white pt-16 pb-8 px-4 border-t border-slate-800/80">
     <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
             <div class="md:col-span-2">
                 <img src="logo.PNG?v=5" alt="Avenchie" class="h-10 w-auto mb-6">
                 <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
@@ -325,10 +368,10 @@
             </div>
 
             <div>
-                <h4 class="font-bold text-sm mb-4 text-slate-200">روابط مباشرة</h4>
-                <ul class="space-y-2 text-sm text-slate-400">
-                    <li><a href="#demo" class="hover:text-white transition">التجربة الحية</a></li>
-                    <li><a href="#services" class="hover:text-white transition">الخدمات</a></li>
+                <h4 class="font-bold text-sm mb-4 text-slate-200">الوصول السريع</h4>
+                <ul class="space-y-2.5 text-sm text-slate-400">
+                    <li><a href="#demo" class="hover:text-blue-400 transition">التجربة التفاعلية</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 transition">الخدمات</a></li>
                 </ul>
             </div>
 
@@ -342,14 +385,14 @@
 
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <span>© 2026 Avenchie. جميع الحقوق محفوظة.</span>
-            <span>تصميم مخصص للشركات الفخمة.</span>
+            <span>تصميم مخصص للشركات العالمية.</span>
         </div>
     </div>
 </footer>
 
-<!-- JAVASCRIPT: DRAWER, TYPING & STABLE CONTINUOUS CHAT -->
+<!-- JAVASCRIPT: DRAWER, FIXED TYPING & SMOOTH CHAT -->
 <script>
-/* MOBILE DRAWER MENU TOGGLE */
+/* MOBILE DRAWER TOGGLE */
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const backdrop = document.getElementById('mobileBackdrop');
@@ -365,15 +408,15 @@ function toggleMobileMenu() {
     }
 }
 
-/* HERO TYPING ANIMATION */
+/* HERO TYPING ANIMATION (FIXED TEXT) */
 const typingText = document.getElementById('typingText');
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 async function typeLoop() {
     while (true) {
         typingText.innerHTML = '';
-        const phrase1 = "مستقبل أتمتة الأعمال ";
-        const phrase2 = "بالذكاء الاصطناعي";
+        const phrase1 = "حلول ذكاء اصطناعي ";
+        const phrase2 = "ترتقي بمستوى عملك";
         
         for (let char of phrase1) {
             typingText.innerHTML += char;
@@ -381,7 +424,7 @@ async function typeLoop() {
         }
         
         const highlight = document.createElement('span');
-        highlight.className = 'text-blue-600';
+        highlight.className = 'text-blue-500';
         typingText.appendChild(highlight);
         
         for (let char of phrase2) {
@@ -394,7 +437,7 @@ async function typeLoop() {
 }
 typeLoop();
 
-/* STABLE CONTINUOUS AUTO-LOOP CHAT (NO SHAKE) */
+/* STABLE CONTINUOUS AUTO-LOOP CHAT */
 const chatBox = document.getElementById('liveChatBox');
 const conversationScript = [
     { type: 'ai', text: 'أهلاً بك في Avenchie 👋 كيف يمكننا مساعدتك اليوم؟' },
@@ -411,26 +454,24 @@ async function startContinuousChat() {
             await sleep(1200);
             
             const msgDiv = document.createElement('div');
-            msgDiv.className = `chat-bubble max-w-[85%] text-xs p-3 rounded-2xl leading-relaxed ${
+            msgDiv.className = `chat-bubble max-w-[85%] text-xs p-3.5 rounded-2xl leading-relaxed ${
                 msg.type === 'ai' 
-                ? 'self-start bg-slate-800 text-slate-100 rounded-tr-none border border-slate-700/50' 
+                ? 'self-start bg-slate-900 text-slate-200 rounded-tr-none border border-slate-800' 
                 : 'self-end bg-blue-600 text-white rounded-tl-none shadow-md shadow-blue-600/20'
             }`;
             msgDiv.innerText = msg.text;
             
             chatBox.appendChild(msgDiv);
             
-            // Smooth scroll inside container only (No Page Jitter)
             chatBox.scrollTo({
                 top: chatBox.scrollHeight,
                 behavior: 'smooth'
             });
         }
-        await sleep(4000); // Pause before looping again
+        await sleep(4000);
     }
 }
 
-// START AUTOMATIC CHAT ON LOAD
 startContinuousChat();
 </script>
 
