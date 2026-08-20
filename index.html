@@ -94,7 +94,7 @@
             will-change: transform;
         }
 
-        /* TYPING HERO - تثبيت المساحة أفقياً ورأسياً لمنع الاهتزاز */
+        /* TYPING HERO */
         .hero-title-box {
             height: 140px;
             display: flex;
@@ -115,7 +115,7 @@
             50% { opacity: 0; }
         }
 
-        /* DEMO CHAT FIXED CONTAINER */
+        /* DEMO CHAT CONTAINER */
         .chat-window {
             background: rgba(255,255,255,.86);
             backdrop-filter: blur(18px);
@@ -133,9 +133,6 @@
         #chatBox::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 10px;
-        }
-        #chatBox::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
         }
 
         .chat-message {
@@ -204,21 +201,22 @@
 
 <body>
 
-<!-- NAVIGATION HEADER - متجاوب ونظيف بالكامل -->
+<!-- NAVIGATION HEADER -->
 <header class="glass-nav fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="h-[70px] sm:h-[80px] flex items-center justify-between gap-2">
             
             <!-- BRAND / LOGO -->
             <a href="#" class="flex items-center gap-2 sm:gap-3 shrink-0">
-                <img src="logo.PNG" alt="Avenchie Logo" class="h-8 sm:h-11 w-auto object-contain">
+                <!-- إضافة v=2 لمنع التخزين المؤقت للمتصفح -->
+                <img src="logo.PNG?v=2" alt="Avenchie Logo" class="h-8 sm:h-11 w-auto object-contain">
                 <div class="flex flex-col justify-center">
                     <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 leading-none">Avenchie</span>
                     <span class="text-[9px] sm:text-[10px] font-bold text-blue-600 tracking-wider uppercase mt-0.5">AI Solutions</span>
                 </div>
             </a>
 
-            <!-- NAV LINKS (مخفية في الموبايل لعدم الازدحام) -->
+            <!-- NAV LINKS -->
             <nav class="hidden lg:flex items-center gap-8 text-sm sm:text-base font-semibold text-slate-700">
                 <a href="#services" class="hover:text-blue-600 transition">الخدمات</a>
                 <a href="#demo" class="hover:text-blue-600 transition">التجربة التفاعلية</a>
@@ -307,9 +305,7 @@
             </p>
         </div>
 
-        <!-- CHAT CONTAINER -->
         <div class="max-w-2xl mx-auto chat-window rounded-[28px] overflow-hidden flex flex-col h-[560px]">
-            <!-- Header -->
             <div class="px-5 py-4 border-b border-slate-100 bg-white flex items-center justify-between shrink-0">
                 <div class="flex items-center gap-3">
                     <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-black shadow-lg shadow-blue-500/20">
@@ -328,10 +324,8 @@
                 </button>
             </div>
 
-            <!-- Chat Content Body -->
             <div id="chatBox" class="flex-1 p-5 md:p-7 bg-gradient-to-b from-slate-50 to-white flex flex-col gap-4 overflow-y-auto"></div>
 
-            <!-- Footer -->
             <div class="px-5 py-3 bg-white border-t border-slate-100 text-center text-[11px] text-slate-400 shrink-0">
                 محاكاة توضيحية — يمكن تخصيص النظام حسب احتياجات عملك
             </div>
@@ -538,7 +532,7 @@
         <div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-slate-800">
             <div>
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="logo.PNG" alt="Avenchie Logo" class="h-9 w-auto">
+                    <img src="logo.PNG?v=2" alt="Avenchie Logo" class="h-9 w-auto">
                     <span class="text-2xl font-black tracking-tight text-white">Avenchie</span>
                 </div>
                 <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
