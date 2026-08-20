@@ -18,8 +18,11 @@
         
         /* Header */
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
-        .logo-box { display: flex; align-items: center; text-decoration: none; }
-        .logo-box img { height: 40px; width: auto; object-fit: contain; }
+        .logo-box { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 42px; height: 42px; }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: #0f172a; line-height: 1; }
+        .logo-subtitle { font-size: 0.65rem; font-weight: 700; color: #2563eb; letter-spacing: 1.5px; margin-top: 3px; }
 
         /* Hero Section */
         .hero { text-align: center; padding: 50px 20px; max-width: 800px; margin: 0 auto; }
@@ -51,14 +54,26 @@
         /* Footer */
         footer { background: #090d16; color: #fff; padding: 40px 20px 20px; text-align: center; font-size: 0.9rem; }
         footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
-        .footer-logo { height: 45px; width: auto; margin-bottom: 15px; background: #fff; padding: 5px 12px; border-radius: 8px; }
+        .footer-logo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .footer-logo .logo-title { color: #ffffff; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="#" class="logo-box">
-            <span style="font-size: 1.5rem; font-weight: bold; color: #0b0f19;">Avenchie <span style="color: #2563eb;">AI</span></span>
+            <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L88.97 27.5 V72.5 L50 95 L11.03 72.5 V27.5 Z" fill="#2563eb"/>
+                <path d="M50 25 C63.8 25 75 36.2 75 50 C75 63.8 63.8 75 50 75 C36.2 75 25 63.8 25 50 C25 36.2 36.2 25 50 25 Z" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+                <path d="M50 32 L58 42 H42 L50 32 Z" fill="#ffffff"/>
+                <path d="M68 50 L58 58 V42 L68 50 Z" fill="#ffffff"/>
+                <path d="M50 68 L42 58 H58 L50 68 Z" fill="#ffffff"/>
+                <path d="M32 50 L42 42 V58 L32 50 Z" fill="#ffffff"/>
+            </svg>
+            <div class="logo-text">
+                <span class="logo-title">Avenchie</span>
+                <span class="logo-subtitle">AI AUTOMATION</span>
+            </div>
         </a>
     </header>
 
@@ -122,7 +137,20 @@
     </main>
 
     <footer>
-        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Avenchie</h3>
+        <div class="footer-logo">
+            <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L88.97 27.5 V72.5 L50 95 L11.03 72.5 V27.5 Z" fill="#2563eb"/>
+                <path d="M50 25 C63.8 25 75 36.2 75 50 C75 63.8 63.8 75 50 75 C36.2 75 25 63.8 25 50 C25 36.2 36.2 25 50 25 Z" fill="#2563eb" stroke="#ffffff" stroke-width="4"/>
+                <path d="M50 32 L58 42 H42 L50 32 Z" fill="#ffffff"/>
+                <path d="M68 50 L58 58 V42 L68 50 Z" fill="#ffffff"/>
+                <path d="M50 68 L42 58 H58 L50 68 Z" fill="#ffffff"/>
+                <path d="M32 50 L42 42 V58 L32 50 Z" fill="#ffffff"/>
+            </svg>
+            <div class="logo-text" style="text-align: right;">
+                <span class="logo-title">Avenchie</span>
+                <span class="logo-subtitle">AI AUTOMATION</span>
+            </div>
+        </div>
         <p style="color: #94a3b8; margin: 10px 0 20px;">وكالة متخصصة في حلول أتمتة الذكاء الاصطناعي لتحويل عملك وزيادة كفاءتك.</p>
         <div>
             <a href="#">الخدمات</a> | <a href="#">كيف نعمل</a> | <a href="#">Demo</a>
