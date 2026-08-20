@@ -18,13 +18,15 @@
         
         /* Header */
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
-        .logo-img { height: 40px; width: auto; object-fit: contain; }
+        .logo-box { display: flex; align-items: center; text-decoration: none; }
+        .logo-box img { height: 40px; width: auto; object-fit: contain; }
 
         /* Hero Section */
         .hero { text-align: center; padding: 50px 20px; max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; color: var(--text-dark); }
         .hero p { color: var(--text-gray); font-size: 1.05rem; margin-bottom: 25px; }
-        .btn-primary { display: inline-block; background-color: var(--primary-blue); color: #fff; padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
+        .btn-primary { display: inline-block; background-color: var(--primary-blue); color: #fff; padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(37,99,235,0.2); transition: 0.3s ease; }
+        .btn-primary:hover { opacity: 0.9; }
 
         /* Badges */
         .badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 25px; font-size: 0.85rem; color: var(--text-gray); }
@@ -41,7 +43,7 @@
         .card-icon { width: 40px; height: 40px; background: #eff6ff; color: var(--primary-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; font-weight: bold; }
 
         /* FAQ Accordion */
-        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 10px; padding: 15px 20px; font-weight: bold; cursor: pointer; }
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; margin-bottom: 10px; padding: 15px 20px; font-weight: bold; }
 
         /* Contact Section */
         .contact-box { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; margin-bottom: 15px; }
@@ -49,13 +51,15 @@
         /* Footer */
         footer { background: #090d16; color: #fff; padding: 40px 20px 20px; text-align: center; font-size: 0.9rem; }
         footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
-        .footer-logo { height: 45px; width: auto; margin-bottom: 15px; }
+        .footer-logo { height: 45px; width: auto; margin-bottom: 15px; background: #fff; padding: 5px 12px; border-radius: 8px; }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#"><img src="https://i.ibb.co/3ynmRkg7/image.png" alt="Avenchie Logo" class="logo-img"></a>
+        <a href="#" class="logo-box">
+            <span style="font-size: 1.5rem; font-weight: bold; color: #0b0f19;">Avenchie <span style="color: #2563eb;">AI</span></span>
+        </a>
     </header>
 
     <main>
@@ -63,7 +67,7 @@
         <section class="hero">
             <h1>حوّل عملك بالذكاء الاصطناعي</h1>
             <p>نبني حلولاً رقمية متكاملة تجمع بين أتمتة الأنظمة، أنظمة CRM، وتطوير المواقع الإلكترونية، لنساعد شركتك على العمل بكفاءة أعلى.</p>
-            <a href="https://wa.me/201278220249" class="btn-primary" target="_blank">احجز استشارتك المجانية الآن</a>
+            <a href="https://wa.me/201278220294" class="btn-primary" target="_blank">احجز استشارتك المجانية الآن</a>
             
             <div class="badges">
                 <div class="badge"><span class="dot"></span> حلول مخصصة لاحتياجك</div>
@@ -106,19 +110,19 @@
         <section>
             <h2 class="section-title">تواصل معنا اليوم</h2>
             <div class="contact-box">
-                <p>📞 <strong>الهاتف / الواتساب:</strong> +201278220249</p>
+                <p>📞 <strong>الهاتف / الواتساب:</strong> +201278220294</p>
             </div>
             <div class="contact-box">
                 <p>✉️ <strong>البريد الإلكتروني:</strong> hello@avenchie.com</p>
             </div>
             <div style="text-align: center; margin-top: 25px;">
-                <a href="https://wa.me/201278220249" class="btn-primary" target="_blank">تواصل عبر واتساب لحجز الاستشارة</a>
+                <a href="https://wa.me/201278220294" class="btn-primary" target="_blank">تواصل عبر واتساب لحجز الاستشارة</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <img src="https://i.ibb.co/3ynmRkg7/image.png" alt="Avenchie Logo" class="footer-logo">
+        <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Avenchie</h3>
         <p style="color: #94a3b8; margin: 10px 0 20px;">وكالة متخصصة في حلول أتمتة الذكاء الاصطناعي لتحويل عملك وزيادة كفاءتك.</p>
         <div>
             <a href="#">الخدمات</a> | <a href="#">كيف نعمل</a> | <a href="#">Demo</a>
