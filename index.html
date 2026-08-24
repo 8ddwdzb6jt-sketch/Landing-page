@@ -48,6 +48,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* قفل التمرير للصفحة الرئيسية عند فتح النافذة المنبثقة */
+        body.modal-open {
+            overflow: hidden !important;
+            touch-action: none;
+        }
+
         /* GLASS NAVIGATION */
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
@@ -154,12 +160,36 @@
         #siteChatMessages { scroll-behavior: smooth; }
         #liveChatBox { scroll-behavior: smooth; }
 
-        .modal-blur {
+        /* MODAL OVERLAY FIXED CSS */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
         }
 
-        /* Custom Scrollbar for Modal Content */
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* CUSTOM SCROLLBAR FOR MODAL CONTENT */
+        .modal-scroll {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+        }
         .modal-scroll::-webkit-scrollbar {
             width: 6px;
         }
@@ -397,16 +427,16 @@
     </div>
 </section>
 
-<!-- SERVICE DETAILS MODAL (APPLE NATIVE FULL DETAILS) -->
-<div id="serviceDetailsModal" class="fixed inset-0 bg-black/50 modal-blur z-50 hidden flex items-center justify-center p-4 sm:p-6">
+<!-- SERVICE DETAILS MODAL (FIXED OVERLAY AND INDEPENDENT SCROLL) -->
+<div id="serviceDetailsModal" class="modal-overlay" onclick="handleOverlayClick(event)">
     <div class="bg-white w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative flex flex-col">
         <!-- CLOSE BUTTON -->
-        <button onclick="closeServiceModal()" class="absolute top-5 left-5 w-9 h-9 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-sm transition z-10">
+        <button type="button" onclick="closeServiceModal()" class="absolute top-5 left-5 w-9 h-9 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-sm transition z-20 cursor-pointer">
             ✕
         </button>
 
-        <!-- MODAL CONTENT AREA WITH SCROLL -->
-        <div id="modalDetailsContent" class="overflow-y-auto modal-scroll pr-1 pl-2 my-2 text-right">
+        <!-- MODAL CONTENT AREA WITH INDEPENDENT SCROLL -->
+        <div id="modalDetailsContent" class="modal-scroll flex-1 pr-1 pl-2 my-2 text-right">
             <!-- DYNAMICALLY INJECTED DETAILS -->
         </div>
     </div>
@@ -643,6 +673,7 @@ const serviceModalDetails = {
     }
 };
 
+/* MODAL OPEN & CLOSE LOGIC (FIXES FREEZING AND SCROLL ISSUES) */
 function openServiceModal(key) {
     const data = serviceModalDetails[key];
     if (data) {
@@ -685,17 +716,29 @@ function openServiceModal(key) {
 
             <div class="pt-2 sticky bottom-0 bg-white pb-2 flex items-center gap-3">
                 <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs sm:text-sm font-extrabold rounded-full shadow-lg shadow-blue-500/20 transition text-center flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     <span>ناقش مشروعك معنا عبر الواتساب</span>
                 </a>
             </div>
         `;
-        document.getElementById('serviceDetailsModal').classList.remove('hidden');
+        
+        // إظهار النافذة المنبثقة وقفل التمرير بالخلفية
+        const modal = document.getElementById('serviceDetailsModal');
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
     }
 }
 
 function closeServiceModal() {
-    document.getElementById('serviceDetailsModal').classList.add('hidden');
+    const modal = document.getElementById('serviceDetailsModal');
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+}
+
+function handleOverlayClick(event) {
+    if (event.target.id === 'serviceDetailsModal') {
+        closeServiceModal();
+    }
 }
 
 /* SITE LIVE CHAT TOGGLE */
