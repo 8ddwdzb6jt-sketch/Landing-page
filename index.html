@@ -226,12 +226,18 @@
                 <a href="#faq" class="hover:text-[#0071e3] transition">الأسئلة الشائعة</a>
             </nav>
 
-            <!-- CTA BUTTON & MOBILE HAMBURGER -->
-            <div class="flex items-center gap-4">
+            <!-- CTA BUTTONS HEADER -->
+            <div class="flex items-center gap-3">
                 <button type="button" onclick="openBookingModal()"
-                   class="hidden sm:inline-flex items-center justify-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-5 py-2.5 rounded-full text-xs font-black transition shadow-md shadow-blue-500/20 cursor-pointer">
+                   class="hidden lg:inline-flex items-center justify-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white px-4 py-2.5 rounded-full text-xs font-black transition shadow-md shadow-blue-500/20 cursor-pointer">
                     <span>احجز استشارة مجانية</span>
                 </button>
+
+                <a href="https://wa.me/201278220294" target="_blank"
+                   class="hidden sm:inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-full text-xs font-black transition shadow-md shadow-emerald-500/20">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>تواصل مباشرة عبر الواتس</span>
+                </a>
 
                 <!-- HAMBURGER BUTTON FOR MOBILE -->
                 <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-2xl bg-white text-slate-800 border border-slate-200 hover:bg-slate-100 transition focus:outline-none" aria-label="Toggle Menu">
@@ -263,10 +269,15 @@
         </nav>
     </div>
 
-    <div class="pt-6 border-t border-slate-100">
-        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full flex items-center justify-center gap-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white font-bold py-3.5 rounded-xl text-sm shadow-lg shadow-blue-500/20 transition">
+    <div class="pt-6 border-t border-slate-100 space-y-3">
+        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full flex items-center justify-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-blue-500/20 transition">
             <span>احجز استشارة مجانية</span>
         </button>
+
+        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-emerald-500/20 transition">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+            <span>التواصل مباشرة عبر الواتس</span>
+        </a>
     </div>
 </aside>
 
@@ -293,13 +304,19 @@
                     نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
                 </p>
 
-                <div class="mt-8 flex flex-wrap items-center gap-4">
+                <!-- DUAL HERO BUTTONS WITH 'أو' -->
+                <div class="mt-8 flex flex-wrap items-center gap-3">
                     <button type="button" onclick="openBookingModal()"
-                       class="px-8 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-extrabold shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 text-sm flex items-center gap-2 cursor-pointer">
+                       class="px-7 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-extrabold shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
                         <span>احجز استشارة مجانية</span>
                     </button>
-                    <a href="#services" class="px-7 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-800 font-bold border border-slate-200 transition text-sm inline-block">
-                        استكشف خدماتنا ↓
+
+                    <span class="text-xs font-bold text-slate-400 px-1">أو</span>
+
+                    <a href="https://wa.me/201278220294" target="_blank"
+                       class="px-7 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 text-xs sm:text-sm flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>تواصل مباشرة عبر الواتس</span>
                     </a>
                 </div>
             </div>
@@ -363,14 +380,21 @@
                     </div>
                 </div>
                 
-                <!-- DUAL BUTTONS -->
-                <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('chatbot')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
+                <!-- SERVICE BUTTONS -->
+                <div class="p-7 pt-0 space-y-2 border-t border-slate-100/80">
+                    <button type="button" onclick="openServiceModal('chatbot')" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
                         تعرّف على المزيد ←
                     </button>
-                    <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition cursor-pointer">
-                        احجز استشارة
-                    </button>
+                    
+                    <div class="flex items-center justify-between gap-1.5 pt-1">
+                        <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-[11px] font-bold rounded-full shadow-sm text-center transition cursor-pointer">
+                            احجز استشارة مجانية
+                        </button>
+                        <span class="text-[10px] text-slate-400 font-bold">أو</span>
+                        <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold rounded-full shadow-sm text-center transition">
+                            تواصل عبر الواتس
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -387,14 +411,21 @@
                     </div>
                 </div>
 
-                <!-- DUAL BUTTONS -->
-                <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('whatsapp')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
+                <!-- SERVICE BUTTONS -->
+                <div class="p-7 pt-0 space-y-2 border-t border-slate-100/80">
+                    <button type="button" onclick="openServiceModal('whatsapp')" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
                         تعرّف على المزيد ←
                     </button>
-                    <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition cursor-pointer">
-                        احجز استشارة
-                    </button>
+                    
+                    <div class="flex items-center justify-between gap-1.5 pt-1">
+                        <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-[11px] font-bold rounded-full shadow-sm text-center transition cursor-pointer">
+                            احجز استشارة مجانية
+                        </button>
+                        <span class="text-[10px] text-slate-400 font-bold">أو</span>
+                        <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold rounded-full shadow-sm text-center transition">
+                            تواصل عبر الواتس
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -411,14 +442,21 @@
                     </div>
                 </div>
 
-                <!-- DUAL BUTTONS -->
-                <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('crm')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
+                <!-- SERVICE BUTTONS -->
+                <div class="p-7 pt-0 space-y-2 border-t border-slate-100/80">
+                    <button type="button" onclick="openServiceModal('crm')" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
                         تعرّف على المزيد ←
                     </button>
-                    <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition cursor-pointer">
-                        احجز استشارة
-                    </button>
+                    
+                    <div class="flex items-center justify-between gap-1.5 pt-1">
+                        <button type="button" onclick="openBookingModal()" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-[11px] font-bold rounded-full shadow-sm text-center transition cursor-pointer">
+                            احجز استشارة مجانية
+                        </button>
+                        <span class="text-[10px] text-slate-400 font-bold">أو</span>
+                        <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold rounded-full shadow-sm text-center transition">
+                            تواصل عبر الواتس
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -440,12 +478,20 @@
             <p class="text-[#0071e3] font-bold text-sm sm:text-base mb-8">
                 اكتشف ما الذي يمكن أتمتته في شركتك.
             </p>
-            <div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-3">
                 <button type="button" onclick="openBookingModal()"
-                   class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-extrabold text-sm shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 cursor-pointer">
+                   class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 cursor-pointer">
                     <span>احجز استشارة مجانية</span>
-                    <span class="text-lg">←</span>
                 </button>
+
+                <span class="text-xs font-bold text-slate-400">أو</span>
+
+                <a href="https://wa.me/201278220294" target="_blank"
+                   class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>تواصل مباشرة عبر الواتس</span>
+                </a>
             </div>
         </div>
 
@@ -467,7 +513,7 @@
     </div>
 </div>
 
-<!-- CONSULTATION BOOKING MODAL (NEW) -->
+<!-- CONSULTATION BOOKING MODAL -->
 <div id="bookingModal" class="modal-overlay" onclick="handleBookingOverlayClick(event)">
     <div class="bg-white w-full max-w-lg max-h-[90vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative flex flex-col text-right">
         <!-- CLOSE BUTTON -->
@@ -477,7 +523,7 @@
 
         <div class="mb-5">
             <span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-[#0071e3] text-xs font-black mb-2">Avenchie Consultation</span>
-            <h3 class="text-2xl font-black text-slate-900">حجز استشارة مجانية</h3>
+            <h3 class="text-2xl font-black text-slate-900">احجز استشارة مجانية</h3>
             <p class="text-xs text-slate-500 mt-1">يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.</p>
         </div>
 
@@ -528,7 +574,7 @@
             <div class="pt-3">
                 <button type="submit" class="w-full py-3.5 bg-[#0071e3] hover:bg-[#0077ed] text-white font-black rounded-xl text-xs sm:text-sm shadow-lg shadow-blue-500/20 transition flex items-center justify-center gap-2 cursor-pointer">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>تأكيد وحجز الاستشارة عبر الواتساب</span>
+                    <span>تأكيد وحجز الاستشارة عبر الواتس</span>
                 </button>
             </div>
         </form>
@@ -604,7 +650,7 @@
             </div>
 
             <div>
-                <h4 class="font-bold text-sm mb-4 text-slate-900">التواصل</h4>
+                <h4 class="font-bold text-sm mb-4 text-slate-900">التواصل المباشر</h4>
                 <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-600 hover:underline text-sm font-bold flex items-center gap-2">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     <span>WhatsApp Direct</span>
@@ -643,14 +689,14 @@
 
         <div class="p-3.5 bg-slate-50 space-y-3 text-xs leading-relaxed max-h-[220px] overflow-y-auto flex flex-col">
             <div class="bg-white text-slate-800 p-3 rounded-2xl rounded-tr-none border border-slate-200 shadow-sm self-start text-xs">
-                مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتساب للرد الفوري على كل استفساراتك.
+                مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتس للرد الفوري على كل استفساراتك.
             </div>
         </div>
 
         <div class="p-3 bg-white border-t border-slate-100">
             <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                <span>ابدأ المحادثة عبر الواتساب</span>
+                <span>تواصل مباشرة عبر الواتس</span>
             </a>
         </div>
     </div>
@@ -854,10 +900,14 @@ function openServiceModal(key) {
                 <p class="leading-relaxed">${data.result}</p>
             </div>
 
-            <div class="pt-2 sticky bottom-0 bg-white pb-2 flex items-center gap-3">
-                <button type="button" onclick="closeServiceModal(); openBookingModal();" class="w-full py-3.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs sm:text-sm font-extrabold rounded-full shadow-lg shadow-blue-500/20 transition text-center flex items-center justify-center gap-2 cursor-pointer">
-                    <span>احجز استشارة مجانية لهذا الحل</span>
+            <div class="pt-2 sticky bottom-0 bg-white pb-2 flex items-center justify-between gap-2">
+                <button type="button" onclick="closeServiceModal(); openBookingModal();" class="flex-1 py-3 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-lg shadow-blue-500/20 transition text-center cursor-pointer">
+                    <span>احجز استشارة مجانية</span>
                 </button>
+                <span class="text-xs font-bold text-slate-400">أو</span>
+                <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-full shadow-lg shadow-emerald-500/20 transition text-center">
+                    <span>تواصل مباشرة عبر الواتس</span>
+                </a>
             </div>
         `;
         
