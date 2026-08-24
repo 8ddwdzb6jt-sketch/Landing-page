@@ -136,7 +136,7 @@
             40% { transform: scale(1); }
         }
 
-        /* FLOATING SITE CHAT WIDGET - COMPACT FIX */
+        /* FLOATING SITE CHAT WIDGET */
         #siteChatWindow {
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -157,6 +157,22 @@
         .modal-blur {
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Custom Scrollbar for Modal Content */
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
@@ -254,7 +270,6 @@
                        class="px-8 py-4 rounded-full bg-[#0071e3] hover:bg-[#0077ed] text-white font-extrabold shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 text-sm flex items-center gap-2">
                         <span>احجز استشارة تقنية مجانية</span>
                     </a>
-                    <!-- زر استكشف خدماتنا أصبح يعبر مباشرة لقسم الخدمات -->
                     <a href="#services" class="px-7 py-4 rounded-full bg-white hover:bg-slate-100 text-slate-800 font-bold border border-slate-200 transition text-sm inline-block">
                         استكشف خدماتنا ↓
                     </a>
@@ -323,11 +338,10 @@
                 <!-- DUAL BUTTONS -->
                 <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
                     <button type="button" onclick="openServiceModal('chatbot')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
-                        تعرف على المزيد ←
+                        تعرّف على المزيد ←
                     </button>
-                    <!-- تم تفعيل زر ناقش مشروعك ليربط بالواتساب -->
                     <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition">
-                        ناقش مشروعك
+                        ناقش مشروعك معنا
                     </a>
                 </div>
             </div>
@@ -340,7 +354,7 @@
                     </div>
                     <div class="p-7">
                         <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center font-black text-xl mb-5">💬</div>
-                        <h3 class="text-xl font-black text-slate-900 mb-3">ربط WhatsApp API</h3>
+                        <h3 class="text-xl font-black text-slate-900 mb-3">ربط واتساب للأعمال (WhatsApp Business API)</h3>
                         <p class="text-slate-500 text-sm leading-relaxed mb-6">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
                     </div>
                 </div>
@@ -348,11 +362,10 @@
                 <!-- DUAL BUTTONS -->
                 <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
                     <button type="button" onclick="openServiceModal('whatsapp')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
-                        تعرف على المزيد ←
+                        تعرّف على المزيد ←
                     </button>
-                    <!-- تم تفعيل زر ناقش مشروعك ليربط بالواتساب -->
                     <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition">
-                        ناقش مشروعك
+                        ناقش مشروعك معنا
                     </a>
                 </div>
             </div>
@@ -365,7 +378,7 @@
                     </div>
                     <div class="p-7">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center font-black text-xl mb-5">⚡</div>
-                        <h3 class="text-xl font-black text-slate-900 mb-3">أتمتة إدارية و CRM</h3>
+                        <h3 class="text-xl font-black text-slate-900 mb-3">أتمتة إدارية وربط CRM</h3>
                         <p class="text-slate-500 text-sm leading-relaxed mb-6">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
                     </div>
                 </div>
@@ -373,11 +386,10 @@
                 <!-- DUAL BUTTONS -->
                 <div class="p-7 pt-0 flex items-center gap-3 border-t border-slate-100/80">
                     <button type="button" onclick="openServiceModal('crm')" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-full transition text-center cursor-pointer">
-                        تعرف على المزيد ←
+                        تعرّف على المزيد ←
                     </button>
-                    <!-- تم تفعيل زر ناقش مشروعك ليربط بالواتساب -->
                     <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-bold rounded-full shadow-sm text-center transition">
-                        ناقش مشروعك
+                        ناقش مشروعك معنا
                     </a>
                 </div>
             </div>
@@ -385,13 +397,18 @@
     </div>
 </section>
 
-<!-- SERVICE DETAILS MODAL (APPLE NATIVE) -->
-<div id="serviceDetailsModal" class="fixed inset-0 bg-black/40 modal-blur z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white w-full max-w-lg rounded-3xl p-8 shadow-2xl border border-slate-100 relative transform transition-all">
-        <button onclick="closeServiceModal()" class="absolute top-6 left-6 w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-xs transition">
+<!-- SERVICE DETAILS MODAL (APPLE NATIVE FULL DETAILS) -->
+<div id="serviceDetailsModal" class="fixed inset-0 bg-black/50 modal-blur z-50 hidden flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-white w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative flex flex-col">
+        <!-- CLOSE BUTTON -->
+        <button onclick="closeServiceModal()" class="absolute top-5 left-5 w-9 h-9 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-sm transition z-10">
             ✕
         </button>
-        <div id="modalDetailsContent"></div>
+
+        <!-- MODAL CONTENT AREA WITH SCROLL -->
+        <div id="modalDetailsContent" class="overflow-y-auto modal-scroll pr-1 pl-2 my-2 text-right">
+            <!-- DYNAMICALLY INJECTED DETAILS -->
+        </div>
     </div>
 </div>
 
@@ -466,7 +483,7 @@
             <div>
                 <h4 class="font-bold text-sm mb-4 text-slate-900">التواصل</h4>
                 <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-600 hover:underline text-sm font-bold flex items-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     <span>WhatsApp Direct</span>
                 </a>
             </div>
@@ -481,10 +498,8 @@
 
 <!-- FLOATING WHATSAPP CHAT WIDGET (MIRNA - DIRECT WHATSAPP ACTION ONLY) -->
 <div class="fixed bottom-5 left-5 z-50">
-    <!-- CHAT POPUP WINDOW - COMPACT SIZE & WHATSAPP ACTION ONLY -->
     <div id="siteChatWindow" class="hidden-widget mb-3 w-[290px] sm:w-[320px] max-w-[85vw] bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
         
-        <!-- HEADER WITH FEMALE AVATAR -->
         <div class="bg-[#0071e3] p-3.5 text-white flex items-center justify-between">
             <div class="flex items-center gap-2.5">
                 <div class="relative">
@@ -503,23 +518,20 @@
             <button onclick="toggleSiteChat()" class="text-white/80 hover:text-white text-base font-bold px-1">✕</button>
         </div>
 
-        <!-- MESSAGE CONTAINER -->
         <div class="p-3.5 bg-slate-50 space-y-3 text-xs leading-relaxed max-h-[220px] overflow-y-auto flex flex-col">
             <div class="bg-white text-slate-800 p-3 rounded-2xl rounded-tr-none border border-slate-200 shadow-sm self-start text-xs">
                 مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتساب للرد الفوري على كل استفساراتك.
             </div>
         </div>
 
-        <!-- DIRECT WHATSAPP ACTION BUTTON ONLY (NO INPUT TEXT FIELD) -->
         <div class="p-3 bg-white border-t border-slate-100">
             <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                 <span>ابدأ المحادثة عبر الواتساب</span>
             </a>
         </div>
     </div>
 
-    <!-- FLOATING TOGGLE BUTTON -->
     <button onclick="toggleSiteChat()" class="relative group bg-[#0071e3] hover:bg-[#0077ed] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-105">
         <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
@@ -557,31 +569,126 @@ function toggleFaq(index) {
     }
 }
 
-/* SERVICE MODAL LOGIC */
+/* SERVICE MODAL DETAILED CONTENT DATA */
 const serviceModalDetails = {
     chatbot: {
         title: "شات بوت ذكي (AI Chatbots)",
-        desc: "أنظمة محادثة متطورة تعتمد على أحدث نماذج الذكاء الاصطناعي لتفهم سياق كلام العملاء ولهجاتهم بشكل دقيق. تتيح تقديم الاستشارات الفورية، الإجابة عن الأسئلة الشائعة، وجمع بيانات العملاء المؤهلين على مدار 24 ساعة دون أي تأخير."
+        subtitle: "اجعل الذكاء الاصطناعي يتولى محادثات عملائك",
+        overview: "نطوّر شات بوتات ذكية (AI Chatbots) قادرة على فهم أسئلة العملاء والتفاعل معهم بطريقة طبيعية، بدل الاعتماد على الردود الجاهزة أو انتظار موظف متاح للرد.<br><br>يمكن للشات بوت استقبال العملاء على مدار الساعة، الإجابة عن الأسئلة المتكررة، جمع بيانات العملاء، تأهيل العملاء المحتملين، وتوجيههم إلى الخطوة المناسبة تلقائيًا.",
+        featuresTitle: "ماذا يمكن للشات بوت أن يفعل؟",
+        features: [
+            "الرد الفوري على استفسارات العملاء.",
+            "فهم سياق المحادثة بدل الاعتماد على كلمات مفتاحية فقط.",
+            "تقديم معلومات عن المنتجات والخدمات والأسعار.",
+            "جمع بيانات العميل واحتياجاته.",
+            "تأهيل العملاء المحتملين (Lead Qualification) وتحديد العملاء الأكثر جدية.",
+            "حجز المواعيد وطلبات الخدمة.",
+            "تحويل المحادثة إلى موظف عند الحاجة.",
+            "العمل على مدار الساعة دون توقف.",
+            "ربط المحادثات مع أنظمة CRM (إدارة علاقات العملاء) والأنظمة الأخرى."
+        ],
+        targetTitle: "مناسب لـ:",
+        target: "الشركات التي تستقبل عددًا كبيرًا من الاستفسارات، المتاجر الإلكترونية، العيادات والمراكز، شركات الخدمات، شركات العقارات، مراكز التدريب، والشركات التي تعتمد على التواصل المباشر مع العملاء.",
+        resultTitle: "النتيجة",
+        result: "بدل أن يقضي فريقك ساعات في الإجابة عن نفس الأسئلة، يتولى الذكاء الاصطناعي الجزء المتكرر من المحادثات، بينما يركز فريقك على العملاء والمهام التي تحتاج إلى تدخل بشري."
     },
     whatsapp: {
-        title: "ربط WhatsApp API",
-        desc: "ربط رسمي وموثق بـ WhatsApp Business API يتيح لك أتمتة إرسال إشعارات الطلبات، الفواتير، التذكيرات، والرسائل الترحيبية التفاعلية. يمنحك سرعة استجابة فائقة ويضمن بناء تجربة عميل ممتازة عبر التطبيق الأكثر استخداماً."
+        title: "ربط واتساب للأعمال (WhatsApp Business API)",
+        subtitle: "حوّل واتساب إلى قناة عمل متكاملة",
+        overview: "نساعد الشركات على ربط واتساب للأعمال (WhatsApp Business Platform / API) بأنظمتها وعملياتها، لإنشاء تواصل أكثر تنظيمًا مع العملاء وأتمتة الرسائل والمتابعات.<br><br>بدل استخدام واتساب فقط للرد اليدوي على العملاء، يصبح جزءًا من منظومة العمل ويمكن ربطه بالمبيعات، خدمة العملاء، الحجوزات، وأنظمة إدارة العملاء.",
+        featuresTitle: "ماذا يمكننا تنفيذ؟",
+        features: [
+            "ربط حساب الشركة بواجهة WhatsApp Business Platform.",
+            "إرسال رسائل ترحيبية تلقائية.",
+            "تأكيد الطلبات والحجوزات.",
+            "إرسال تحديثات حالة الطلب.",
+            "المتابعة التلقائية مع العملاء.",
+            "إرسال الإشعارات والتنبيهات.",
+            "استقبال استفسارات العملاء وأتمتة الردود.",
+            "ربط واتساب مع CRM (إدارة علاقات العملاء).",
+            "ربط واتساب مع أنظمة ومواقع وتطبيقات الشركة عبر API.",
+            "إنشاء تدفقات محادثة مخصصة حسب طبيعة نشاطك."
+        ],
+        exampleTitle: "مثال عملي:",
+        example: "عميل يرسل رسالة على واتساب: <strong>«أريد حجز موعد.»</strong><br>يمكن للنظام أن:<br>يستقبل الرسالة ← يفهم الطلب ← يعرض المواعيد المتاحة ← يسجل بيانات العميل ← يؤكد الحجز ← يرسل رسالة تأكيد تلقائية (بدون الحاجة إلى تنفيذ كل خطوة يدويًا).",
+        targetTitle: "مناسب لـ:",
+        target: "المتاجر، العيادات والمراكز، شركات الخدمات، المطاعم، شركات العقارات، مراكز التدريب، شركات الحجز، وأي نشاط يعتمد على واتساب كقناة رئيسية للتواصل مع العملاء.",
+        resultTitle: "النتيجة",
+        result: "واتساب لا يعود مجرد تطبيق للمحادثة، بل يصبح جزءًا من نظام تشغيل المبيعات وخدمة العملاء داخل شركتك."
     },
     crm: {
-        title: "أتمتة إدارية و CRM",
-        desc: "تكامل شامل بين قنوات المبيعات والدردشة مع برامج إدارة علاقات العملاء (CRM) مثل Zoho, HubSpot وغيرها. يتم تسجيل الصفقات وتحديث حالة العملاء وتكليف فريق العمل بالمهام تلقائياً لتسريع دورة المبيعات وضمان عدم ضياع أي فرصة."
+        title: "أتمتة إدارية وربط CRM (CRM & Workflow Automation)",
+        subtitle: "اجعل أنظمة شركتك تعمل معًا بدل نقل البيانات يدويًا",
+        overview: "نربط الأنظمة والتطبيقات التي تستخدمها شركتك ونبني سير عمل آلي (Workflow Automation) ينقل البيانات وينفذ المهام تلقائيًا وفقًا للقواعد التي تحددها.<br><br>بدل أن ينتقل الموظف بين واتساب والبريد الإلكتروني وملفات Excel ونظام إدارة العملاء، يمكن جعل هذه الأنظمة تتبادل البيانات تلقائيًا.",
+        featuresTitle: "ماذا يمكننا أتمتته؟",
+        features: [
+            "إنشاء العملاء المحتملين تلقائيًا داخل CRM.",
+            "توزيع العملاء على موظفي المبيعات.",
+            "إنشاء المهام ومتابعتها تلقائيًا.",
+            "تحديث مراحل الصفقات.",
+            "إرسال التنبيهات والتذكيرات.",
+            "نقل البيانات بين الأنظمة.",
+            "إنشاء سجلات العملاء تلقائيًا.",
+            "أتمتة عمليات المتابعة.",
+            "ربط الموقع وواتساب والبريد الإلكتروني مع CRM.",
+            "إنشاء تدفقات عمل مخصصة حسب طبيعة شركتك.",
+            "تقليل إدخال البيانات المتكرر والأخطاء الناتجة عنه."
+        ],
+        exampleTitle: "مثال عملي:",
+        example: "عميل يرسل استفسارًا:<br>واتساب ← الذكاء الاصطناعي يفهم الطلب ← يتم إنشاء العميل في CRM ← يتم تأهيل العميل ← يتم تعيينه لموظف المبيعات ← تصل مهمة للموظف ← تبدأ المتابعة.<br><em>(كل ذلك يمكن أن يحدث تلقائيًا وفق النظام الذي يتم تصميمه لشركتك).</em>",
+        targetTitle: "مناسب لـ:",
+        target: "الشركات التي لديها فريق مبيعات أو خدمة عملاء، والشركات التي تستخدم أكثر من نظام أو تطبيق وتضطر إلى نقل البيانات بينها يدويًا.",
+        resultTitle: "النتيجة",
+        result: "بيانات أكثر تنظيمًا، مهام أقل تكرارًا، أخطاء أقل، ومتابعة أفضل للعملاء — مع تقليل الاعتماد على العمليات اليدوية."
     }
 };
 
 function openServiceModal(key) {
     const data = serviceModalDetails[key];
     if (data) {
+        let featuresListHtml = '';
+        data.features.forEach(item => {
+            featuresListHtml += `<li class="flex items-start gap-2 mb-2 text-xs sm:text-sm text-slate-600"><span class="text-[#0071e3] font-bold">✓</span><span>${item}</span></li>`;
+        });
+
+        let exampleHtml = '';
+        if (data.example) {
+            exampleHtml = `
+                <div class="mt-4 p-4 bg-blue-50/60 rounded-2xl border border-blue-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <h5 class="font-black text-[#0071e3] mb-1">${data.exampleTitle}</h5>
+                    <p>${data.example}</p>
+                </div>
+            `;
+        }
+
         document.getElementById('modalDetailsContent').innerHTML = `
-            <h3 class="text-xl font-bold text-slate-900 mb-3">${data.title}</h3>
-            <p class="text-sm text-slate-500 leading-relaxed mb-6">${data.desc}</p>
-            <a href="https://wa.me/201278220294" target="_blank" class="inline-block px-6 py-3 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full shadow-sm transition">
-                تحدث مع خبير حول الخدمة
-            </a>
+            <span class="inline-block text-[#0071e3] text-xs font-black uppercase mb-1">تفاصيل الخدمة</span>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-1">${data.title}</h3>
+            <p class="text-xs sm:text-sm font-bold text-slate-600 mb-4">${data.subtitle}</p>
+            
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 border-b border-slate-100 pb-4">${data.overview}</p>
+            
+            <h4 class="font-black text-slate-900 text-sm mb-3">${data.featuresTitle}</h4>
+            <ul class="mb-6">${featuresListHtml}</ul>
+            
+            ${exampleHtml}
+
+            <div class="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-200/80">
+                <h5 class="font-black text-slate-900 text-xs sm:text-sm mb-1">${data.targetTitle}</h5>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${data.target}</p>
+            </div>
+
+            <div class="mt-4 p-4 bg-emerald-50/70 rounded-2xl border border-emerald-100 text-xs sm:text-sm text-slate-700 mb-6">
+                <h5 class="font-black text-emerald-700 mb-1">${data.resultTitle}</h5>
+                <p class="leading-relaxed">${data.result}</p>
+            </div>
+
+            <div class="pt-2 sticky bottom-0 bg-white pb-2 flex items-center gap-3">
+                <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs sm:text-sm font-extrabold rounded-full shadow-lg shadow-blue-500/20 transition text-center flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>ناقش مشروعك معنا عبر الواتساب</span>
+                </a>
+            </div>
         `;
         document.getElementById('serviceDetailsModal').classList.remove('hidden');
     }
