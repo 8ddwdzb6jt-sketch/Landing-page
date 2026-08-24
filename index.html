@@ -1,673 +1,216 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Avenchie — Enterprise AI Solutions, Business Automation & CRM Integration">
-    <meta name="theme-color" content="#ffffff">
-
-    <title>Avenchie | Enterprise AI Solutions & Automation</title>
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- TAILWIND CSS -->
+    <title>Avenchie | حلول الأتمتة الذكية</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Tajawal', 'sans-serif'] },
-                    colors: {
-                        avenchie: {
-                            blue: '#2563eb',
-                            blueDark: '#1d4ed8',
-                            cyan: '#38bdf8',
-                            dark: '#030712',
-                            cardBg: '#0b1329'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- APPLE / MICROSOFT STYLE GLOBAL CSS -->
     <style>
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         body {
-            margin: 0;
-            background-color: #030712;
-            color: #f8fafc;
-            font-family: 'Tajawal', sans-serif;
-            overflow-x: hidden;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* GLASS NAVIGATION */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
+        /* Apple Bento Card Style */
+        .bento-card {
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 28px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* MOBILE DRAWER MENU */
-        #mobileMenu {
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #mobileMenu.closed { transform: translateX(100%); }
-        #mobileMenu.open { transform: translateX(0); }
-
-        /* AMBIENT GLOW EFFECTS */
-        .glow-bg {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            pointer-events: none;
-            opacity: 0.25;
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: rgba(0, 0, 0, 0.12);
         }
 
-        /* TYPING CURSOR */
-        #typingCursor { animation: blink 0.8s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-        /* ENTERPRISE CARD WITH UNIFORM IMAGE CONTAINER */
-        .enterprise-card {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden;
-        }
-        .enterprise-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(37, 99, 235, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
+        /* Smooth Scroll & Modal Animation */
+        html {
+            scroll-behavior: smooth;
         }
 
-        /* STRICT ASPECT RATIO FOR UNIFORM IMAGES */
-        .card-image-wrapper {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            position: relative;
+        .modal-blur {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
         }
-        .card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .enterprise-card:hover .card-image-wrapper img {
-            transform: scale(1.04);
-        }
-
-        /* REALISTIC STABLE PHONE MOCKUP (COMPACT SIZE) */
-        .phone-mockup {
-            border: 8px solid #1e293b;
-            border-radius: 36px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(37, 99, 235, 0.15);
-            background: #080d1a;
-        }
-
-        /* CHAT BUBBLE ANIMATION */
-        .chat-bubble {
-            animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* TYPING DOTS ANIMATION */
-        .typing-dot {
-            animation: typingBounce 1.4s infinite ease-in-out both;
-        }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typingBounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
-
-        /* FLOATING SITE CHAT WIDGET */
-        #siteChatWindow {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #siteChatWindow.hidden-widget {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px) scale(0.95);
-        }
-        #siteChatWindow.visible-widget {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0) scale(1);
-        }
-
-        #siteChatMessages { scroll-behavior: smooth; }
-        #liveChatBox { scroll-behavior: smooth; }
     </style>
 </head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
 
-<body>
-
-<!-- NAVIGATION HEADER -->
-<header class="glass-nav fixed top-0 left-0 w-full z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-[80px] flex items-center justify-between">
-            
-            <!-- LOGO WITH CONTRAST BACKGROUND -->
-            <a href="#" class="flex items-center bg-slate-100/80 px-3 py-1.5 rounded-xl border border-slate-200/80 shadow-sm">
-                <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-9 sm:h-10 w-auto object-contain">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-30 w-full bg-white/70 backdrop-blur-xl border-b border-black/5">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight text-slate-900">
+                Avenchie<span class="text-[#0071e3]">.</span>
             </a>
-
-            <!-- DESKTOP NAV LINKS -->
-            <nav class="hidden md:flex items-center gap-9 text-sm font-bold text-slate-800">
-                <a href="#demo" class="hover:text-blue-600 transition">التجربة التفاعلية</a>
-                <a href="#services" class="hover:text-blue-600 transition">الخدمات</a>
-                <a href="#solutions" class="hover:text-blue-600 transition">الحلول المؤسسية</a>
-                <a href="#faq" class="hover:text-blue-600 transition">الأسئلة الشائعة</a>
+            <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600">
+                <a href="#services" class="hover:text-slate-900 transition">الخدمات</a>
+                <a href="#about" class="hover:text-slate-900 transition">عن الشركة</a>
+                <a href="https://wa.me/201278220294" target="_blank" class="hover:text-slate-900 transition">تواصل معنا</a>
             </nav>
-
-            <!-- CTA BUTTON & MOBILE HAMBURGER -->
-            <div class="flex items-center gap-4">
-                <a href="https://wa.me/201278220294" target="_blank"
-                   class="hidden sm:inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full text-xs font-black transition shadow-lg shadow-emerald-600/20">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>تواصل معنا</span>
-                </a>
-
-                <!-- HAMBURGER BUTTON FOR MOBILE -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-2xl bg-slate-100 text-slate-800 border border-slate-200 hover:bg-slate-200 transition focus:outline-none" aria-label="Toggle Menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-
+            <a href="https://wa.me/201278220294" target="_blank" class="px-4 py-2 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full shadow-sm transition">
+                استشارة مجانية
+            </a>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- MOBILE DRAWER MENU -->
-<div id="mobileBackdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden transition-opacity"></div>
-<aside id="mobileMenu" class="closed fixed top-0 right-0 h-full w-[290px] sm:w-[320px] bg-slate-950 border-l border-slate-800 z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
-    <div>
-        <div class="flex items-center justify-between pb-6 border-b border-slate-800">
-            <div class="bg-slate-100 p-2 rounded-xl">
-                <img src="logo.PNG?v=5" alt="Avenchie" class="h-7 w-auto">
-            </div>
-            <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition">✕</button>
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
+        <span class="inline-block px-3 py-1 bg-blue-50 text-[#0071e3] text-xs font-semibold rounded-full mb-6">
+            جيل جديد من أتمتة الأعمال
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+            ذكاء اصطناعي يُدير خدماتك عبر الواتساب ببساطة.
+        </h1>
+        <p class="text-slate-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+            ارتقِ بإنتاجية عملك وتفاعل مع عملائك بلحظات عبر أتمتة متكاملة وربط ذكي مع أنظمة ادارة العملاء.
+        </p>
+        <div class="flex items-center justify-center gap-4">
+            <a href="#services" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-full shadow-md transition">
+                استكشف الخدمات
+            </a>
+            <a href="https://wa.me/201278220294" target="_blank" class="px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 text-xs font-semibold rounded-full border border-slate-200 transition">
+                تحدث مع خبير
+            </a>
+        </div>
+    </section>
+
+    <!-- Bento Grid Services Section -->
+    <section id="services" class="max-w-6xl mx-auto px-6 py-12 w-full">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">خدماتنا المخصصة</h2>
         </div>
 
-        <nav class="mt-8 flex flex-col gap-6 text-base font-bold text-slate-200">
-            <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">التجربة التفاعلية</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">الخدمات</a>
-            <a href="#solutions" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">الحلول المؤسسية</a>
-            <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">الأسئلة الشائعة</a>
-        </nav>
-    </div>
-
-    <div class="pt-6 border-t border-slate-800">
-        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-sm shadow-lg shadow-emerald-600/30 transition">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            <span>تواصل معنا عبر واتساب</span>
-        </a>
-    </div>
-</aside>
-
-<!-- HERO SECTION -->
-<section class="relative pt-36 sm:pt-44 pb-24 overflow-hidden bg-slate-950">
-    <div class="glow-bg w-[500px] h-[500px] bg-blue-600 top-[-100px] right-[-100px]"></div>
-    <div class="glow-bg w-[400px] h-[400px] bg-sky-500 bottom-[0px] left-[-100px]"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <!-- HERO TEXT CONTENT -->
-            <div class="lg:col-span-6 text-right">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-400 text-xs font-black mb-6 shadow-sm backdrop-blur">
-                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
-                    منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي
-                </div>
-
-                <h1 class="text-3xl sm:text-5xl lg:text-5xl font-black text-white tracking-tight leading-tight min-h-[110px]">
-                    <span id="typingText"></span><span id="typingCursor" class="text-blue-500">|</span>
-                </h1>
-
-                <p class="mt-6 text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
-                    نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
-                </p>
-
-                <div class="mt-8 flex flex-wrap items-center gap-4">
-                    <a href="https://wa.me/201278220294" target="_blank"
-                       class="px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-extrabold shadow-xl shadow-blue-600/30 transition hover:-translate-y-0.5 text-sm flex items-center gap-2">
-                        <span>احجز استشارة تقنية مجانية</span>
-                    </a>
-                    <a href="#services" class="px-7 py-4 rounded-full bg-slate-900 hover:bg-slate-800 text-slate-200 font-bold border border-slate-800 transition text-sm">
-                        استكشف خدماتنا ↓
-                    </a>
-                </div>
-            </div>
-
-            <!-- DYNAMIC REALISTIC COMPACT WHATSAPP CHAT MOCKUP -->
-            <div id="demo" class="lg:col-span-6 flex justify-center">
-                <div class="phone-mockup w-full max-w-[310px] h-[480px] flex flex-col relative overflow-hidden">
-                    
-                    <!-- WHATSAPP BRANDED HEADER -->
-                    <div class="bg-[#075e54] px-4 pt-3 pb-2.5 flex items-center justify-between text-white shadow-md">
-                        <div class="flex items-center gap-2.5">
-                            <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white font-black text-[11px] border border-white/30">
-                                A
-                            </div>
-                            <div>
-                                <h4 class="text-xs font-bold leading-none">Avenchie WhatsApp AI</h4>
-                                <span id="statusText" class="text-[9px] text-emerald-200 flex items-center gap-1 mt-0.5 font-medium">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> متصل الآن
-                                </span>
-                            </div>
-                        </div>
-                        <svg class="w-4 h-4 fill-current text-white/80" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    </div>
-
-                    <!-- CHAT MESSAGES AREA -->
-                    <div id="liveChatBox" class="flex-1 p-3 overflow-y-auto flex flex-col gap-2.5 bg-[#0b141a]"></div>
-
-                    <!-- CTA BUTTONS INSIDE CHAT MOCKUP -->
-                    <div class="p-2.5 bg-[#111b21] border-t border-slate-800 flex flex-col gap-2">
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="#services" class="text-center py-2 px-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-[11px] font-bold rounded-xl border border-slate-700 transition">
-                                تعرف على المزيد
-                            </a>
-                            <a href="https://wa.me/201278220294" target="_blank" class="text-center py-2 px-2 bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold rounded-xl shadow-md transition flex items-center justify-center gap-1">
-                                <span>تواصل عبر واتساب</span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SERVICES SECTION -->
-<section id="services" class="py-28 px-4 bg-slate-900/50 relative border-t border-slate-800/60">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-blue-500 text-xs font-black uppercase tracking-widest">ENTERPRISE SOLUTIONS</span>
-            <h2 class="mt-3 text-3xl sm:text-4xl font-black text-white">
-                حلول رقمية متكاملة للارتقاء بأداء الشركات
-            </h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="enterprise-card flex flex-col justify-between">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="AI Analytics Dashboard">
-                </div>
-                <div class="p-7 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-400 border border-blue-500/20 flex items-center justify-center font-black text-xl mb-5">🤖</div>
-                        <h3 class="text-xl font-black text-white mb-3">شات بوت ذكي (AI Chatbots)</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="enterprise-card flex flex-col justify-between">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?auto=format&fit=crop&w=800&q=80" alt="WhatsApp Automation System">
-                </div>
-                <div class="p-7 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-600/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center font-black text-xl mb-5">💬</div>
-                        <h3 class="text-xl font-black text-white mb-3">ربط WhatsApp API</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="enterprise-card flex flex-col justify-between">
-                <div class="card-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="CRM Business Integration">
-                </div>
-                <div class="p-7 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-2xl bg-indigo-600/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center font-black text-xl mb-5">⚡</div>
-                        <h3 class="text-xl font-black text-white mb-3">أتمتة إدارية و CRM</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ SECTION -->
-<section id="faq" class="py-24 px-4 bg-slate-950 border-t border-slate-800/80">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-blue-500 text-xs font-black uppercase tracking-widest">SUPPORT & INFO</span>
-            <h2 class="mt-3 text-3xl font-black text-white">الأسئلة الشائعة</h2>
-            <p class="text-slate-400 text-sm mt-2">إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها</p>
-        </div>
-
-        <div class="space-y-4">
-            <!-- FAQ ITEM 1 -->
-            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden">
-                <button onclick="toggleFaq(1)" class="w-full p-5 text-right font-bold text-white flex items-center justify-between hover:bg-slate-800/50 transition">
-                    <span>ما الفرق بين الشات بوت التقليدي والذكاء الاصطناعي من Avenchie؟</span>
-                    <span id="faqIcon1" class="text-blue-500 text-lg">+</span>
-                </button>
-                <div id="faqAns1" class="hidden p-5 pt-0 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50">
-                    الشات بوت التقليدي يعتمد على خيارات محددة مسبقاً، بينما تعتمد أنظمتنا على نماذج الذكاء الاصطناعي التي تفهم اللغة الطبيعية والعميل وتستوعب الأسئلة المعقدة وترد بدقة وكأنها موظف بشري خبير.
-                </div>
-            </div>
-
-            <!-- FAQ ITEM 2 -->
-            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden">
-                <button onclick="toggleFaq(2)" class="w-full p-5 text-right font-bold text-white flex items-center justify-between hover:bg-slate-800/50 transition">
-                    <span>هل يمكن ربط النظام مع برنامج إدارة العملاء (CRM) الذي نستخدمه؟</span>
-                    <span id="faqIcon2" class="text-blue-500 text-lg">+</span>
-                </button>
-                <div id="faqAns2" class="hidden p-5 pt-0 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50">
-                    نعم، نربط كافة المنصات مع أشهر أنظمة الـ CRM مثل HubSpot, Zoho, Salesforce أو حتى الأنظمة الخاصة بشركتك عبر الـ API بكل سهولة.
-                </div>
-            </div>
-
-            <!-- FAQ ITEM 3 -->
-            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden">
-                <button onclick="toggleFaq(3)" class="w-full p-5 text-right font-bold text-white flex items-center justify-between hover:bg-slate-800/50 transition">
-                    <span>كم يستغرق وقت تجهيز النظام وإطلاقه لشركتنا؟</span>
-                    <span id="faqIcon3" class="text-blue-500 text-lg">+</span>
-                </button>
-                <div id="faqAns3" class="hidden p-5 pt-0 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50">
-                    يستغرق العمل عادةً ما بين 3 إلى 7 أيام عمل فقط، تشمل مرحلة تدريب الذكاء الاصطناعي على بيانات شركتك، واختبار الربط لضمان أعلى جودة قبل التشغيل الفعلي.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-slate-900 text-white pt-16 pb-8 px-4 border-t border-slate-800/80">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
-            <div class="md:col-span-2">
-                <div class="inline-block bg-slate-100 p-2.5 rounded-2xl mb-6 border border-slate-200">
-                    <img src="logo.PNG?v=5" alt="Avenchie" class="h-10 w-auto">
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
-                    Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.
-                </p>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-sm mb-4 text-slate-200">الوصول السريع</h4>
-                <ul class="space-y-2.5 text-sm text-slate-400">
-                    <li><a href="#demo" class="hover:text-blue-400 transition">التجربة التفاعلية</a></li>
-                    <li><a href="#services" class="hover:text-blue-400 transition">الخدمات</a></li>
-                    <li><a href="#faq" class="hover:text-blue-400 transition">الأسئلة الشائعة</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-sm mb-4 text-slate-200">التواصل</h4>
-                <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-400 hover:underline text-sm font-bold flex items-center gap-2">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>WhatsApp Direct</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <span>© 2026 Avenchie. جميع الحقوق محفوظة.</span>
-            <span>تصميم مخصص للشركات العالمية.</span>
-        </div>
-    </div>
-</footer>
-
-<!-- FULLY INTERACTIVE IN-SITE CHAT WIDGET -->
-<div class="fixed bottom-6 left-6 z-50">
-    <!-- CHAT POPUP WINDOW -->
-    <div id="siteChatWindow" class="hidden-widget mb-4 w-[320px] sm:w-[360px] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
-        <!-- HEADER WITH VECTOR FEMALE AVATAR -->
-        <div class="bg-blue-600 p-4 text-white flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="relative">
-                    <!-- VECTOR FEMALE AVATAR ICON -->
-                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 border-2 border-white/80 shadow-inner">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2a5 5 0 0 0-5 5v1a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v.5a3.5 3.5 0 0 1-6 0V7a3 3 0 0 1 3-3zm0 9c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5z"/>
-                        </svg>
-                    </div>
-                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-slate-900 rounded-full"></span>
-                </div>
+            <!-- Card 1 -->
+            <div class="bento-card p-8 flex flex-col justify-between">
                 <div>
-                    <h4 class="font-bold text-sm leading-tight">ميرنا | خدمة العملاء</h4>
-                    <span class="text-[10px] text-blue-100">فريق Avenchie متواجد حالياً</span>
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#0071e3] flex items-center justify-center mb-6 font-bold text-sm">
+                        01
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight text-slate-900 mb-3">أتمتة الواتساب الذكية</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        ربط حسابك بـ WhatsApp API للرد الآلي الفوري على الاستفسارات وتأكيد الطلبات وزيادة المبيعات.
+                    </p>
+                </div>
+                
+                <div class="flex items-center gap-3 pt-6 border-t border-slate-100">
+                    <button onclick="openModal('service1')" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-semibold rounded-full transition">
+                        تعرف على المزيد ←
+                    </button>
+                    <a href="https://wa.me/201278220294" target="_blank" class="px-5 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full shadow-sm transition">
+                        ناقش مشروعك
+                    </a>
                 </div>
             </div>
-            <button onclick="toggleSiteChat()" class="text-white/80 hover:text-white text-lg font-bold">✕</button>
-        </div>
 
-        <!-- LIVE MESSAGES CONTAINER -->
-        <div id="siteChatMessages" class="p-4 bg-slate-950 space-y-3 text-xs leading-relaxed h-[260px] overflow-y-auto flex flex-col">
-            <div class="bg-slate-900 text-slate-200 p-3.5 rounded-2xl rounded-tr-none border border-slate-800 shadow-sm self-start max-w-[90%]">
-                مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يمكنك مراسلتي هنا مباشرةً من داخل الموقع.
+            <!-- Card 2 -->
+            <div class="bento-card p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 font-bold text-sm">
+                        02
+                    </div>
+                    <h3 class="text-2xl font-bold tracking-tight text-slate-900 mb-3">ربط أنظمة الـ CRM</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
+                        تكامل سلس بين منصات الدردشة وقواعد بيانات عملائك لمتابعة الصفقات وتنفيذ عمليات المبيعات تلقائياً.
+                    </p>
+                </div>
+                
+                <div class="flex items-center gap-3 pt-6 border-t border-slate-100">
+                    <button onclick="openModal('service2')" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 text-xs font-semibold rounded-full transition">
+                        تعرف على المزيد ←
+                    </button>
+                    <a href="https://wa.me/201278220294" target="_blank" class="px-5 py-2.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full shadow-sm transition">
+                        احصل على استشارة
+                    </a>
+                </div>
             </div>
+
         </div>
+    </section>
 
-        <!-- INPUT FIELD FOR IN-SITE CHAT & WHATSAPP OPTION -->
-        <div class="p-3 bg-slate-900 border-t border-slate-800 flex flex-col gap-2">
-            <form onsubmit="sendSiteMessage(event)" class="flex items-center gap-2">
-                <input id="siteChatInput" type="text" placeholder="اكتب استفسارك هنا..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-blue-500 transition">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white p-2.5 rounded-xl transition">
-                    <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </button>
-            </form>
-
-            <!-- SECONDARY OPTIONAL WHATSAPP LINK -->
-            <div class="pt-1 border-t border-slate-800/60 flex items-center justify-between text-[11px]">
-                <span class="text-slate-400">أو تكيّف مع خيارك المفضل:</span>
-                <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-400 hover:underline font-bold flex items-center gap-1">
-                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>المحادثة عبر الواتساب</span>
-                </a>
-            </div>
+    <!-- Native Apple Modal -->
+    <div id="serviceModal" class="fixed inset-0 bg-slate-900/40 modal-blur z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white/95 w-full max-w-lg rounded-3xl p-8 shadow-2xl border border-slate-100 relative transform transition-all">
+            <button onclick="closeModal()" class="absolute top-6 left-6 w-8 h-8 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 text-xs font-bold transition">
+                ✕
+            </button>
+            <div id="modalContent"></div>
         </div>
     </div>
 
-    <!-- FLOATING TOGGLE BUTTON -->
-    <button onclick="toggleSiteChat()" class="relative group bg-blue-600 hover:bg-blue-500 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-105">
-        <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-slate-900 rounded-full"></span>
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-    </button>
-</div>
-
-<!-- JAVASCRIPT LOGIC -->
-<script>
-/* MOBILE DRAWER TOGGLE */
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const backdrop = document.getElementById('mobileBackdrop');
-    
-    if (menu.classList.contains('closed')) {
-        menu.classList.remove('closed');
-        menu.classList.add('open');
-        backdrop.classList.remove('hidden');
-    } else {
-        menu.classList.remove('open');
-        menu.classList.add('closed');
-        backdrop.classList.add('hidden');
-    }
-}
-
-/* FAQ TOGGLE */
-function toggleFaq(index) {
-    const ans = document.getElementById(`faqAns${index}`);
-    const icon = document.getElementById(`faqIcon${index}`);
-    if (ans.classList.contains('hidden')) {
-        ans.classList.remove('hidden');
-        icon.innerText = '−';
-    } else {
-        ans.classList.add('hidden');
-        icon.innerText = '+';
-    }
-}
-
-/* SITE LIVE CHAT TOGGLE */
-function toggleSiteChat() {
-    const chatWin = document.getElementById('siteChatWindow');
-    if (chatWin.classList.contains('hidden-widget')) {
-        chatWin.classList.remove('hidden-widget');
-        chatWin.classList.add('visible-widget');
-    } else {
-        chatWin.classList.remove('visible-widget');
-        chatWin.classList.add('hidden-widget');
-    }
-}
-
-// IN-SITE CHAT MESSAGING LOGIC
-function sendSiteMessage(e) {
-    e.preventDefault();
-    const input = document.getElementById('siteChatInput');
-    const msgBox = document.getElementById('siteChatMessages');
-    const text = input.value.trim();
-    if (!text) return;
-
-    // Append User Message
-    const userMsg = document.createElement('div');
-    userMsg.className = 'bg-blue-600 text-white p-3 rounded-2xl rounded-tl-none self-end max-w-[85%] shadow-sm';
-    userMsg.innerText = text;
-    msgBox.appendChild(userMsg);
-    input.value = '';
-    msgBox.scrollTop = msgBox.scrollHeight;
-
-    // AI/Mirna Automated Response Simulation
-    setTimeout(() => {
-        const aiMsg = document.createElement('div');
-        aiMsg.className = 'bg-slate-900 text-slate-200 p-3 rounded-2xl rounded-tr-none border border-slate-800 self-start max-w-[85%] shadow-sm';
-        aiMsg.innerText = 'شكراً لتواصلك معنا! قام فريقنا بتلقي استفسارك وسنقوم بمساعدتك فوراً في أتمتة حلول الذكاء الاصطناعي لشركتك.';
-        msgBox.appendChild(aiMsg);
-        msgBox.scrollTop = msgBox.scrollHeight;
-    }, 1000);
-}
-
-// AUTO SHOW LIVE CHAT WIDGET AFTER 2 SECONDS
-setTimeout(() => {
-    const chatWin = document.getElementById('siteChatWindow');
-    if (chatWin) {
-        chatWin.classList.remove('hidden-widget');
-        chatWin.classList.add('visible-widget');
-    }
-}, 2000);
-
-/* HERO TYPING ANIMATION */
-const typingText = document.getElementById('typingText');
-async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-async function typeLoop() {
-    while (true) {
-        typingText.innerHTML = '';
-        const phrase1 = "حلول ذكاء اصطناعي ";
-        const phrase2 = "ترتقي بمستوى عملك";
+    <!-- Floating Mini WhatsApp Widget (Bottom Right) -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
         
-        for (let char of phrase1) {
-            typingText.innerHTML += char;
-            await sleep(50);
-        }
-        
-        const highlight = document.createElement('span');
-        highlight.className = 'text-blue-500';
-        typingText.appendChild(highlight);
-        
-        for (let char of phrase2) {
-            highlight.innerHTML += char;
-            await sleep(50);
-        }
-        
-        await sleep(3500);
-    }
-}
-typeLoop();
-
-/* DEMO WHATSAPP CHAT SIMULATION */
-const chatBox = document.getElementById('liveChatBox');
-const statusText = document.getElementById('statusText');
-
-const whatsappScript = [
-    { type: 'ai', text: 'أهلاً بك في Avenchie عبر الواتساب! 👋 كيف أستطيع خدمتك اليوم؟' },
-    { type: 'user', text: 'أريد أتمتة الردود على عملائي عبر الواتساب وتأكيد الطلبات تلقائياً.' },
-    { type: 'ai', text: 'ممتاز! نربط حسابك بـ WhatsApp API ونفعل لك شات بوت ذكي يرد على عملائك 24/7 ويُسجّل المبيعات في الـ CRM.' },
-    { type: 'user', text: 'جميل جداً، كيف أبدأ معكم؟' },
-    { type: 'ai', text: 'يمكنك ضغط "تواصل عبر واتساب" بالأسفل مباشرة للتحدث مع فريقنا المباشر!' }
-];
-
-async function startContinuousChat() {
-    while (true) {
-        chatBox.innerHTML = '';
-        
-        for (let msg of whatsappScript) {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = `chat-bubble max-w-[85%] text-[11px] p-2.5 rounded-2xl flex items-center gap-1.5 ${
-                msg.type === 'ai' 
-                ? 'self-start bg-[#202c33] text-slate-300 rounded-tr-none border border-slate-700/50' 
-                : 'self-end bg-[#005c4b] text-emerald-100 rounded-tl-none border border-emerald-700/40'
-            }`;
-            
-            typingDiv.innerHTML = `
-                <span class="text-[9px] opacity-75">${msg.type === 'ai' ? 'يكتب الآن' : 'جاري الإرسال'}</span>
-                <div class="flex items-center gap-1 mr-1">
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full typing-dot"></span>
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full typing-dot"></span>
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full typing-dot"></span>
+        <div id="chatWidget" class="hidden w-72 bg-white/90 modal-blur p-5 rounded-3xl shadow-2xl border border-slate-200/80 mb-1 transition-all">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-bold text-slate-900">فريق Avenchie</span>
                 </div>
-            `;
-            
-            if (msg.type === 'ai') {
-                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> يكتب الآن...`;
+                <button onclick="toggleWidget()" class="text-slate-400 hover:text-slate-600 text-xs font-bold">✕</button>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                مرحباً بك! 👋 كيف يمكننا مساعدتك في تطوير وأتمتة أعمالك اليوم؟
+            </p>
+            <a href="https://wa.me/201278220294" target="_blank" class="w-full py-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold rounded-2xl flex items-center justify-center gap-2 shadow-sm transition">
+                <span>تحدث معنا عبر الواتساب</span>
+            </a>
+        </div>
+
+        <button onclick="toggleWidget()" class="w-14 h-14 bg-[#0071e3] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition duration-300">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-black/5 py-8 mt-12 bg-white/50">
+        <div class="max-w-6xl mx-auto px-6 text-center text-slate-400 text-xs">
+            © 2026 Avenchie Inc. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const serviceDetails = {
+            service1: {
+                title: "أتمتة الواتساب الذكية",
+                desc: "نظام متكامل يربط متجرك أو شركتك بـ WhatsApp Business API. يتميز بالرد الفوري على الاستفسارات، إرسال إشعارات الشحن والطلبات تلقائياً، والربط المباشر مع أنظمة CRM لضمان عدم ضياع أي عميل."
+            },
+            service2: {
+                title: "ربط أنظمة الـ CRM",
+                desc: "ربط قنوات التواصل وقواعد بيانات العملاء لتجميع البيانات والصفقات تلقائياً في مكان واحد، مما يُسهل عملية المتابعة وإغلاق الصفقات بكفاءة عالية بدون تدخل يدوي."
             }
+        };
 
-            chatBox.appendChild(typingDiv);
-            chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
-
-            await sleep(1400);
-            chatBox.removeChild(typingDiv);
-
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `chat-bubble max-w-[85%] text-[11px] p-2.5 rounded-2xl leading-relaxed ${
-                msg.type === 'ai' 
-                ? 'self-start bg-[#202c33] text-slate-100 rounded-tr-none border border-slate-700/50' 
-                : 'self-end bg-[#005c4b] text-white rounded-tl-none shadow-sm'
-            }`;
-            msgDiv.innerText = msg.text;
-            
-            chatBox.appendChild(msgDiv);
-            
-            if (msg.type === 'ai') {
-                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> متصل الآن`;
+        function openModal(key) {
+            const data = serviceDetails[key];
+            if (data) {
+                document.getElementById('modalContent').innerHTML = `
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">${data.title}</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-6">${data.desc}</p>
+                    <a href="https://wa.me/201278220294" target="_blank" class="inline-block px-6 py-3 bg-[#0071e3] hover:bg-[#0077ed] text-white text-xs font-semibold rounded-full shadow-sm transition">
+                        احصل على استشارة الآن
+                    </a>
+                `;
+                document.getElementById('serviceModal').classList.remove('hidden');
             }
-
-            chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
-            await sleep(1800);
         }
 
-        await sleep(3500);
-    }
-}
+        function closeModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        }
 
-startContinuousChat();
-</script>
-
+        function toggleWidget() {
+            const widget = document.getElementById('chatWidget');
+            widget.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
