@@ -124,13 +124,16 @@
                 <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-8 sm:h-9 w-auto object-contain">
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-[#1E2A22]/85">
-                <a href="#demo" class="hover:text-[#0071e3] transition">التجربة التفاعلية</a>
-                <a href="#services" class="hover:text-[#0071e3] transition">الخدمات</a>
-                <a href="#faq" class="hover:text-[#0071e3] transition">الأسئلة الشائعة</a>
+                <a href="#demo" class="hover:text-[#0071e3] transition" data-i18n="nav.demo">التجربة التفاعلية</a>
+                <a href="#services" class="hover:text-[#0071e3] transition" data-i18n="nav.services">الخدمات</a>
+                <a href="#faq" class="hover:text-[#0071e3] transition" data-i18n="nav.faq">الأسئلة الشائعة</a>
             </nav>
-            <div class="flex items-center gap-2.5">
+            <div class="flex items-center gap-2">
+                <button type="button" onclick="toggleLanguage()" class="btn-hard w-10 h-10 sm:w-auto sm:px-4 sm:py-2.5 rounded-full text-xs font-black flex items-center justify-center cursor-pointer" aria-label="Switch language">
+                    <span id="langToggleLabel">EN</span>
+                </button>
                 <button type="button" onclick="openBookingModal()" class="hidden sm:inline-flex btn-flat-blue px-5 py-2.5 rounded-full text-xs font-black cursor-pointer">
-                    احجز استشارة مجانية
+                    <span data-i18n="nav.book">احجز استشارة مجانية</span>
                 </button>
                 <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-white border-2 border-[#1E2A22] text-[#1E2A22]" aria-label="Toggle Menu">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -151,16 +154,19 @@
             <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-[#1E2A22]/60 hover:text-[#1E2A22] transition">✕</button>
         </div>
         <nav class="mt-8 flex flex-col gap-6 text-base font-bold text-[#1E2A22]">
-            <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">التجربة التفاعلية</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">الخدمات</a>
-            <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">الأسئلة الشائعة</a>
+            <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition" data-i18n="nav.demo">التجربة التفاعلية</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition" data-i18n="nav.services">الخدمات</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition" data-i18n="nav.faq">الأسئلة الشائعة</a>
         </nav>
     </div>
     <div class="pt-6 border-t-2 border-[#1E2A22]/15 space-y-3">
-        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full btn-flat-blue font-bold py-3.5 rounded-xl text-xs">احجز استشارة مجانية</button>
+        <button type="button" onclick="toggleLanguage()" class="w-full btn-hard font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+            <span>🌐</span><span id="langToggleLabelMobile">English</span>
+        </button>
+        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full btn-flat-blue font-bold py-3.5 rounded-xl text-xs"><span data-i18n="nav.book">احجز استشارة مجانية</span></button>
         <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 btn-hard font-bold py-3.5 rounded-xl text-xs">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-            <span>التواصل مباشرة عبر الواتس</span>
+            <span data-i18n="nav.whatsapp">التواصل مباشرة عبر الواتس</span>
         </a>
     </div>
 </aside>
@@ -169,7 +175,7 @@
 <section class="relative px-6 pt-[140px] sm:pt-[180px] pb-16 text-center max-w-5xl mx-auto">
     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-[#1E2A22] text-[#1E2A22] text-xs font-bold mb-8">
         <span class="w-2 h-2 rounded-full bg-[#0071e3] animate-ping"></span>
-        منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي
+        <span data-i18n="hero.badge">منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي</span>
     </div>
 
     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.25] text-[#1E2A22] min-h-[130px] sm:min-h-[170px] lg:min-h-[190px]">
@@ -178,53 +184,75 @@
     <div class="w-24 h-[3px] bg-[#1E2A22] mx-auto mt-8 rounded-full"></div>
 
     <!-- HAND-DRAWN ILLUSTRATION -->
-    <div class="relative mx-auto mt-6" style="width:340px; max-width:90%; height:260px;">
-        <svg viewBox="0 0 340 260" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
+    <div class="relative mx-auto mt-6" style="width:360px; max-width:92%; height:270px;">
+        <svg viewBox="0 0 360 270" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
             <defs>
                 <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="n"/>
-                    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+                    <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="7" result="n"/>
+                    <feDisplacementMap in="SourceGraphic" in2="n" scale="5.5"/>
                 </filter>
             </defs>
             <g filter="url(#sketchy)">
-                <path class="doodle-line" d="M38 40 h38 a8 8 0 0 1 8 8 v18 a8 8 0 0 1-8 8 h-20 l-10 10 v-10 h-8 a8 8 0 0 1-8-8 v-18 a8 8 0 0 1 8-8Z"/>
-                <path class="doodle-line" d="M254 26 h40 a8 8 0 0 1 8 8 v16 a8 8 0 0 1-8 8 h-8 l-10 10 v-10 h-22 a8 8 0 0 1-8-8 v-16 a8 8 0 0 1 8-8Z" opacity="0.55"/>
-                <circle class="doodle-line" cx="284" cy="138" r="22"/>
-                <path class="doodle-line" d="M284 126 v14 l10 6"/>
-                <path class="doodle-line" d="M50 118 C 78 138, 38 165, 66 183 C 90 198, 58 214, 84 224" opacity="0.6"/>
-                <rect class="doodle-line" x="26" y="182" width="46" height="34" rx="3" transform="rotate(-6 49 199)"/>
-                <rect class="doodle-line" x="30" y="175" width="46" height="34" rx="3"/>
-                <g transform="translate(170,140)">
-                    <path class="doodle-line" d="M-18 -68 C -26 -74, -14 -86, -2 -80 C 10 -88, 24 -76, 14 -66 C 24 -60, 14 -48, 0 -54 C -10 -46, -24 -56, -18 -68Z"/>
-                    <circle class="doodle-line" cx="0" cy="-40" r="20"/>
-                    <path class="doodle-line" d="M-16 -8 C -16 -26, 16 -26, 16 -8 v46 h-32Z"/>
-                    <path class="doodle-line" d="M-16 2 C -40 6, -46 26, -60 30"/>
-                    <path class="doodle-line" d="M16 2 C 40 6, 46 26, 60 30"/>
+                <!-- chat bubbles -->
+                <path class="doodle-line" d="M40 40 h38 a8 8 0 0 1 8 8 v18 a8 8 0 0 1-8 8 h-20 l-10 10 v-10 h-8 a8 8 0 0 1-8-8 v-18 a8 8 0 0 1 8-8Z"/>
+                <path class="doodle-line" d="M268 24 h40 a8 8 0 0 1 8 8 v16 a8 8 0 0 1-8 8 h-8 l-10 10 v-10 h-22 a8 8 0 0 1-8-8 v-16 a8 8 0 0 1 8-8Z" opacity="0.5"/>
+                <!-- small linked-nodes squiggle (disconnected systems) -->
+                <circle class="doodle-line" cx="300" cy="90" r="4" fill="#1E2A22"/>
+                <circle class="doodle-line" cx="325" cy="70" r="4" fill="#1E2A22"/>
+                <circle class="doodle-line" cx="322" cy="108" r="4" fill="#1E2A22"/>
+                <path class="doodle-line" d="M300 90 L325 70 M300 90 L322 108" stroke-dasharray="1 6" opacity="0.7"/>
+                <!-- clock -->
+                <circle class="doodle-line" cx="290" cy="168" r="23" fill="#0071e3" fill-opacity="0.08"/>
+                <path class="doodle-line" d="M290 155 v15 l11 7"/>
+                <!-- tangled connector -->
+                <path class="doodle-line" d="M48 118 C 76 138, 36 165, 64 183 C 88 198, 56 214, 82 224" opacity="0.6"/>
+                <!-- paper stack -->
+                <rect class="doodle-line" x="24" y="182" width="46" height="34" rx="3" transform="rotate(-6 47 199)"/>
+                <rect class="doodle-line" x="28" y="175" width="46" height="34" rx="3"/>
+                <!-- character -->
+                <g transform="translate(178,148)">
+                    <!-- scribble hair mass -->
+                    <path class="doodle-line" d="M-22 -70 C -32 -78, -26 -92, -10 -88 C -2 -98, 14 -96, 14 -84 C 26 -86, 32 -74, 20 -68 C 30 -60, 20 -48, 6 -54 C 4 -44, -12 -44, -14 -56 C -28 -54, -32 -66, -22 -70 C -30 -72, -18 -80, -22 -70 Z"/>
+                    <circle class="doodle-line" cx="-4" cy="-62" r="3" fill="#1E2A22" opacity="0.5"/>
+                    <!-- head -->
+                    <circle class="doodle-line" cx="0" cy="-38" r="21"/>
+                    <!-- simple face -->
+                    <circle cx="-7" cy="-40" r="1.6" fill="#1E2A22"/>
+                    <circle cx="7" cy="-40" r="1.6" fill="#1E2A22"/>
+                    <path class="doodle-line" d="M-6 -30 Q0 -26 6 -30" stroke-width="1.8"/>
+                    <!-- body with collar -->
+                    <path class="doodle-line" d="M-17 -6 C -17 -24, -8 -28, 0 -28 C 8 -28, 17 -24, 17 -6 v44 h-34Z"/>
+                    <path class="doodle-line" d="M-8 -25 L0 -14 L8 -25" opacity="0.55"/>
+                    <!-- arms + hands -->
+                    <path class="doodle-line" d="M-17 0 C -42 4, -50 24, -64 28"/>
+                    <circle class="doodle-line" cx="-67" cy="29" r="4"/>
+                    <path class="doodle-line" d="M17 0 C 42 4, 50 24, 64 28"/>
+                    <circle class="doodle-line" cx="67" cy="29" r="4"/>
                 </g>
             </g>
         </svg>
     </div>
     <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs font-bold text-[#1E2A22]/55 mb-6">
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span>رسائل متفرقة</span>
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span>وقت ضائع</span>
-        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span>متابعة يدوية</span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span><span data-i18n="hero.tag1">رسائل متفرقة</span></span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span><span data-i18n="hero.tag2">وقت ضائع</span></span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#0071e3]"></span><span data-i18n="hero.tag3">متابعة يدوية</span></span>
     </div>
 
-    <p class="max-w-xl mx-auto text-base sm:text-lg text-[#1E2A22]/70 leading-relaxed">
+    <p class="max-w-xl mx-auto text-base sm:text-lg text-[#1E2A22]/70 leading-relaxed" data-i18n="hero.subtext">
         نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
     </p>
 
     <div class="inline-flex items-center gap-1.5 bg-white border-2 border-[#1E2A22] rounded-full p-1.5 mt-9 shadow-[4px_4px_0_0_#1E2A22]">
-        <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-[#FAF6EE] transition">واتساب</a>
-        <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer">احجز استشارة مجانية</button>
+        <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-[#FAF6EE] transition" data-i18n="cta.whatsapp">واتساب</a>
+        <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer" data-i18n="nav.book">احجز استشارة مجانية</button>
     </div>
 </section>
 
 <!-- LIVE DEMO SECTION -->
 <section id="demo" class="px-6 py-16">
     <div class="max-w-md mx-auto text-center mb-8">
-        <h2 class="text-2xl sm:text-3xl font-black text-[#1E2A22]">جرّب المساعد بنفسك</h2>
-        <p class="mt-2 text-[#1E2A22]/60 text-sm">هذا مثال حي لمحادثة حقيقية يديرها الذكاء الاصطناعي</p>
+        <h2 class="text-2xl sm:text-3xl font-black text-[#1E2A22]" data-i18n="demo.title">جرّب المساعد بنفسك</h2>
+        <p class="mt-2 text-[#1E2A22]/60 text-sm" data-i18n="demo.subtitle">هذا مثال حي لمحادثة حقيقية يديرها الذكاء الاصطناعي</p>
     </div>
     <div class="flex justify-center">
         <div class="phone-mockup w-full max-w-[340px] h-[540px] flex flex-col relative overflow-hidden shadow-[8px_8px_0_0_#1E2A22]">
@@ -232,7 +260,7 @@
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center text-white font-black text-xs">A</div>
                     <div>
-                        <h4 class="text-xs font-bold text-[#1E2A22] leading-none">مساعد Avenchie</h4>
+                        <h4 class="text-xs font-bold text-[#1E2A22] leading-none" data-i18n="demo.assistant">مساعد Avenchie</h4>
                         <span id="statusText" class="text-[10px] text-emerald-600 flex items-center gap-1 mt-1 font-medium">
                             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> متصل الآن
                         </span>
@@ -243,7 +271,7 @@
             <div id="liveChatBox" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3.5 bg-white"></div>
             <div class="p-3 bg-[#FAF6EE] border-t-2 border-[#1E2A22]/10 flex items-center gap-2">
                 <div class="flex-1 bg-white rounded-full px-4 py-2 text-[11px] text-[#1E2A22]/40 border-2 border-[#1E2A22]/15 flex items-center justify-between">
-                    <span>معالجة فورية للمحادثة...</span>
+                    <span data-i18n="demo.processing">معالجة فورية للمحادثة...</span>
                     <span class="w-2 h-2 rounded-full bg-[#0071e3] animate-ping"></span>
                 </div>
             </div>
@@ -255,29 +283,29 @@
 <section class="py-20 sm:py-24 px-4">
     <div class="max-w-6xl mx-auto">
         <div class="max-w-2xl mb-16 text-right">
-            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight">كيف نحوّل عملك إلى نظام يعمل من تلقاء نفسه</h2>
-            <p class="mt-4 text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed">أربع خطوات واضحة، من أول مكالمة معك إلى نظام يعمل يومياً دون تدخل يدوي.</p>
+            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight" data-i18n="process.title">كيف نحوّل عملك إلى نظام يعمل من تلقاء نفسه</h2>
+            <p class="mt-4 text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed" data-i18n="process.subtitle">أربع خطوات واضحة، من أول مكالمة معك إلى نظام يعمل يومياً دون تدخل يدوي.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             <div class="relative text-right">
                 <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">01</div>
-                <h3 class="font-black text-[#1E2A22] text-base mb-2">الاكتشاف</h3>
-                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نفهم طريقة عملك الحالية، ونحدد المهام المتكررة ونقاط التعطّل بدقة.</p>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2" data-i18n="process.step1.title">الاكتشاف</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed" data-i18n="process.step1.desc">نفهم طريقة عملك الحالية، ونحدد المهام المتكررة ونقاط التعطّل بدقة.</p>
             </div>
             <div class="relative text-right">
                 <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">02</div>
-                <h3 class="font-black text-[#1E2A22] text-base mb-2">التصميم</h3>
-                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نصمم الحل التقني الأنسب لطبيعة شركتك، لا حلاً جاهزاً موحّداً لكل الشركات.</p>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2" data-i18n="process.step2.title">التصميم</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed" data-i18n="process.step2.desc">نصمم الحل التقني الأنسب لطبيعة شركتك، لا حلاً جاهزاً موحّداً لكل الشركات.</p>
             </div>
             <div class="relative text-right">
                 <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">03</div>
-                <h3 class="font-black text-[#1E2A22] text-base mb-2">الربط</h3>
-                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نربط الأنظمة والقنوات التي تستخدمها فعلاً، من واتساب إلى برنامج إدارة العملاء.</p>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2" data-i18n="process.step3.title">الربط</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed" data-i18n="process.step3.desc">نربط الأنظمة والقنوات التي تستخدمها فعلاً، من واتساب إلى برنامج إدارة العملاء.</p>
             </div>
             <div class="relative text-right">
                 <div class="w-14 h-14 rounded-2xl bg-[#0071e3] border-2 border-[#1E2A22] text-white font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">04</div>
-                <h3 class="font-black text-[#1E2A22] text-base mb-2">الإطلاق</h3>
-                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نطلق النظام، نختبره ميدانياً، ونتابع أداءه لضمان أعلى جودة تشغيل.</p>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2" data-i18n="process.step4.title">الإطلاق</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed" data-i18n="process.step4.desc">نطلق النظام، نختبره ميدانياً، ونتابع أداءه لضمان أعلى جودة تشغيل.</p>
             </div>
         </div>
     </div>
@@ -287,7 +315,7 @@
 <section id="services" class="py-20 sm:py-24 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="max-w-2xl mb-14 text-right">
-            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight">حلول رقمية متكاملة للارتقاء بأداء الشركات</h2>
+            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight" data-i18n="services.title">حلول رقمية متكاملة للارتقاء بأداء الشركات</h2>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -297,10 +325,10 @@
                     <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-[#0071e3] flex items-center justify-center mb-5">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                     </div>
-                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">شات بوت ذكي (AI Chatbots)</h3>
-                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3" data-i18n="services.chatbot.title">شات بوت ذكي (AI Chatbots)</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6" data-i18n="services.chatbot.desc">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
                 </div>
-                <button type="button" onclick="openServiceModal('chatbot')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
+                <button type="button" onclick="openServiceModal('chatbot')" class="w-full btn-hard py-3 rounded-full text-xs font-bold"><span data-i18n="services.cta">عرض التفاصيل الكاملة</span></button>
             </div>
 
             <!-- CARD 2 -->
@@ -309,10 +337,10 @@
                     <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-emerald-600 flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     </div>
-                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">ربط واتساب للأعمال (WhatsApp Business API)</h3>
-                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3" data-i18n="services.whatsapp.title">ربط واتساب للأعمال (WhatsApp Business API)</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6" data-i18n="services.whatsapp.desc">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
                 </div>
-                <button type="button" onclick="openServiceModal('whatsapp')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
+                <button type="button" onclick="openServiceModal('whatsapp')" class="w-full btn-hard py-3 rounded-full text-xs font-bold"><span data-i18n="services.cta">عرض التفاصيل الكاملة</span></button>
             </div>
 
             <!-- CARD 3 -->
@@ -321,23 +349,23 @@
                     <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-indigo-600 flex items-center justify-center mb-5">
                         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.3"/><circle cx="19" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M7 7.2L11 16M17 7.2L13 16M7.3 6h9.4"/></svg>
                     </div>
-                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">أتمتة إدارية وربط CRM</h3>
-                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3" data-i18n="services.crm.title">أتمتة إدارية وربط CRM</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6" data-i18n="services.crm.desc">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
                 </div>
-                <button type="button" onclick="openServiceModal('crm')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
+                <button type="button" onclick="openServiceModal('crm')" class="w-full btn-hard py-3 rounded-full text-xs font-bold"><span data-i18n="services.cta">عرض التفاصيل الكاملة</span></button>
             </div>
         </div>
 
         <!-- SHARED VALUE PROPOSITION -->
         <div class="mt-16 bg-white hard-card p-8 sm:p-12 text-center max-w-4xl mx-auto">
-            <h3 class="text-2xl sm:text-3xl font-black text-[#1E2A22] mb-4">حلول مصممة وفق طريقة عمل شركتك</h3>
-            <p class="text-[#1E2A22]/70 text-sm sm:text-base leading-relaxed mb-4 max-w-2xl mx-auto">لا نبدأ بفرض نظام واحد على جميع الشركات.</p>
-            <p class="text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl mx-auto">نبدأ بفهم طريقة عملك، وتحديد المهام المتكررة ونقاط التعطّل، ثم نصمم الحل التقني المناسب ونربطه بالأنظمة التي تستخدمها بالفعل.</p>
-            <p class="text-[#0071e3] font-bold text-sm sm:text-base mb-8">اكتشف ما الذي يمكن أتمتته في شركتك.</p>
+            <h3 class="text-2xl sm:text-3xl font-black text-[#1E2A22] mb-4" data-i18n="valuebox.title">حلول مصممة وفق طريقة عمل شركتك</h3>
+            <p class="text-[#1E2A22]/70 text-sm sm:text-base leading-relaxed mb-4 max-w-2xl mx-auto" data-i18n="valuebox.p1">لا نبدأ بفرض نظام واحد على جميع الشركات.</p>
+            <p class="text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl mx-auto" data-i18n="valuebox.p2">نبدأ بفهم طريقة عملك، وتحديد المهام المتكررة ونقاط التعطّل، ثم نصمم الحل التقني المناسب ونربطه بالأنظمة التي تستخدمها بالفعل.</p>
+            <p class="text-[#0071e3] font-bold text-sm sm:text-base mb-8" data-i18n="valuebox.tagline">اكتشف ما الذي يمكن أتمتته في شركتك.</p>
 
             <div class="inline-flex items-center gap-1.5 bg-[#FAF6EE] border-2 border-[#1E2A22] rounded-full p-1.5">
-                <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-white transition">واتساب</a>
-                <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer">احجز استشارة مجانية</button>
+                <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-white transition" data-i18n="cta.whatsapp">واتساب</a>
+                <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer" data-i18n="nav.book">احجز استشارة مجانية</button>
             </div>
         </div>
     </div>
@@ -356,46 +384,46 @@
     <div class="bg-[#FAF6EE] w-full max-w-lg max-h-[90vh] rounded-3xl p-6 sm:p-8 border-2 border-[#1E2A22] relative flex flex-col text-right shadow-[8px_8px_0_0_#1E2A22]">
         <button type="button" onclick="closeBookingModal()" class="absolute top-5 left-5 w-9 h-9 bg-white border-2 border-[#1E2A22] rounded-full flex items-center justify-center text-[#1E2A22] font-bold text-sm z-20 cursor-pointer">✕</button>
         <div class="mb-5">
-            <h3 class="text-2xl font-black text-[#1E2A22]">احجز استشارة مجانية</h3>
-            <p class="text-xs text-[#1E2A22]/60 mt-1">يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.</p>
+            <h3 class="text-2xl font-black text-[#1E2A22]" data-i18n="booking.title">احجز استشارة مجانية</h3>
+            <p class="text-xs text-[#1E2A22]/60 mt-1" data-i18n="booking.subtitle">يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.</p>
         </div>
         <form id="bookingForm" onsubmit="submitBookingForm(event)" class="modal-scroll flex-1 pr-1 pl-1 space-y-4">
             <div class="grid grid-cols-2 gap-3">
                 <div>
-                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">تاريخ الاجتماع *</label>
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.date">تاريخ الاجتماع *</label>
                     <input type="date" id="bookDate" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs font-medium text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">الوقت المناسب *</label>
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.time">الوقت المناسب *</label>
                     <input type="time" id="bookTime" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs font-medium text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
             </div>
             <div>
-                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">الاسم الكامل *</label>
-                <input type="text" id="bookName" placeholder="أدخل اسمك الكريم" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.name">الاسم الكامل *</label>
+                <input type="text" id="bookName" placeholder="أدخل اسمك الكريم" data-i18n-placeholder="booking.name.ph" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
             </div>
             <div class="grid grid-cols-2 gap-3">
                 <div>
-                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">اسم الشركة *</label>
-                    <input type="text" id="bookCompany" placeholder="شركة..." required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.company">اسم الشركة *</label>
+                    <input type="text" id="bookCompany" placeholder="شركة..." data-i18n-placeholder="booking.company.ph" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">المنصب الوظيفي *</label>
-                    <input type="text" id="bookJob" placeholder="مثال: مدير عام / مسؤول تقنية" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.job">المنصب الوظيفي *</label>
+                    <input type="text" id="bookJob" placeholder="مثال: مدير عام / مسؤول تقنية" data-i18n-placeholder="booking.job.ph" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
             </div>
             <div>
-                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">رقم الجوال *</label>
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.phone">رقم الجوال *</label>
                 <input type="tel" id="bookPhone" placeholder="مثال: 00966500000000" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
             </div>
             <div>
-                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">البريد الإلكتروني *</label>
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5" data-i18n="booking.email">البريد الإلكتروني *</label>
                 <input type="email" id="bookEmail" placeholder="name@company.com" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
             </div>
             <div class="pt-3">
                 <button type="submit" class="w-full py-3.5 btn-flat-blue font-black rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>تأكيد وحجز الاستشارة عبر الواتس</span>
+                    <span data-i18n="booking.submit">تأكيد وحجز الاستشارة عبر الواتس</span>
                 </button>
             </div>
         </form>
@@ -406,34 +434,34 @@
 <section id="faq" class="py-20 px-4">
     <div class="max-w-4xl mx-auto">
         <div class="mb-14 text-right">
-            <h2 class="text-3xl font-black text-[#1E2A22]">الأسئلة الشائعة</h2>
-            <p class="text-[#1E2A22]/60 text-sm mt-2">إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها</p>
+            <h2 class="text-3xl font-black text-[#1E2A22]" data-i18n="faq.title">الأسئلة الشائعة</h2>
+            <p class="text-[#1E2A22]/60 text-sm mt-2" data-i18n="faq.subtitle">إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها</p>
         </div>
         <div class="space-y-4">
             <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
                 <button onclick="toggleFaq(1)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
-                    <span>ما الفرق بين الشات بوت التقليدي والذكاء الاصطناعي من Avenchie؟</span>
+                    <span data-i18n="faq.q1">ما الفرق بين الشات بوت التقليدي والذكاء الاصطناعي من Avenchie؟</span>
                     <span id="faqIcon1" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns1" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
+                <div id="faqAns1" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed" data-i18n="faq.a1">
                     الشات بوت التقليدي يعتمد على خيارات محددة مسبقاً، بينما تعتمد أنظمتنا على نماذج الذكاء الاصطناعي التي تفهم اللغة الطبيعية للعميل وتستوعب الأسئلة المعقدة وترد بدقة وكأنها موظف بشري خبير.
                 </div>
             </div>
             <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
                 <button onclick="toggleFaq(2)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
-                    <span>هل يمكن ربط النظام مع برنامج إدارة العملاء (CRM) الذي نستخدمه؟</span>
+                    <span data-i18n="faq.q2">هل يمكن ربط النظام مع برنامج إدارة العملاء (CRM) الذي نستخدمه؟</span>
                     <span id="faqIcon2" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns2" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
+                <div id="faqAns2" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed" data-i18n="faq.a2">
                     نعم، نربط كافة المنصات مع أشهر أنظمة الـ CRM مثل HubSpot, Zoho, Salesforce أو حتى الأنظمة الخاصة بشركتك عبر الـ API بكل سهولة.
                 </div>
             </div>
             <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
                 <button onclick="toggleFaq(3)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
-                    <span>كم يستغرق وقت تجهيز النظام وإطلاقه لشركتنا؟</span>
+                    <span data-i18n="faq.q3">كم يستغرق وقت تجهيز النظام وإطلاقه لشركتنا؟</span>
                     <span id="faqIcon3" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns3" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
+                <div id="faqAns3" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed" data-i18n="faq.a3">
                     يستغرق العمل عادةً ما بين 3 إلى 7 أيام عمل فقط، تشمل مرحلة تدريب الذكاء الاصطناعي على بيانات شركتك، واختبار الربط لضمان أعلى جودة قبل التشغيل الفعلي.
                 </div>
             </div>
@@ -449,18 +477,18 @@
                 <div class="inline-block bg-white p-2.5 rounded-2xl mb-6">
                     <img src="logo.PNG?v=5" alt="Avenchie" class="h-10 w-auto">
                 </div>
-                <p class="text-white/60 text-sm leading-relaxed max-w-sm">Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.</p>
+                <p class="text-white/60 text-sm leading-relaxed max-w-sm" data-i18n="footer.desc">Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.</p>
             </div>
             <div>
-                <h4 class="font-bold text-sm mb-4 text-white">الوصول السريع</h4>
+                <h4 class="font-bold text-sm mb-4 text-white" data-i18n="footer.quicklinks">الوصول السريع</h4>
                 <ul class="space-y-2.5 text-sm text-white/60">
-                    <li><a href="#demo" class="hover:text-[#4da3ff] transition">التجربة التفاعلية</a></li>
-                    <li><a href="#services" class="hover:text-[#4da3ff] transition">الخدمات</a></li>
-                    <li><a href="#faq" class="hover:text-[#4da3ff] transition">الأسئلة الشائعة</a></li>
+                    <li><a href="#demo" class="hover:text-[#4da3ff] transition" data-i18n="nav.demo">التجربة التفاعلية</a></li>
+                    <li><a href="#services" class="hover:text-[#4da3ff] transition" data-i18n="nav.services">الخدمات</a></li>
+                    <li><a href="#faq" class="hover:text-[#4da3ff] transition" data-i18n="nav.faq">الأسئلة الشائعة</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-sm mb-4 text-white">التواصل المباشر</h4>
+                <h4 class="font-bold text-sm mb-4 text-white" data-i18n="footer.contact">التواصل المباشر</h4>
                 <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition text-sm font-bold flex items-center gap-2">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     <span>WhatsApp Direct</span>
@@ -468,8 +496,8 @@
             </div>
         </div>
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-            <span>© 2026 Avenchie. جميع الحقوق محفوظة.</span>
-            <span>تصميم مخصص للشركات العالمية.</span>
+            <span data-i18n="footer.copyright">© 2026 Avenchie. جميع الحقوق محفوظة.</span>
+            <span data-i18n="footer.tagline">تصميم مخصص للشركات العالمية.</span>
         </div>
     </div>
 </footer>
@@ -486,21 +514,21 @@
                     <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-white rounded-full"></span>
                 </div>
                 <div>
-                    <h4 class="font-bold text-xs leading-tight">ميرنا | خدمة العملاء</h4>
-                    <span class="text-[9px] text-blue-100">فريق Avenchie متواجد حالياً</span>
+                    <h4 class="font-bold text-xs leading-tight" data-i18n="widget.name">ميرنا | خدمة العملاء</h4>
+                    <span class="text-[9px] text-blue-100" data-i18n="widget.status">فريق Avenchie متواجد حالياً</span>
                 </div>
             </div>
             <button onclick="toggleSiteChat()" class="text-white/80 hover:text-white text-base font-bold px-1">✕</button>
         </div>
         <div class="p-3.5 bg-white space-y-3 text-xs leading-relaxed max-h-[220px] overflow-y-auto flex flex-col">
             <div class="bg-[#FAF6EE] text-[#1E2A22] p-3 rounded-2xl rounded-tr-none border-2 border-[#1E2A22]/10 self-start text-xs">
-                مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتس للرد الفوري على كل استفساراتك.
+                <span data-i18n="widget.welcome">مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتس للرد الفوري على كل استفساراتك.</span>
             </div>
         </div>
         <div class="p-3 bg-[#FAF6EE] border-t-2 border-[#1E2A22]/10">
             <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 transition">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                <span>تواصل مباشرة عبر الواتس</span>
+                <span data-i18n="nav.whatsapp">تواصل مباشرة عبر الواتس</span>
             </a>
         </div>
     </div>
@@ -597,125 +625,206 @@ function submitBookingForm(event) {
 /* SERVICE MODAL DETAILED CONTENT DATA */
 const serviceModalDetails = {
     chatbot: {
-        title: "شات بوت ذكي (AI Chatbots)",
-        subtitle: "اجعل الذكاء الاصطناعي يتولى محادثات عملائك",
-        overview: "نطوّر شات بوتات ذكية (AI Chatbots) قادرة على فهم أسئلة العملاء والتفاعل معهم بطريقة طبيعية، بدل الاعتماد على الردود الجاهزة أو انتظار موظف متاح للرد.<br><br>يمكن للشات بوت استقبال العملاء على مدار الساعة، الإجابة عن الأسئلة المتكررة، جمع بيانات العملاء، تأهيل العملاء المحتملين، وتوجيههم إلى الخطوة المناسبة تلقائيًا.",
-        featuresTitle: "ماذا يمكن للشات بوت أن يفعل؟",
-        features: [
-            "الرد الفوري على استفسارات العملاء.",
-            "فهم سياق المحادثة بدل الاعتماد على كلمات مفتاحية فقط.",
-            "تقديم معلومات عن المنتجات والخدمات والأسعار.",
-            "جمع بيانات العميل واحتياجاته.",
-            "تأهيل العملاء المحتملين (Lead Qualification) وتحديد العملاء الأكثر جدية.",
-            "حجز المواعيد وطلبات الخدمة.",
-            "تحويل المحادثة إلى موظف عند الحاجة.",
-            "العمل على مدار الساعة دون توقف.",
-            "ربط المحادثات مع أنظمة CRM (إدارة علاقات العملاء) والأنظمة الأخرى."
-        ],
-        targetTitle: "مناسب لـ:",
-        target: "الشركات التي تستقبل عددًا كبيرًا من الاستفسارات، المتاجر الإلكترونية، العيادات والمراكز، شركات الخدمات، شركات العقارات، مراكز التدريب، والشركات التي تعتمد على التواصل المباشر مع العملاء.",
-        resultTitle: "النتيجة",
-        result: "بدل أن يقضي فريقك ساعات في الإجابة عن نفس الأسئلة، يتولى الذكاء الاصطناعي الجزء المتكرر من المحادثات، بينما يركز فريقك على العملاء والمهام التي تحتاج إلى تدخل بشري."
+        ar: {
+            title: "شات بوت ذكي (AI Chatbots)",
+            subtitle: "اجعل الذكاء الاصطناعي يتولى محادثات عملائك",
+            overview: "نطوّر شات بوتات ذكية (AI Chatbots) قادرة على فهم أسئلة العملاء والتفاعل معهم بطريقة طبيعية، بدل الاعتماد على الردود الجاهزة أو انتظار موظف متاح للرد.<br><br>يمكن للشات بوت استقبال العملاء على مدار الساعة، الإجابة عن الأسئلة المتكررة، جمع بيانات العملاء، تأهيل العملاء المحتملين، وتوجيههم إلى الخطوة المناسبة تلقائيًا.",
+            featuresTitle: "ماذا يمكن للشات بوت أن يفعل؟",
+            features: [
+                "الرد الفوري على استفسارات العملاء.",
+                "فهم سياق المحادثة بدل الاعتماد على كلمات مفتاحية فقط.",
+                "تقديم معلومات عن المنتجات والخدمات والأسعار.",
+                "جمع بيانات العميل واحتياجاته.",
+                "تأهيل العملاء المحتملين (Lead Qualification) وتحديد العملاء الأكثر جدية.",
+                "حجز المواعيد وطلبات الخدمة.",
+                "تحويل المحادثة إلى موظف عند الحاجة.",
+                "العمل على مدار الساعة دون توقف.",
+                "ربط المحادثات مع أنظمة CRM (إدارة علاقات العملاء) والأنظمة الأخرى."
+            ],
+            targetTitle: "مناسب لـ:",
+            target: "الشركات التي تستقبل عددًا كبيرًا من الاستفسارات، المتاجر الإلكترونية، العيادات والمراكز، شركات الخدمات، شركات العقارات، مراكز التدريب، والشركات التي تعتمد على التواصل المباشر مع العملاء.",
+            resultTitle: "النتيجة",
+            result: "بدل أن يقضي فريقك ساعات في الإجابة عن نفس الأسئلة، يتولى الذكاء الاصطناعي الجزء المتكرر من المحادثات، بينما يركز فريقك على العملاء والمهام التي تحتاج إلى تدخل بشري."
+        },
+        en: {
+            title: "AI Chatbots",
+            subtitle: "Let AI handle your customer conversations",
+            overview: "We build AI chatbots that understand customer questions and engage naturally, instead of relying on canned replies or waiting for an available agent.<br><br>The chatbot can welcome customers around the clock, answer frequent questions, collect customer data, qualify leads, and route them to the right next step automatically.",
+            featuresTitle: "What can the chatbot do?",
+            features: [
+                "Instant replies to customer inquiries.",
+                "Understands conversation context instead of relying on keywords alone.",
+                "Shares information on products, services, and pricing.",
+                "Collects customer data and needs.",
+                "Lead qualification — identifying the most serious prospects.",
+                "Books appointments and service requests.",
+                "Hands the conversation to a human agent when needed.",
+                "Runs around the clock without stopping.",
+                "Connects conversations with CRM and other systems."
+            ],
+            targetTitle: "Best suited for:",
+            target: "Companies that receive a high volume of inquiries, e-commerce stores, clinics and centers, service companies, real estate firms, training centers, and any business built on direct customer communication.",
+            resultTitle: "The Result",
+            result: "Instead of your team spending hours answering the same questions, AI handles the repetitive part of conversations, while your team focuses on customers and tasks that genuinely need a human touch."
+        }
     },
     whatsapp: {
-        title: "ربط واتساب للأعمال (WhatsApp Business API)",
-        subtitle: "حوّل واتساب إلى قناة عمل متكاملة",
-        overview: "نساعد الشركات على ربط واتساب للأعمال (WhatsApp Business Platform / API) بأنظمتها وعملياتها، لإنشاء تواصل أكثر تنظيمًا مع العملاء وأتمتة الرسائل والمتابعات.<br><br>بدل استخدام واتساب فقط للرد اليدوي على العملاء، يصبح جزءًا من منظومة العمل ويمكن ربطه بالمبيعات، خدمة العملاء، الحجوزات، وأنظمة إدارة العملاء.",
-        featuresTitle: "ماذا يمكننا تنفيذ؟",
-        features: [
-            "ربط حساب الشركة بواجهة WhatsApp Business Platform.",
-            "إرسال رسائل ترحيبية تلقائية.",
-            "تأكيد الطلبات والحجوزات.",
-            "إرسال تحديثات حالة الطلب.",
-            "المتابعة التلقائية مع العملاء.",
-            "إرسال الإشعارات والتنبيهات.",
-            "استقبال استفسارات العملاء وأتمتة الردود.",
-            "ربط واتساب مع CRM (إدارة علاقات العملاء).",
-            "ربط واتساب مع أنظمة وم مواقع وتطبيقات الشركة عبر API.",
-            "إنشاء تدفقات محادثة مخصصة حسب طبيعة نشاطك."
-        ],
-        exampleTitle: "مثال عملي:",
-        example: "عميل يرسل رسالة على واتساب: <strong>«أريد حجز موعد.»</strong><br>يمكن للنظام أن:<br>يستقبل الرسالة ← يفهم الطلب ← يعرض المواعيد المتاحة ← يسجل بيانات العميل ← يؤكد الحجز ← يرسل رسالة تأكيد تلقائية (بدون الحاجة إلى تنفيذ كل خطوة يدويًا).",
-        targetTitle: "مناسب لـ:",
-        target: "المتاجر، العيادات والمراكز، شركات الخدمات، المطاعم، شركات العقارات، مراكز التدريب، شركات الحجز، وأي نشاط يعتمد على واتساب كقناة رئيسية للتواصل مع العملاء.",
-        resultTitle: "النتيجة",
-        result: "واتساب لا يعود مجرد تطبيق للمحادثة، بل يصبح جزءًا من نظام تشغيل المبيعات وخدمة العملاء داخل شركتك."
+        ar: {
+            title: "ربط واتساب للأعمال (WhatsApp Business API)",
+            subtitle: "حوّل واتساب إلى قناة عمل متكاملة",
+            overview: "نساعد الشركات على ربط واتساب للأعمال (WhatsApp Business Platform / API) بأنظمتها وعملياتها، لإنشاء تواصل أكثر تنظيمًا مع العملاء وأتمتة الرسائل والمتابعات.<br><br>بدل استخدام واتساب فقط للرد اليدوي على العملاء، يصبح جزءًا من منظومة العمل ويمكن ربطه بالمبيعات، خدمة العملاء، الحجوزات، وأنظمة إدارة العملاء.",
+            featuresTitle: "ماذا يمكننا تنفيذ؟",
+            features: [
+                "ربط حساب الشركة بواجهة WhatsApp Business Platform.",
+                "إرسال رسائل ترحيبية تلقائية.",
+                "تأكيد الطلبات والحجوزات.",
+                "إرسال تحديثات حالة الطلب.",
+                "المتابعة التلقائية مع العملاء.",
+                "إرسال الإشعارات والتنبيهات.",
+                "استقبال استفسارات العملاء وأتمتة الردود.",
+                "ربط واتساب مع CRM (إدارة علاقات العملاء).",
+                "ربط واتساب مع أنظمة ومواقع وتطبيقات الشركة عبر API.",
+                "إنشاء تدفقات محادثة مخصصة حسب طبيعة نشاطك."
+            ],
+            exampleTitle: "مثال عملي:",
+            example: "عميل يرسل رسالة على واتساب: <strong>«أريد حجز موعد.»</strong><br>يمكن للنظام أن:<br>يستقبل الرسالة ← يفهم الطلب ← يعرض المواعيد المتاحة ← يسجل بيانات العميل ← يؤكد الحجز ← يرسل رسالة تأكيد تلقائية (بدون الحاجة إلى تنفيذ كل خطوة يدويًا).",
+            targetTitle: "مناسب لـ:",
+            target: "المتاجر، العيادات والمراكز، شركات الخدمات، المطاعم، شركات العقارات، مراكز التدريب، شركات الحجز، وأي نشاط يعتمد على واتساب كقناة رئيسية للتواصل مع العملاء.",
+            resultTitle: "النتيجة",
+            result: "واتساب لا يعود مجرد تطبيق للمحادثة، بل يصبح جزءًا من نظام تشغيل المبيعات وخدمة العملاء داخل شركتك."
+        },
+        en: {
+            title: "WhatsApp Business API Integration",
+            subtitle: "Turn WhatsApp into a full business channel",
+            overview: "We help companies connect WhatsApp Business (Platform / API) to their systems and workflows, creating more organized customer communication and automating messages and follow-ups.<br><br>Instead of using WhatsApp only for manual replies, it becomes part of your operations — connected to sales, customer service, bookings, and CRM systems.",
+            featuresTitle: "What can we build?",
+            features: [
+                "Connecting your company account to the WhatsApp Business Platform.",
+                "Automated welcome messages.",
+                "Order and booking confirmations.",
+                "Order status update notifications.",
+                "Automatic customer follow-ups.",
+                "Sending alerts and notifications.",
+                "Receiving customer inquiries with automated replies.",
+                "Connecting WhatsApp with CRM systems.",
+                "Connecting WhatsApp with your company's systems, websites, and apps via API.",
+                "Building custom conversation flows tailored to your business."
+            ],
+            exampleTitle: "A practical example:",
+            example: "A customer sends a WhatsApp message: <strong>\"I'd like to book an appointment.\"</strong><br>The system can:<br>Receive the message → understand the request → show available times → log the customer's details → confirm the booking → send an automatic confirmation (with no step done manually).",
+            targetTitle: "Best suited for:",
+            target: "Stores, clinics and centers, service companies, restaurants, real estate firms, training centers, booking businesses, and any business that relies on WhatsApp as a main channel for customer communication.",
+            resultTitle: "The Result",
+            result: "WhatsApp stops being just a chat app and becomes part of your company's sales and customer service operating system."
+        }
     },
     crm: {
-        title: "أتمتة إدارية وربط CRM (CRM & Workflow Automation)",
-        subtitle: "اجعل أنظمة شركتك تعمل معًا بدل نقل البيانات يدويًا",
-        overview: "نربط الأنظمة والتطبيقات التي تستخدمها شركتك ونبني سير عمل آلي (Workflow Automation) ينقل البيانات وينفذ المهام تلقائيًا وفقًا للقواعد التي تحددها.<br><br>بدل أن ينتقل الموظف بين واتساب والبريد الإلكتروني وملفات Excel ونظام إدارة العملاء، يمكن جعل هذه الأنظمة تتبادل البيانات تلقائيًا.",
-        featuresTitle: "ماذا يمكننا أتمتته؟",
-        features: [
-            "إنشاء العملاء المحتملين تلقائيًا داخل CRM.",
-            "توزيع العملاء على موظفي المبيعات.",
-            "إنشاء المهام ومتابعتها تلقائيًا.",
-            "تحديث مراحل الصفقات.",
-            "إرسال التنبيهات والتذكيرات.",
-            "نقل البيانات بين الأنظمة.",
-            "إنشاء سجلات العملاء تلقائيًا.",
-            "أتمتة عمليات المتابعة.",
-            "ربط الموقع وواتساب والبريد الإلكتروني مع CRM.",
-            "إنشاء تدفقات عمل مخصصة حسب طبيعة شركتك.",
-            "تقليل إدخال البيانات المتكرر والأخطاء الناتجة عنه."
-        ],
-        exampleTitle: "مثال عملي:",
-        example: "عميل يرسل استفسارًا:<br>واتساب ← الذكاء الاصطناعي يفهم الطلب ← يتم إنشاء العميل في CRM ← يتم تأهيل العميل ← يتم تعيينه لموظف المبيعات ← تصل مهمة للموظف ← تبدأ المتابعة.<br><em>(كل ذلك يمكن أن يحدث تلقائيًا وفق النظام الذي يتم تصميمه لشركتك).</em>",
-        targetTitle: "مناسب لـ:",
-        target: "الشركات التي لديها فريق مبيعات أو خدمة عملاء، والشركات التي تستخدم أكثر من نظام أو تطبيق وتضطر إلى نقل البيانات بينها يدويًا.",
-        resultTitle: "النتيجة",
-        result: "بيانات أكثر تنظيمًا، مهام أقل تكرارًا، أخطاء أقل، ومتابعة أفضل للعملاء — مع تقليل الاعتماد على العمليات اليدوية."
+        ar: {
+            title: "أتمتة إدارية وربط CRM (CRM & Workflow Automation)",
+            subtitle: "اجعل أنظمة شركتك تعمل معًا بدل نقل البيانات يدويًا",
+            overview: "نربط الأنظمة والتطبيقات التي تستخدمها شركتك ونبني سير عمل آلي (Workflow Automation) ينقل البيانات وينفذ المهام تلقائيًا وفقًا للقواعد التي تحددها.<br><br>بدل أن ينتقل الموظف بين واتساب والبريد الإلكتروني وملفات Excel ونظام إدارة العملاء، يمكن جعل هذه الأنظمة تتبادل البيانات تلقائيًا.",
+            featuresTitle: "ماذا يمكننا أتمتته؟",
+            features: [
+                "إنشاء العملاء المحتملين تلقائيًا داخل CRM.",
+                "توزيع العملاء على موظفي المبيعات.",
+                "إنشاء المهام ومتابعتها تلقائيًا.",
+                "تحديث مراحل الصفقات.",
+                "إرسال التنبيهات والتذكيرات.",
+                "نقل البيانات بين الأنظمة.",
+                "إنشاء سجلات العملاء تلقائيًا.",
+                "أتمتة عمليات المتابعة.",
+                "ربط الموقع وواتساب والبريد الإلكتروني مع CRM.",
+                "إنشاء تدفقات عمل مخصصة حسب طبيعة شركتك.",
+                "تقليل إدخال البيانات المتكرر والأخطاء الناتجة عنه."
+            ],
+            exampleTitle: "مثال عملي:",
+            example: "عميل يرسل استفسارًا:<br>واتساب ← الذكاء الاصطناعي يفهم الطلب ← يتم إنشاء العميل في CRM ← يتم تأهيل العميل ← يتم تعيينه لموظف المبيعات ← تصل مهمة للموظف ← تبدأ المتابعة.<br><em>(كل ذلك يمكن أن يحدث تلقائيًا وفق النظام الذي يتم تصميمه لشركتك).</em>",
+            targetTitle: "مناسب لـ:",
+            target: "الشركات التي لديها فريق مبيعات أو خدمة عملاء، والشركات التي تستخدم أكثر من نظام أو تطبيق وتضطر إلى نقل البيانات بينها يدويًا.",
+            resultTitle: "النتيجة",
+            result: "بيانات أكثر تنظيمًا، مهام أقل تكرارًا، أخطاء أقل، ومتابعة أفضل للعملاء — مع تقليل الاعتماد على العمليات اليدوية."
+        },
+        en: {
+            title: "CRM & Workflow Automation",
+            subtitle: "Make your company's systems work together instead of moving data by hand",
+            overview: "We connect the systems and apps your company uses and build automated workflows that move data and execute tasks automatically, based on the rules you define.<br><br>Instead of an employee switching between WhatsApp, email, spreadsheets, and your CRM, these systems can exchange data automatically.",
+            featuresTitle: "What can we automate?",
+            features: [
+                "Automatically creating leads inside your CRM.",
+                "Distributing leads to sales staff.",
+                "Creating and tracking tasks automatically.",
+                "Updating deal stages.",
+                "Sending alerts and reminders.",
+                "Moving data between systems.",
+                "Automatically creating customer records.",
+                "Automating follow-up processes.",
+                "Connecting your website, WhatsApp, and email with your CRM.",
+                "Building custom workflows tailored to your business.",
+                "Reducing repetitive data entry and the errors that come with it."
+            ],
+            exampleTitle: "A practical example:",
+            example: "A customer sends an inquiry:<br>WhatsApp → AI understands the request → the customer is created in the CRM → the lead is qualified → it's assigned to a sales rep → a task reaches the rep → follow-up begins.<br><em>(All of this can happen automatically, based on the system designed for your business.)</em>",
+            targetTitle: "Best suited for:",
+            target: "Companies with a sales or customer service team, and any business using more than one system or app that requires moving data between them manually.",
+            resultTitle: "The Result",
+            result: "More organized data, less repetitive work, fewer errors, and better customer follow-up — with less reliance on manual processes."
+        }
     }
 };
 
-/* MODAL OPEN & CLOSE LOGIC */
 function openServiceModal(key) {
-    const data = serviceModalDetails[key];
+    const data = serviceModalDetails[key] ? serviceModalDetails[key][window.currentLang] : null;
     if (data) {
+        window.currentModalKey = key;
         let featuresListHtml = '';
         data.features.forEach(item => {
-            featuresListHtml += `<li class="flex items-start gap-2 mb-2 text-xs sm:text-sm text-slate-600"><span class="text-[#0071e3] font-bold">✓</span><span>${item}</span></li>`;
+            featuresListHtml += `<li class="flex items-start gap-2 mb-2 text-xs sm:text-sm text-[#1E2A22]/70"><span class="text-[#0071e3] font-bold">✓</span><span>${item}</span></li>`;
         });
 
         let exampleHtml = '';
         if (data.example) {
             exampleHtml = `
-                <div class="mt-4 p-4 bg-blue-50/60 rounded-2xl border border-blue-100 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <div class="mt-4 p-4 bg-[#FAF6EE] rounded-2xl border-2 border-[#1E2A22]/10 text-xs sm:text-sm text-[#1E2A22]/80 leading-relaxed">
                     <h5 class="font-black text-[#0071e3] mb-1">${data.exampleTitle}</h5>
                     <p>${data.example}</p>
                 </div>
             `;
         }
 
+        const i18nTag = window.currentLang === 'en' ? 'Service Details' : 'تفاصيل الخدمة';
+        const bookLabel = i18n['nav.book'][window.currentLang];
+        const orLabel = window.currentLang === 'en' ? 'or' : 'أو';
+        const waLabel = i18n['nav.whatsapp'][window.currentLang];
+
         document.getElementById('modalDetailsContent').innerHTML = `
-            <span class="inline-block text-[#0071e3] text-xs font-black mb-1">تفاصيل الخدمة</span>
-            <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-1">${data.title}</h3>
-            <p class="text-xs sm:text-sm font-bold text-slate-600 mb-4">${data.subtitle}</p>
+            <span class="inline-block text-[#0071e3] text-xs font-black mb-1">${i18nTag}</span>
+            <h3 class="text-xl sm:text-2xl font-black text-[#1E2A22] mb-1">${data.title}</h3>
+            <p class="text-xs sm:text-sm font-bold text-[#1E2A22]/70 mb-4">${data.subtitle}</p>
 
-            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6 border-b border-slate-100 pb-4">${data.overview}</p>
+            <p class="text-xs sm:text-sm text-[#1E2A22]/60 leading-relaxed mb-6 border-b-2 border-[#1E2A22]/10 pb-4">${data.overview}</p>
 
-            <h4 class="font-black text-slate-900 text-sm mb-3">${data.featuresTitle}</h4>
+            <h4 class="font-black text-[#1E2A22] text-sm mb-3">${data.featuresTitle}</h4>
             <ul class="mb-6">${featuresListHtml}</ul>
 
             ${exampleHtml}
 
-            <div class="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-200/80">
-                <h5 class="font-black text-slate-900 text-xs sm:text-sm mb-1">${data.targetTitle}</h5>
-                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">${data.target}</p>
+            <div class="mt-4 p-4 bg-[#FAF6EE] rounded-2xl border-2 border-[#1E2A22]/10">
+                <h5 class="font-black text-[#1E2A22] text-xs sm:text-sm mb-1">${data.targetTitle}</h5>
+                <p class="text-xs sm:text-sm text-[#1E2A22]/60 leading-relaxed">${data.target}</p>
             </div>
 
-            <div class="mt-4 p-4 bg-emerald-50/70 rounded-2xl border border-emerald-100 text-xs sm:text-sm text-slate-700 mb-6">
+            <div class="mt-4 p-4 bg-emerald-50 rounded-2xl border-2 border-emerald-200 text-xs sm:text-sm text-[#1E2A22]/80 mb-6">
                 <h5 class="font-black text-emerald-700 mb-1">${data.resultTitle}</h5>
                 <p class="leading-relaxed">${data.result}</p>
             </div>
 
-            <div class="pt-2 sticky bottom-0 bg-white pb-2 flex items-center justify-between gap-2">
-                <button type="button" onclick="closeServiceModal(); openBookingModal();" class="flex-1 py-3 bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white text-xs font-bold rounded-full shadow-lg shadow-blue-600/30 transition text-center cursor-pointer">
-                    <span>احجز استشارة مجانية</span>
+            <div class="pt-2 sticky bottom-0 bg-[#FAF6EE] pb-2 flex items-center justify-between gap-2">
+                <button type="button" onclick="closeServiceModal(); openBookingModal();" class="flex-1 py-3 btn-flat-blue text-xs font-bold rounded-full text-center cursor-pointer">
+                    <span>${bookLabel}</span>
                 </button>
-                <span class="text-xs font-bold text-slate-400">أو</span>
-                <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-3 bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white text-xs font-bold rounded-full shadow-lg shadow-emerald-600/30 transition text-center">
-                    <span>تواصل مباشرة عبر الواتس</span>
+                <span class="text-xs font-bold text-[#1E2A22]/40">${orLabel}</span>
+                <a href="https://wa.me/201278220294" target="_blank" class="flex-1 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-full text-center transition">
+                    <span>${waLabel}</span>
                 </a>
             </div>
         `;
@@ -759,13 +868,119 @@ setTimeout(() => {
     }
 }, 2000);
 
+/* ================= BILINGUAL SYSTEM (AR / EN) ================= */
+window.currentLang = 'ar';
+window.currentModalKey = null;
+
+const i18n = {
+    "nav.demo": { ar: "التجربة التفاعلية", en: "Interactive Demo" },
+    "nav.services": { ar: "الخدمات", en: "Services" },
+    "nav.faq": { ar: "الأسئلة الشائعة", en: "FAQ" },
+    "nav.book": { ar: "احجز استشارة مجانية", en: "Book a Free Consultation" },
+    "nav.whatsapp": { ar: "التواصل مباشرة عبر الواتس", en: "Chat with us on WhatsApp" },
+    "cta.whatsapp": { ar: "واتساب", en: "WhatsApp" },
+    "hero.badge": { ar: "منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي", en: "Enterprise Business Automation & AI Platform" },
+    "hero.subtext": { ar: "نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.", en: "We turn repetitive, complex operations into smart, self-running systems — connecting your tools, qualifying your customers, and boosting your company's efficiency with the latest technology." },
+    "hero.tag1": { ar: "رسائل متفرقة", en: "Scattered messages" },
+    "hero.tag2": { ar: "وقت ضائع", en: "Wasted time" },
+    "hero.tag3": { ar: "متابعة يدوية", en: "Manual follow-up" },
+    "demo.title": { ar: "جرّب المساعد بنفسك", en: "Try the assistant yourself" },
+    "demo.subtitle": { ar: "هذا مثال حي لمحادثة حقيقية يديرها الذكاء الاصطناعي", en: "A live example of a real conversation handled by AI" },
+    "demo.assistant": { ar: "مساعد Avenchie", en: "Avenchie Assistant" },
+    "demo.processing": { ar: "معالجة فورية للمحادثة...", en: "Processing conversation in real time..." },
+    "process.title": { ar: "كيف نحوّل عملك إلى نظام يعمل من تلقاء نفسه", en: "How we turn your business into a system that runs itself" },
+    "process.subtitle": { ar: "أربع خطوات واضحة، من أول مكالمة معك إلى نظام يعمل يومياً دون تدخل يدوي.", en: "Four clear steps, from your first call with us to a system running daily without manual work." },
+    "process.step1.title": { ar: "الاكتشاف", en: "Discovery" },
+    "process.step1.desc": { ar: "نفهم طريقة عملك الحالية، ونحدد المهام المتكررة ونقاط التعطّل بدقة.", en: "We understand how you currently work, and pinpoint repetitive tasks and bottlenecks precisely." },
+    "process.step2.title": { ar: "التصميم", en: "Design" },
+    "process.step2.desc": { ar: "نصمم الحل التقني الأنسب لطبيعة شركتك، لا حلاً جاهزاً موحّداً لكل الشركات.", en: "We design the technical solution that fits your business — not a one-size-fits-all template." },
+    "process.step3.title": { ar: "الربط", en: "Integration" },
+    "process.step3.desc": { ar: "نربط الأنظمة والقنوات التي تستخدمها فعلاً، من واتساب إلى برنامج إدارة العملاء.", en: "We connect the systems and channels you actually use, from WhatsApp to your CRM." },
+    "process.step4.title": { ar: "الإطلاق", en: "Launch" },
+    "process.step4.desc": { ar: "نطلق النظام، نختبره ميدانياً، ونتابع أداءه لضمان أعلى جودة تشغيل.", en: "We launch the system, test it in the field, and monitor performance to guarantee top-quality operation." },
+    "services.title": { ar: "حلول رقمية متكاملة للارتقاء بأداء الشركات", en: "Complete digital solutions to elevate business performance" },
+    "services.chatbot.title": { ar: "شات بوت ذكي (AI Chatbots)", en: "AI Chatbots" },
+    "services.chatbot.desc": { ar: "أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.", en: "Advanced conversational systems that understand customer context, provide instant support, and capture data with high accuracy." },
+    "services.whatsapp.title": { ar: "ربط واتساب للأعمال (WhatsApp Business API)", en: "WhatsApp Business API Integration" },
+    "services.whatsapp.desc": { ar: "حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.", en: "Verified WhatsApp Business accounts with automated welcome messages, order confirmations, and follow-ups — no human intervention required." },
+    "services.crm.title": { ar: "أتمتة إدارية وربط CRM", en: "Business Process & CRM Automation" },
+    "services.crm.desc": { ar: "ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.", en: "Connecting your sales channels to CRM platforms, so deals are logged and tasks are assigned to your team automatically." },
+    "services.cta": { ar: "عرض التفاصيل الكاملة", en: "View Full Details" },
+    "valuebox.title": { ar: "حلول مصممة وفق طريقة عمل شركتك", en: "Solutions designed around how your business actually works" },
+    "valuebox.p1": { ar: "لا نبدأ بفرض نظام واحد على جميع الشركات.", en: "We don't start by forcing one system on every company." },
+    "valuebox.p2": { ar: "نبدأ بفهم طريقة عملك، وتحديد المهام المتكررة ونقاط التعطّل، ثم نصمم الحل التقني المناسب ونربطه بالأنظمة التي تستخدمها بالفعل.", en: "We start by understanding how you work, identifying repetitive tasks and bottlenecks, then design the right technical solution and connect it to the systems you already use." },
+    "valuebox.tagline": { ar: "اكتشف ما الذي يمكن أتمتته في شركتك.", en: "Discover what can be automated in your business." },
+    "faq.title": { ar: "الأسئلة الشائعة", en: "Frequently Asked Questions" },
+    "faq.subtitle": { ar: "إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها", en: "Answers to the most common questions about our systems and how they're implemented" },
+    "faq.q1": { ar: "ما الفرق بين الشات بوت التقليدي والذكاء الاصطناعي من Avenchie؟", en: "What's the difference between a traditional chatbot and Avenchie's AI?" },
+    "faq.a1": { ar: "الشات بوت التقليدي يعتمد على خيارات محددة مسبقاً، بينما تعتمد أنظمتنا على نماذج الذكاء الاصطناعي التي تفهم اللغة الطبيعية للعميل وتستوعب الأسئلة المعقدة وترد بدقة وكأنها موظف بشري خبير.", en: "A traditional chatbot relies on pre-set options, while our systems use AI models that understand the customer's natural language, grasp complex questions, and respond accurately — like an expert human employee." },
+    "faq.q2": { ar: "هل يمكن ربط النظام مع برنامج إدارة العملاء (CRM) الذي نستخدمه؟", en: "Can the system connect with the CRM we already use?" },
+    "faq.a2": { ar: "نعم، نربط كافة المنصات مع أشهر أنظمة الـ CRM مثل HubSpot, Zoho, Salesforce أو حتى الأنظمة الخاصة بشركتك عبر الـ API بكل سهولة.", en: "Yes — we connect every platform with popular CRM systems like HubSpot, Zoho, and Salesforce, or even your company's own system, easily via API." },
+    "faq.q3": { ar: "كم يستغرق وقت تجهيز النظام وإطلاقه لشركتنا؟", en: "How long does it take to set up and launch the system for our company?" },
+    "faq.a3": { ar: "يستغرق العمل عادةً ما بين 3 إلى 7 أيام عمل فقط، تشمل مرحلة تدريب الذكاء الاصطناعي على بيانات شركتك، واختبار الربط لضمان أعلى جودة قبل التشغيل الفعلي.", en: "It typically takes just 3 to 7 business days, including training the AI on your company's data and testing the integration to ensure top quality before going live." },
+    "footer.desc": { ar: "Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.", en: "Avenchie — Intelligent solutions and enterprise business automation for sustainable growth and high efficiency." },
+    "footer.quicklinks": { ar: "الوصول السريع", en: "Quick Links" },
+    "footer.contact": { ar: "التواصل المباشر", en: "Get in Touch" },
+    "footer.copyright": { ar: "© 2026 Avenchie. جميع الحقوق محفوظة.", en: "© 2026 Avenchie. All rights reserved." },
+    "footer.tagline": { ar: "تصميم مخصص للشركات العالمية.", en: "Custom-built for global companies." },
+    "widget.name": { ar: "ميرنا | خدمة العملاء", en: "Mirna | Customer Care" },
+    "widget.status": { ar: "فريق Avenchie متواجد حالياً", en: "Avenchie team is online now" },
+    "widget.welcome": { ar: "مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتس للرد الفوري على كل استفساراتك.", en: "Welcome to Avenchie! 👋<br>I'm Mirna — how can I help you today? Feel free to reach us directly on WhatsApp for an instant response to all your questions." },
+    "booking.title": { ar: "احجز استشارة مجانية", en: "Book a Free Consultation" },
+    "booking.subtitle": { ar: "يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.", en: "Please fill in the details below to schedule a time that works for you and discuss automating your business." },
+    "booking.date": { ar: "تاريخ الاجتماع *", en: "Meeting Date *" },
+    "booking.time": { ar: "الوقت المناسب *", en: "Preferred Time *" },
+    "booking.name": { ar: "الاسم الكامل *", en: "Full Name *" },
+    "booking.name.ph": { ar: "أدخل اسمك الكريم", en: "Enter your name" },
+    "booking.company": { ar: "اسم الشركة *", en: "Company Name *" },
+    "booking.company.ph": { ar: "شركة...", en: "Company..." },
+    "booking.job": { ar: "المنصب الوظيفي *", en: "Job Title *" },
+    "booking.job.ph": { ar: "مثال: مدير عام / مسؤول تقنية", en: "e.g. General Manager / IT Lead" },
+    "booking.phone": { ar: "رقم الجوال *", en: "Phone Number *" },
+    "booking.email": { ar: "البريد الإلكتروني *", en: "Email Address *" },
+    "booking.submit": { ar: "تأكيد وحجز الاستشارة عبر الواتس", en: "Confirm & Book via WhatsApp" }
+};
+
+function applyLanguage(lang) {
+    window.currentLang = lang;
+    document.documentElement.setAttribute('lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[key]) el.innerHTML = i18n[key][lang];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (i18n[key]) el.setAttribute('placeholder', i18n[key][lang]);
+    });
+
+    const labelEl = document.getElementById('langToggleLabel');
+    const labelMobileEl = document.getElementById('langToggleLabelMobile');
+    if (labelEl) labelEl.textContent = lang === 'ar' ? 'EN' : 'AR';
+    if (labelMobileEl) labelMobileEl.textContent = lang === 'ar' ? 'English' : 'العربية';
+
+    // Refresh open service modal in new language, if any
+    if (window.currentModalKey && document.getElementById('serviceDetailsModal').classList.contains('active')) {
+        openServiceModal(window.currentModalKey);
+    }
+}
+
+function toggleLanguage() {
+    applyLanguage(window.currentLang === 'ar' ? 'en' : 'ar');
+}
+
 /* HERO TYPING ANIMATION */
 const typingText = document.getElementById('typingText');
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
+const typingPhrases = {
+    ar: "حلول ذكاء اصطناعي ترتقي بمستوى عملك",
+    en: "AI Solutions That Elevate Your Business"
+};
+
 async function typeLoop() {
-    const phrase = "حلول ذكاء اصطناعي ترتقي بمستوى عملك";
     while (true) {
+        const phrase = typingPhrases[window.currentLang];
         typingText.textContent = '';
         for (let char of phrase) {
             typingText.textContent += char;
@@ -780,28 +995,45 @@ typeLoop();
 const chatBox = document.getElementById('liveChatBox');
 const statusText = document.getElementById('statusText');
 
-const conversationScript = [
-    { type: 'ai', text: 'أهلاً بك في Avenchie 👋 كيف يمكننا مساعدتك اليوم؟' },
-    { type: 'user', text: 'أحتاج شات بوت ذكي يرد على عملائي في الواتساب تلقائياً.' },
-    { type: 'ai', text: 'بالتأكيد! نربط النظام بـ WhatsApp API ونقوم بتدريبه على خدماتك.' },
-    { type: 'user', text: 'هل يتم تسجيل بيانات العملاء والمبيعات مباشرة؟' },
-    { type: 'ai', text: 'نعم، يتم الربط مع نظام الـ CRM الخاص بك فوراً وتحديث البيانات.' }
-];
+const conversationScripts = {
+    ar: [
+        { type: 'ai', text: 'أهلاً بك في Avenchie 👋 كيف يمكننا مساعدتك اليوم؟' },
+        { type: 'user', text: 'أحتاج شات بوت ذكي يرد على عملائي في الواتساب تلقائياً.' },
+        { type: 'ai', text: 'بالتأكيد! نربط النظام بـ WhatsApp API ونقوم بتدريبه على خدماتك.' },
+        { type: 'user', text: 'هل يتم تسجيل بيانات العملاء والمبيعات مباشرة؟' },
+        { type: 'ai', text: 'نعم، يتم الربط مع نظام الـ CRM الخاص بك فوراً وتحديث البيانات.' }
+    ],
+    en: [
+        { type: 'ai', text: 'Welcome to Avenchie 👋 How can we help you today?' },
+        { type: 'user', text: 'I need a smart chatbot that replies to my customers on WhatsApp automatically.' },
+        { type: 'ai', text: 'Absolutely! We connect the system to the WhatsApp API and train it on your services.' },
+        { type: 'user', text: 'Does it log customer and sales data directly?' },
+        { type: 'ai', text: "Yes — it connects instantly with your CRM and updates the data in real time." }
+    ]
+};
+
+const chatLabels = {
+    ar: { typing: 'يكتب الآن', sending: 'جاري الإرسال', typingStatus: 'يكتب الآن...', onlineStatus: 'متصل الآن' },
+    en: { typing: 'Typing', sending: 'Sending', typingStatus: 'Typing...', onlineStatus: 'Online now' }
+};
 
 async function startContinuousChat() {
     while (true) {
         chatBox.innerHTML = '';
+        const lang = window.currentLang;
+        const script = conversationScripts[lang];
+        const labels = chatLabels[lang];
 
-        for (let msg of conversationScript) {
+        for (let msg of script) {
             const typingDiv = document.createElement('div');
             typingDiv.className = `chat-bubble max-w-[85%] text-xs p-3 rounded-2xl flex items-center gap-1.5 ${
                 msg.type === 'ai'
-                ? 'self-start bg-white text-slate-500 rounded-tr-none border border-slate-200'
-                : 'self-end bg-blue-100 text-[#0071e3] rounded-tl-none border border-blue-200'
+                ? 'self-start bg-white text-[#1E2A22]/70 rounded-tr-none border-2 border-[#1E2A22]/10'
+                : 'self-end bg-blue-50 text-[#0071e3] rounded-tl-none border-2 border-blue-100'
             }`;
 
             typingDiv.innerHTML = `
-                <span class="text-[10px] opacity-75">${msg.type === 'ai' ? 'يكتب الآن' : 'جاري الإرسال'}</span>
+                <span class="text-[10px] opacity-75">${msg.type === 'ai' ? labels.typing : labels.sending}</span>
                 <div class="flex items-center gap-1 mr-1">
                     <span class="w-1.5 h-1.5 bg-[#0071e3] rounded-full typing-dot"></span>
                     <span class="w-1.5 h-1.5 bg-[#0071e3] rounded-full typing-dot"></span>
@@ -810,27 +1042,27 @@ async function startContinuousChat() {
             `;
 
             if (msg.type === 'ai') {
-                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] animate-ping"></span> يكتب الآن...`;
+                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-[#0071e3] animate-ping"></span> ${labels.typingStatus}`;
             }
 
             chatBox.appendChild(typingDiv);
             chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
 
             await sleep(1500);
-            chatBox.removeChild(typingDiv);
+            if (chatBox.contains(typingDiv)) chatBox.removeChild(typingDiv);
 
             const msgDiv = document.createElement('div');
             msgDiv.className = `chat-bubble max-w-[85%] text-xs p-3.5 rounded-2xl leading-relaxed ${
                 msg.type === 'ai'
-                ? 'self-start bg-white text-slate-800 rounded-tr-none border border-slate-200 shadow-sm'
-                : 'self-end bg-[#0071e3] text-white rounded-tl-none shadow-md shadow-blue-500/10'
+                ? 'self-start bg-white text-[#1E2A22] rounded-tr-none border-2 border-[#1E2A22]/10 shadow-sm'
+                : 'self-end bg-[#0071e3] text-white rounded-tl-none'
             }`;
             msgDiv.innerText = msg.text;
 
             chatBox.appendChild(msgDiv);
 
             if (msg.type === 'ai') {
-                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> متصل الآن`;
+                statusText.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> ${labels.onlineStatus}`;
             }
 
             chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
@@ -842,6 +1074,7 @@ async function startContinuousChat() {
 }
 
 startContinuousChat();
+
 </script>
 
 </body>
