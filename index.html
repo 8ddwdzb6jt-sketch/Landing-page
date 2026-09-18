@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Avenchie — Enterprise AI Solutions, Business Automation & CRM Integration">
-    <meta name="theme-color" content="#f5f5f7">
+    <meta name="theme-color" content="#FAF6EE">
 
     <title>Avenchie | Enterprise AI Solutions & Automation</title>
 
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,588 +20,384 @@
                 extend: {
                     fontFamily: { sans: ['Tajawal', 'sans-serif'] },
                     colors: {
-                        avenchie: {
-                            blue: '#0071e3',
-                            blueDark: '#005bb5',
-                            ink: '#14161C',
-                            lightBg: '#f5f5f7',
-                            cardBg: '#ffffff'
-                        }
+                        avenchie: { blue: '#0071e3', ink: '#1E2A22', cream: '#FAF6EE' }
                     }
                 }
             }
         }
     </script>
 
-    <!-- GLOBAL CSS -->
     <style>
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
+            background-color: #FAF6EE;
+            color: #1E2A22;
             font-family: 'Tajawal', sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
+        body.modal-open { overflow: hidden !important; touch-action: none; }
 
-        /* قفل التمرير للصفحة الرئيسية عند فتح النافذة المنبثقة */
-        body.modal-open {
-            overflow: hidden !important;
-            touch-action: none;
-        }
-
-        /* SELECTION + KEYBOARD FOCUS */
         ::selection { background: #0071e3; color: #ffffff; }
-        a:focus-visible, button:focus-visible, input:focus-visible {
-            outline: 2px solid #0071e3; outline-offset: 3px; border-radius: 6px;
-        }
+        a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #0071e3; outline-offset: 3px; border-radius: 6px; }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
         }
 
-        /* GLASS NAVIGATION — floating pill */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.78);
-            backdrop-filter: blur(20px) saturate(1.6);
-            -webkit-backdrop-filter: blur(20px) saturate(1.6);
-            border: 1px solid rgba(20, 22, 28, 0.06);
-            box-shadow: 0 1px 2px rgba(20,22,28,0.04), 0 12px 32px -12px rgba(20, 22, 28, 0.12);
-            transition: box-shadow .35s ease, background .35s ease, border-color .35s ease;
-        }
-        .glass-nav.scrolled {
-            background: rgba(255, 255, 255, 0.92);
-            box-shadow: 0 1px 2px rgba(20,22,28,0.05), 0 16px 40px -14px rgba(0, 113, 227, 0.22);
-            border-color: rgba(0, 113, 227, 0.12);
-        }
+        /* NAV */
+        .site-nav { background: rgba(250, 246, 238, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(30,42,34,0.08); transition: box-shadow .3s ease; }
+        .site-nav.scrolled { box-shadow: 0 6px 20px rgba(30,42,34,0.06); }
 
-        /* MOBILE DRAWER MENU */
         #mobileMenu { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         #mobileMenu.closed { transform: translateX(100%); }
         #mobileMenu.open { transform: translateX(0); }
 
-        /* TYPING CURSOR */
         #typingCursor { animation: blink 0.8s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* SERVICE CARD */
-        .enterprise-card {
-            position: relative;
-            background: #ffffff;
-            border: 1px solid rgba(20, 22, 28, 0.07);
-            border-radius: 22px;
-            box-shadow: 0 1px 2px rgba(20,22,28,0.04), 0 1px 0 rgba(20,22,28,0.02);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-            overflow: hidden;
-        }
-        .enterprise-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 1px 2px rgba(20,22,28,0.04), 0 24px 48px -16px rgba(0, 113, 227, 0.22);
-            border-color: rgba(0, 113, 227, 0.25);
-        }
-        .enterprise-card::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 12%; left: 12%;
-            height: 2px; border-radius: 2px;
-            background: linear-gradient(90deg, transparent, #0071e3, transparent);
-            opacity: 0; transition: opacity .35s ease;
-        }
-        .enterprise-card:hover::after { opacity: 1; }
+        /* SKETCHY HAND-DRAWN LINES */
+        .doodle-line { stroke:#1E2A22; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+        .accent-line { stroke:#0071e3; fill:none; stroke-width:3; stroke-linecap:round; }
 
-        .card-image-wrapper {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            position: relative;
+        /* HARD-SHADOW BORDERED CARD/BUTTON SYSTEM */
+        .hard-card {
+            background:#fff; border:2px solid #1E2A22; border-radius:22px;
+            box-shadow: 5px 5px 0 0 #1E2A22;
+            transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s cubic-bezier(.16,1,.3,1);
         }
-        .card-image-wrapper svg { width: 100%; height: 100%; display: block; transition: transform 0.5s ease; }
-        .enterprise-card:hover .card-image-wrapper svg { transform: scale(1.04); }
+        .hard-card:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 0 #1E2A22; }
 
-        /* PHONE MOCKUP */
-        .phone-mockup {
-            border: 10px solid #e2e8f0;
-            border-radius: 44px;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.04), 0 40px 70px -20px rgba(20, 22, 28, 0.22), 0 0 0 1px rgba(20,22,28,0.03);
-            background: #ffffff;
+        .btn-flat-blue { background:#0071e3; color:#fff; transition: background .2s ease, transform .2s ease; }
+        .btn-flat-blue:hover { background:#0064cc; transform: translateY(-2px); }
+        .btn-hard {
+            background:#fff; border:2px solid #1E2A22; color:#1E2A22;
+            box-shadow: 4px 4px 0 0 #1E2A22;
+            transition: transform .2s ease, box-shadow .2s ease;
         }
-        .phone-ground-shadow {
-            position: absolute;
-            bottom: -18px; left: 8%; right: 8%;
-            height: 36px;
-            background: radial-gradient(ellipse at center, rgba(0, 113, 227, 0.18) 0%, rgba(0, 113, 227, 0) 72%);
-            filter: blur(6px);
-            z-index: -1;
-        }
+        .btn-hard:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 0 #1E2A22; }
+        .btn-hard-dark { background:#1E2A22; color:#fff; border:2px solid #1E2A22; box-shadow: 4px 4px 0 0 rgba(0,113,227,0.4); transition: transform .2s ease, box-shadow .2s ease; }
+        .btn-hard-dark:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 0 rgba(0,113,227,0.5); }
 
-        /* CHAT BUBBLE ANIMATION */
+        .service-icon-badge { border:2px solid #1E2A22; box-shadow: 3px 3px 0 0 #1E2A22; }
+
+        /* PHONE DEMO */
+        .phone-mockup { border: 8px solid #1E2A22; border-radius: 40px; background: #ffffff; }
         .chat-bubble { animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* TYPING DOTS ANIMATION */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
         .typing-dot { animation: typingBounce 1.4s infinite ease-in-out both; }
         .typing-dot:nth-child(1) { animation-delay: -0.32s; }
         .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typingBounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
+        @keyframes typingBounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
 
-        /* FAQ ICON */
         .faq-icon { display: inline-block; transition: transform .3s cubic-bezier(.16,1,.3,1); }
         .faq-icon.rotated { transform: rotate(45deg); }
 
-        /* FLOATING SITE CHAT WIDGET */
         #siteChatWindow { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         #siteChatWindow.hidden-widget { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
         #siteChatWindow.visible-widget { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
-
         #siteChatMessages { scroll-behavior: smooth; }
         #liveChatBox { scroll-behavior: smooth; }
 
-        /* MODAL OVERLAY */
         .modal-overlay {
-            position: fixed; inset: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            z-index: 9999;
-            display: flex; align-items: center; justify-content: center;
-            padding: 1rem;
-            opacity: 0; visibility: hidden; pointer-events: none;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
+            position: fixed; inset: 0; background-color: rgba(30, 42, 34, 0.45);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 1rem;
+            opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.25s ease, visibility 0.25s ease;
         }
         .modal-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
-
         .modal-scroll { overflow-y: auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
         .modal-scroll::-webkit-scrollbar { width: 6px; }
-        .modal-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        .modal-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        .modal-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .modal-scroll::-webkit-scrollbar-track { background: #F4F0E6; border-radius: 10px; }
+        .modal-scroll::-webkit-scrollbar-thumb { background: #d8d2c4; border-radius: 10px; }
     </style>
 </head>
 
 <body>
 
 <!-- NAVIGATION HEADER -->
-<header id="siteHeader" class="glass-nav fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2.5rem)] max-w-6xl z-40 rounded-2xl">
-    <div class="px-3 sm:px-4 lg:px-6">
-        <div class="h-[60px] sm:h-[66px] flex items-center justify-between">
-
-            <!-- LOGO -->
-            <a href="#" class="flex items-center bg-white px-2.5 py-1.5 rounded-xl border border-slate-200/80">
-                <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-7 sm:h-8 w-auto object-contain">
+<header id="siteHeader" class="site-nav fixed top-0 left-0 w-full z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-[70px] flex items-center justify-between">
+            <a href="#" class="flex items-center bg-white px-2.5 py-1.5 rounded-xl border-2 border-[#1E2A22]">
+                <img src="logo.PNG?v=5" alt="Avenchie Logo" class="h-8 sm:h-9 w-auto object-contain">
             </a>
-
-            <!-- DESKTOP NAV LINKS -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
+            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-[#1E2A22]/85">
                 <a href="#demo" class="hover:text-[#0071e3] transition">التجربة التفاعلية</a>
                 <a href="#services" class="hover:text-[#0071e3] transition">الخدمات</a>
                 <a href="#faq" class="hover:text-[#0071e3] transition">الأسئلة الشائعة</a>
             </nav>
-
-            <!-- CTA BUTTONS HEADER -->
             <div class="flex items-center gap-2.5">
-                <button type="button" onclick="openBookingModal()"
-                   class="hidden lg:inline-flex items-center justify-center gap-2 bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white px-4 py-2.5 rounded-full text-xs font-black transition-all shadow-md shadow-blue-600/25 cursor-pointer">
-                    <span>احجز استشارة مجانية</span>
+                <button type="button" onclick="openBookingModal()" class="hidden sm:inline-flex btn-flat-blue px-5 py-2.5 rounded-full text-xs font-black cursor-pointer">
+                    احجز استشارة مجانية
                 </button>
-
-                <a href="https://wa.me/201278220294" target="_blank"
-                   class="hidden sm:inline-flex items-center justify-center gap-1.5 bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white px-4 py-2.5 rounded-full text-xs font-black transition-all shadow-md shadow-emerald-600/25">
-                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>تواصل مباشرة عبر الواتس</span>
-                </a>
-
-                <!-- HAMBURGER BUTTON FOR MOBILE -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-white text-slate-800 border border-slate-200 hover:bg-slate-100 transition focus:outline-none" aria-label="Toggle Menu">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-white border-2 border-[#1E2A22] text-[#1E2A22]" aria-label="Toggle Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
-
         </div>
     </div>
 </header>
 
 <!-- MOBILE DRAWER MENU -->
-<div id="mobileBackdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-black/40 backdrop-blur-md z-50 hidden transition-opacity"></div>
-<aside id="mobileMenu" class="closed fixed top-0 right-0 h-full w-[290px] sm:w-[320px] bg-white border-l border-slate-200 z-50 shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+<div id="mobileBackdrop" onclick="toggleMobileMenu()" class="fixed inset-0 bg-[#1E2A22]/50 backdrop-blur-md z-50 hidden transition-opacity"></div>
+<aside id="mobileMenu" class="closed fixed top-0 right-0 h-full w-[290px] sm:w-[320px] bg-[#FAF6EE] border-l-2 border-[#1E2A22] z-50 flex flex-col justify-between p-6 overflow-y-auto">
     <div>
-        <div class="flex items-center justify-between pb-6 border-b border-slate-100">
-            <div class="bg-slate-100 p-2 rounded-xl">
+        <div class="flex items-center justify-between pb-6 border-b-2 border-[#1E2A22]/15">
+            <div class="bg-white p-2 rounded-xl border-2 border-[#1E2A22]">
                 <img src="logo.PNG?v=5" alt="Avenchie" class="h-7 w-auto">
             </div>
-            <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-400 hover:text-slate-800 hover:bg-slate-100 transition">✕</button>
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-xl text-[#1E2A22]/60 hover:text-[#1E2A22] transition">✕</button>
         </div>
-
-        <nav class="mt-8 flex flex-col gap-6 text-base font-bold text-slate-800">
+        <nav class="mt-8 flex flex-col gap-6 text-base font-bold text-[#1E2A22]">
             <a href="#demo" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">التجربة التفاعلية</a>
             <a href="#services" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">الخدمات</a>
             <a href="#faq" onclick="toggleMobileMenu()" class="hover:text-[#0071e3] transition">الأسئلة الشائعة</a>
         </nav>
     </div>
-
-    <div class="pt-6 border-t border-slate-100 space-y-3">
-        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-blue-600/30 transition">
-            <span>احجز استشارة مجانية</span>
-        </button>
-
-        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl text-xs shadow-lg shadow-emerald-600/30 transition">
+    <div class="pt-6 border-t-2 border-[#1E2A22]/15 space-y-3">
+        <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full btn-flat-blue font-bold py-3.5 rounded-xl text-xs">احجز استشارة مجانية</button>
+        <a href="https://wa.me/201278220294" target="_blank" class="w-full flex items-center justify-center gap-2 btn-hard font-bold py-3.5 rounded-xl text-xs">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
             <span>التواصل مباشرة عبر الواتس</span>
         </a>
     </div>
 </aside>
 
-<!-- HERO SECTION -->
-<section class="relative pt-36 sm:pt-44 pb-24 sm:pb-32 overflow-hidden bg-[#f5f5f7]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- HERO -->
+<section class="relative px-6 pt-32 sm:pt-40 pb-16 text-center max-w-5xl mx-auto">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border-2 border-[#1E2A22] text-[#1E2A22] text-xs font-bold mb-8">
+        <span class="w-2 h-2 rounded-full bg-[#0071e3] animate-ping"></span>
+        منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي
+    </div>
 
-            <!-- HERO TEXT -->
-            <div class="lg:col-span-6 text-right">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-100 text-[#0071e3] text-[11px] font-bold mb-7 shadow-sm shadow-blue-600/5">
-                    <span class="relative flex w-1.5 h-1.5">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0071e3] opacity-60"></span>
-                        <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#0071e3]"></span>
-                    </span>
-                    منصة أتمتة الأعمال والذكاء الاصطناعي المؤسسي
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.25] text-[#1E2A22] min-h-[140px] sm:min-h-[110px]">
+        <span id="typingText"></span><span id="typingCursor" class="text-[#0071e3]">|</span>
+    </h1>
+    <div class="w-24 h-[3px] bg-[#1E2A22] mx-auto mt-8 rounded-full"></div>
+
+    <!-- HAND-DRAWN ILLUSTRATION -->
+    <div class="relative mx-auto mt-6 mb-6" style="width:340px; max-width:90%; height:280px;">
+        <svg viewBox="0 0 340 280" class="w-full h-full">
+            <defs>
+                <filter id="sketchy" x="-20%" y="-20%" width="140%" height="140%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="7" result="n"/>
+                    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/>
+                </filter>
+            </defs>
+            <g filter="url(#sketchy)">
+                <path class="doodle-line" d="M40 45 h38 a8 8 0 0 1 8 8 v18 a8 8 0 0 1-8 8 h-20 l-10 10 v-10 h-8 a8 8 0 0 1-8-8 v-18 a8 8 0 0 1 8-8Z"/>
+                <path class="doodle-line" d="M255 30 h40 a8 8 0 0 1 8 8 v16 a8 8 0 0 1-8 8 h-8 l-10 10 v-10 h-22 a8 8 0 0 1-8-8 v-16 a8 8 0 0 1 8-8Z" opacity="0.55"/>
+                <circle class="doodle-line" cx="278" cy="140" r="22"/>
+                <path class="doodle-line" d="M278 128 v14 l10 6"/>
+                <path class="doodle-line" d="M52 120 C 80 140, 40 170, 70 190 C 95 206, 60 225, 90 238" opacity="0.6"/>
+                <rect class="doodle-line" x="30" y="195" width="46" height="34" rx="3" transform="rotate(-6 53 212)"/>
+                <rect class="doodle-line" x="34" y="188" width="46" height="34" rx="3"/>
+                <g transform="translate(170,140)">
+                    <path class="doodle-line" d="M-18 -68 C -26 -74, -14 -86, -2 -80 C 10 -88, 24 -76, 14 -66 C 24 -60, 14 -48, 0 -54 C -10 -46, -24 -56, -18 -68Z"/>
+                    <circle class="doodle-line" cx="0" cy="-40" r="20"/>
+                    <path class="doodle-line" d="M-16 -8 C -16 -26, 16 -26, 16 -8 v46 h-32Z"/>
+                    <path class="doodle-line" d="M-16 2 C -40 6, -46 26, -60 30"/>
+                    <path class="doodle-line" d="M16 2 C 40 6, 46 26, 60 30"/>
+                </g>
+                <g transform="translate(228,168)">
+                    <circle cx="0" cy="0" r="17" fill="#0071e3" opacity="0.12"/>
+                    <path class="accent-line" d="M-8 -6 a8 8 0 1 1 4 13 l-6 3 1.5 -5.5 a8 8 0 0 1 0.5 -10.5Z"/>
+                </g>
+            </g>
+            <g fill="#1E2A22" font-family="Tajawal, sans-serif" font-weight="700" font-size="12">
+                <text x="18" y="260" opacity="0.7">رسائل متفرقة</text>
+                <text x="252" y="175" opacity="0.7">وقت ضائع</text>
+            </g>
+            <rect x="12" y="248" width="88" height="10" fill="#0071e3" opacity="0.18"/>
+        </svg>
+    </div>
+
+    <p class="max-w-xl mx-auto text-base sm:text-lg text-[#1E2A22]/70 leading-relaxed">
+        نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
+    </p>
+
+    <div class="inline-flex items-center gap-1.5 bg-white border-2 border-[#1E2A22] rounded-full p-1.5 mt-9 shadow-[4px_4px_0_0_#1E2A22]">
+        <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-[#FAF6EE] transition">واتساب</a>
+        <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer">احجز استشارة مجانية</button>
+    </div>
+</section>
+
+<!-- LIVE DEMO SECTION -->
+<section id="demo" class="px-6 py-16">
+    <div class="max-w-md mx-auto text-center mb-8">
+        <h2 class="text-2xl sm:text-3xl font-black text-[#1E2A22]">جرّب المساعد بنفسك</h2>
+        <p class="mt-2 text-[#1E2A22]/60 text-sm">هذا مثال حي لمحادثة حقيقية يديرها الذكاء الاصطناعي</p>
+    </div>
+    <div class="flex justify-center">
+        <div class="phone-mockup w-full max-w-[340px] h-[540px] flex flex-col relative overflow-hidden shadow-[8px_8px_0_0_#1E2A22]">
+            <div class="bg-[#FAF6EE] px-5 pt-3.5 pb-3 flex items-center justify-between border-b-2 border-[#1E2A22]/10">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center text-white font-black text-xs">A</div>
+                    <div>
+                        <h4 class="text-xs font-bold text-[#1E2A22] leading-none">مساعد Avenchie</h4>
+                        <span id="statusText" class="text-[10px] text-emerald-600 flex items-center gap-1 mt-1 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> متصل الآن
+                        </span>
+                    </div>
                 </div>
-
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tighter leading-[1.06] min-h-[150px] sm:min-h-[195px] lg:min-h-[235px]">
-                    <span id="typingText"></span><span id="typingCursor" class="text-[#0071e3]">|</span>
-                </h1>
-
-                <p class="mt-7 text-base sm:text-lg text-slate-500 leading-relaxed max-w-xl">
-                    نحول العمليات التكرارية والمعقدة إلى منظومات ذكية ذاتية التشغيل. نربط أنظمتك، نؤهل عملائك، ونرفع كفاءة تشغيل شركتك باستخدام أحدث التقنيات.
-                </p>
-
-                <div class="mt-9 flex flex-wrap items-center gap-3">
-                    <button type="button" onclick="openBookingModal()"
-                       class="px-7 py-4 rounded-full bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white font-extrabold shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-0.5 text-xs sm:text-sm flex items-center gap-2 cursor-pointer">
-                        <span>احجز استشارة مجانية</span>
-                    </button>
-
-                    <span class="text-xs font-bold text-slate-400 px-1">أو</span>
-
-                    <a href="https://wa.me/201278220294" target="_blank"
-                       class="px-7 py-4 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white font-extrabold shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5 text-xs sm:text-sm flex items-center gap-2">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                        <span>تواصل مباشرة عبر الواتس</span>
-                    </a>
+                <span class="text-[10px] font-bold text-[#1E2A22]/30">AI LIVE</span>
+            </div>
+            <div id="liveChatBox" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3.5 bg-white"></div>
+            <div class="p-3 bg-[#FAF6EE] border-t-2 border-[#1E2A22]/10 flex items-center gap-2">
+                <div class="flex-1 bg-white rounded-full px-4 py-2 text-[11px] text-[#1E2A22]/40 border-2 border-[#1E2A22]/15 flex items-center justify-between">
+                    <span>معالجة فورية للمحادثة...</span>
+                    <span class="w-2 h-2 rounded-full bg-[#0071e3] animate-ping"></span>
                 </div>
             </div>
-
-            <!-- LIVE PHONE DEMO -->
-            <div id="demo" class="lg:col-span-6 flex justify-center">
-                <div class="relative">
-                    <div class="hidden sm:flex absolute -top-5 -right-8 md:-right-12 w-16 h-16 bg-white rounded-2xl shadow-lg border border-slate-100 items-center justify-center -rotate-6 z-20">
-                        <svg class="w-7 h-7 text-slate-300" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"/><path stroke-linecap="round" stroke-linejoin="round" d="M14 3v5h5M9 13h6M9 17h4"/></svg>
-                    </div>
-                    <div class="hidden sm:flex absolute -bottom-4 -left-8 md:-left-12 w-16 h-16 bg-white rounded-2xl shadow-lg border border-slate-100 items-center justify-center rotate-6 z-20">
-                        <svg class="w-7 h-7 text-emerald-500" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    </div>
-
-                    <div class="phone-ground-shadow"></div>
-                    <div class="phone-mockup w-full max-w-[360px] h-[580px] flex flex-col relative overflow-hidden">
-
-                        <div class="bg-slate-50 px-6 pt-3.5 pb-3 flex items-center justify-between border-b border-slate-200">
-                            <div class="flex items-center gap-2.5">
-                                <div class="w-8 h-8 rounded-full bg-[#0071e3] flex items-center justify-center text-white font-black text-xs shadow-md">
-                                    A
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-900 leading-none">مساعد Avenchie</h4>
-                                    <span id="statusText" class="text-[10px] text-emerald-600 flex items-center gap-1 mt-1 font-medium">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> متصل الآن
-                                    </span>
-                                </div>
-                            </div>
-                            <span class="text-[10px] font-bold text-slate-300">AI LIVE</span>
-                        </div>
-
-                        <div id="liveChatBox" class="flex-1 p-4 overflow-y-auto flex flex-col gap-3.5 bg-slate-100/50"></div>
-
-                        <div class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
-                            <div class="flex-1 bg-slate-50 rounded-full px-4 py-2 text-[11px] text-slate-400 border border-slate-200 flex items-center justify-between">
-                                <span>معالجة فورية للمحادثة...</span>
-                                <span class="w-2 h-2 rounded-full bg-[#0071e3] animate-ping"></span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
 
 <!-- PROCESS SECTION -->
-<section class="py-24 sm:py-28 px-4 bg-white border-t border-slate-200/60">
+<section class="py-20 sm:py-24 px-4">
     <div class="max-w-6xl mx-auto">
-        <div class="max-w-2xl mb-16 sm:mb-20 text-right">
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
-                كيف نحوّل عملك إلى نظام يعمل من تلقاء نفسه
-            </h2>
-            <p class="mt-4 text-slate-500 text-sm sm:text-base leading-relaxed">
-                أربع خطوات واضحة، من أول مكالمة معك إلى نظام يعمل يومياً دون تدخل يدوي.
-            </p>
+        <div class="max-w-2xl mb-16 text-right">
+            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight">كيف نحوّل عملك إلى نظام يعمل من تلقاء نفسه</h2>
+            <p class="mt-4 text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed">أربع خطوات واضحة، من أول مكالمة معك إلى نظام يعمل يومياً دون تدخل يدوي.</p>
         </div>
-
-        <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
-            <div class="hidden lg:block absolute top-7 inset-x-0 h-px bg-gradient-to-l from-transparent via-slate-200 to-transparent"></div>
-
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             <div class="relative text-right">
-                <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-[#0071e3] text-[#0071e3] font-black text-base flex items-center justify-center mb-5">01</div>
-                <h3 class="font-black text-slate-900 text-base mb-2">الاكتشاف</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">نفهم طريقة عملك الحالية، ونحدد المهام المتكررة ونقاط التعطّل بدقة.</p>
+                <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">01</div>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2">الاكتشاف</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نفهم طريقة عملك الحالية، ونحدد المهام المتكررة ونقاط التعطّل بدقة.</p>
             </div>
             <div class="relative text-right">
-                <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-[#0071e3] text-[#0071e3] font-black text-base flex items-center justify-center mb-5">02</div>
-                <h3 class="font-black text-slate-900 text-base mb-2">التصميم</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">نصمم الحل التقني الأنسب لطبيعة شركتك، لا حلاً جاهزاً موحّداً لكل الشركات.</p>
+                <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">02</div>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2">التصميم</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نصمم الحل التقني الأنسب لطبيعة شركتك، لا حلاً جاهزاً موحّداً لكل الشركات.</p>
             </div>
             <div class="relative text-right">
-                <div class="relative z-10 w-14 h-14 rounded-2xl bg-white border-2 border-[#0071e3] text-[#0071e3] font-black text-base flex items-center justify-center mb-5">03</div>
-                <h3 class="font-black text-slate-900 text-base mb-2">الربط</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">نربط الأنظمة والقنوات التي تستخدمها فعلاً، من واتساب إلى برنامج إدارة العملاء.</p>
+                <div class="w-14 h-14 rounded-2xl bg-white border-2 border-[#1E2A22] text-[#1E2A22] font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">03</div>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2">الربط</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نربط الأنظمة والقنوات التي تستخدمها فعلاً، من واتساب إلى برنامج إدارة العملاء.</p>
             </div>
             <div class="relative text-right">
-                <div class="relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1a8cff] to-[#0064cc] text-white shadow-lg shadow-blue-600/30 font-black text-base flex items-center justify-center mb-5">04</div>
-                <h3 class="font-black text-slate-900 text-base mb-2">الإطلاق</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">نطلق النظام، نختبره ميدانياً، ونتابع أداءه لضمان أعلى جودة تشغيل.</p>
+                <div class="w-14 h-14 rounded-2xl bg-[#0071e3] border-2 border-[#1E2A22] text-white font-black text-base flex items-center justify-center mb-5 shadow-[3px_3px_0_0_#1E2A22]">04</div>
+                <h3 class="font-black text-[#1E2A22] text-base mb-2">الإطلاق</h3>
+                <p class="text-sm text-[#1E2A22]/60 leading-relaxed">نطلق النظام، نختبره ميدانياً، ونتابع أداءه لضمان أعلى جودة تشغيل.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- SERVICES SECTION -->
-<section id="services" class="py-24 sm:py-28 px-4 bg-[#f5f5f7] border-t border-slate-200/60">
+<section id="services" class="py-20 sm:py-24 px-4">
     <div class="max-w-7xl mx-auto">
-        <div class="max-w-2xl mb-14 sm:mb-16 text-right">
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
-                حلول رقمية متكاملة للارتقاء بأداء الشركات
-            </h2>
+        <div class="max-w-2xl mb-14 text-right">
+            <h2 class="text-3xl sm:text-4xl font-black text-[#1E2A22] leading-tight">حلول رقمية متكاملة للارتقاء بأداء الشركات</h2>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- SERVICE CARD 1 -->
-            <div class="enterprise-card flex flex-col justify-between">
+            <!-- CARD 1 -->
+            <div class="hard-card flex flex-col justify-between p-7 text-right">
                 <div>
-                    <div class="card-image-wrapper">
-                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
-                            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EAF2FE"/><stop offset="100%" stop-color="#F7FAFF"/></linearGradient></defs>
-                            <rect width="800" height="450" fill="url(#g1)"/>
-                            <circle cx="686" cy="54" r="130" fill="#0071e3" opacity="0.07"/>
-                            <g fill="#0071e3" opacity="0.18">
-                                <circle cx="56" cy="56" r="2.5"/><circle cx="84" cy="56" r="2.5"/><circle cx="112" cy="56" r="2.5"/>
-                                <circle cx="56" cy="84" r="2.5"/><circle cx="84" cy="84" r="2.5"/><circle cx="112" cy="84" r="2.5"/>
-                            </g>
-                            <rect x="468" y="112" width="164" height="64" rx="20" fill="#ffffff" stroke="#DCE8FB"/>
-                            <rect x="222" y="148" width="330" height="152" rx="26" fill="#ffffff" stroke="#CFE0FA" stroke-width="1.5"/>
-                            <circle cx="345" cy="224" r="9" fill="#0071e3"/>
-                            <circle cx="390" cy="224" r="9" fill="#0071e3" opacity="0.55"/>
-                            <circle cx="435" cy="224" r="9" fill="#0071e3" opacity="0.3"/>
-                            <path d="M290 300 L290 332 L332 300 Z" fill="#ffffff" stroke="#CFE0FA" stroke-width="1.5"/>
-                            <rect x="150" y="264" width="150" height="52" rx="16" fill="#0071e3" opacity="0.92"/>
-                        </svg>
+                    <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-[#0071e3] flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                     </div>
-                    <div class="p-7">
-                        <div class="w-11 h-11 rounded-xl bg-blue-50 text-[#0071e3] border border-blue-100 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M9 10h.01M12 10h.01M15 10h.01" stroke-width="2.4"/></svg>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-900 mb-3">شات بوت ذكي (AI Chatbots)</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
-                    </div>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">شات بوت ذكي (AI Chatbots)</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">أنظمة محادثة متطورة تفهم سياق كلام العميل، تقدم الاستشارات الفورية، وتجمع البيانات بدقة فائقة.</p>
                 </div>
-
-                <div class="p-7 pt-0 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('chatbot')" class="group w-full mt-5 py-3.5 bg-[#14161C] hover:bg-[#23262f] text-white text-xs font-bold rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer">
-                        <span>عرض التفاصيل الكاملة</span>
-                        <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    </button>
-                </div>
+                <button type="button" onclick="openServiceModal('chatbot')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
             </div>
 
-            <!-- SERVICE CARD 2 -->
-            <div class="enterprise-card flex flex-col justify-between">
+            <!-- CARD 2 -->
+            <div class="hard-card flex flex-col justify-between p-7 text-right">
                 <div>
-                    <div class="card-image-wrapper">
-                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
-                            <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#E9FBF3"/><stop offset="100%" stop-color="#F2F9FF"/></linearGradient></defs>
-                            <rect width="800" height="450" fill="url(#g2)"/>
-                            <circle cx="706" cy="378" r="120" fill="#10b981" opacity="0.08"/>
-                            <path d="M150 336 C 270 336, 270 206, 392 206 S 516 96, 646 96" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="7 9" opacity="0.5"/>
-                            <circle cx="150" cy="336" r="9" fill="#10b981"/>
-                            <circle cx="392" cy="206" r="9" fill="#0071e3"/>
-                            <circle cx="646" cy="96" r="9" fill="#10b981"/>
-                            <rect x="94" y="258" width="148" height="148" rx="24" fill="#ffffff" stroke="#D7F0E4" stroke-width="1.5"/>
-                            <path d="M168 300a32 32 0 1 0 24 55l15 5-4-16a32 32 0 0 0-35-44z" fill="#10b981" opacity="0.92"/>
-                            <rect x="560" y="34" width="146" height="104" rx="20" fill="#ffffff" stroke="#DCE8FB" stroke-width="1.5"/>
-                            <rect x="580" y="58" width="76" height="9" rx="4.5" fill="#0071e3" opacity="0.75"/>
-                            <rect x="580" y="77" width="106" height="7" rx="3.5" fill="#CBD9F2"/>
-                            <rect x="580" y="93" width="58" height="7" rx="3.5" fill="#CBD9F2"/>
-                        </svg>
+                    <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-emerald-600 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     </div>
-                    <div class="p-7">
-                        <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2.5-7.5L3 11z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-900 mb-3">ربط واتساب للأعمال (WhatsApp Business API)</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
-                    </div>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">ربط واتساب للأعمال (WhatsApp Business API)</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">حسابات واتساب موثقة مع أتمتة الرسائل الترحيبية وتأكيد الطلبات والمتابعات التلقائية دون تدخل بشري.</p>
                 </div>
-
-                <div class="p-7 pt-0 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('whatsapp')" class="group w-full mt-5 py-3.5 bg-[#14161C] hover:bg-[#23262f] text-white text-xs font-bold rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer">
-                        <span>عرض التفاصيل الكاملة</span>
-                        <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    </button>
-                </div>
+                <button type="button" onclick="openServiceModal('whatsapp')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
             </div>
 
-            <!-- SERVICE CARD 3 -->
-            <div class="enterprise-card flex flex-col justify-between">
+            <!-- CARD 3 -->
+            <div class="hard-card flex flex-col justify-between p-7 text-right">
                 <div>
-                    <div class="card-image-wrapper">
-                        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
-                            <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#EEF1FE"/><stop offset="100%" stop-color="#F4F8FF"/></linearGradient></defs>
-                            <rect width="800" height="450" fill="url(#g3)"/>
-                            <circle cx="654" cy="382" r="130" fill="#6366f1" opacity="0.08"/>
-                            <path d="M204 132 L400 228 L618 138" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.4"/>
-                            <path d="M400 228 L362 338" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.4"/>
-                            <path d="M400 228 L468 348" fill="none" stroke="#6366f1" stroke-width="2" opacity="0.4"/>
-                            <circle cx="204" cy="132" r="15" fill="#ffffff" stroke="#6366f1" stroke-width="2.5"/>
-                            <circle cx="618" cy="138" r="15" fill="#ffffff" stroke="#0071e3" stroke-width="2.5"/>
-                            <circle cx="400" cy="228" r="20" fill="#6366f1"/>
-                            <circle cx="362" cy="338" r="13" fill="#ffffff" stroke="#6366f1" stroke-width="2.5"/>
-                            <circle cx="468" cy="348" r="13" fill="#ffffff" stroke="#0071e3" stroke-width="2.5"/>
-                        </svg>
+                    <div class="w-14 h-14 rounded-2xl bg-white service-icon-badge text-indigo-600 flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.3"/><circle cx="19" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M7 7.2L11 16M17 7.2L13 16M7.3 6h9.4"/></svg>
                     </div>
-                    <div class="p-7">
-                        <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.3"/><circle cx="19" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M7 7.2L11 16M17 7.2L13 16M7.3 6h9.4"/></svg>
-                        </div>
-                        <h3 class="text-xl font-black text-slate-900 mb-3">أتمتة إدارية وربط CRM</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
-                    </div>
+                    <h3 class="text-xl font-black text-[#1E2A22] mb-3">أتمتة إدارية وربط CRM</h3>
+                    <p class="text-[#1E2A22]/60 text-sm leading-relaxed mb-6">ربط قنوات المبيعات ببرامج إدارة العملاء، لتسجيل الصفقات وتوزيع المهام على الفريق تلقائياً.</p>
                 </div>
-
-                <div class="p-7 pt-0 border-t border-slate-100/80">
-                    <button type="button" onclick="openServiceModal('crm')" class="group w-full mt-5 py-3.5 bg-[#14161C] hover:bg-[#23262f] text-white text-xs font-bold rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer">
-                        <span>عرض التفاصيل الكاملة</span>
-                        <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    </button>
-                </div>
+                <button type="button" onclick="openServiceModal('crm')" class="w-full btn-hard py-3 rounded-full text-xs font-bold">عرض التفاصيل الكاملة</button>
             </div>
         </div>
 
         <!-- SHARED VALUE PROPOSITION -->
-        <div class="mt-16 bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/70 text-center max-w-4xl mx-auto" style="box-shadow: 0 1px 2px rgba(20,22,28,0.04), 0 20px 44px -20px rgba(0,113,227,0.18);">
-            <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">
-                حلول مصممة وفق طريقة عمل شركتك
-            </h3>
-            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4 max-w-2xl mx-auto">
-                لا نبدأ بفرض نظام واحد على جميع الشركات.
-            </p>
-            <p class="text-slate-500 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl mx-auto">
-                نبدأ بفهم طريقة عملك، وتحديد المهام المتكررة ونقاط التعطّل، ثم نصمم الحل التقني المناسب ونربطه بالأنظمة التي تستخدمها بالفعل.
-            </p>
-            <p class="text-[#0071e3] font-bold text-sm sm:text-base mb-8">
-                اكتشف ما الذي يمكن أتمتته في شركتك.
-            </p>
+        <div class="mt-16 bg-white hard-card p-8 sm:p-12 text-center max-w-4xl mx-auto">
+            <h3 class="text-2xl sm:text-3xl font-black text-[#1E2A22] mb-4">حلول مصممة وفق طريقة عمل شركتك</h3>
+            <p class="text-[#1E2A22]/70 text-sm sm:text-base leading-relaxed mb-4 max-w-2xl mx-auto">لا نبدأ بفرض نظام واحد على جميع الشركات.</p>
+            <p class="text-[#1E2A22]/60 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl mx-auto">نبدأ بفهم طريقة عملك، وتحديد المهام المتكررة ونقاط التعطّل، ثم نصمم الحل التقني المناسب ونربطه بالأنظمة التي تستخدمها بالفعل.</p>
+            <p class="text-[#0071e3] font-bold text-sm sm:text-base mb-8">اكتشف ما الذي يمكن أتمتته في شركتك.</p>
 
-            <div class="flex flex-wrap items-center justify-center gap-3">
-                <button type="button" onclick="openBookingModal()"
-                   class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-blue-600/30 transition hover:-translate-y-0.5 cursor-pointer">
-                    <span>احجز استشارة مجانية</span>
-                </button>
-
-                <span class="text-xs font-bold text-slate-400">أو</span>
-
-                <a href="https://wa.me/201278220294" target="_blank"
-                   class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white font-extrabold text-xs sm:text-sm shadow-lg shadow-emerald-600/30 transition hover:-translate-y-0.5">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                    <span>تواصل مباشرة عبر الواتس</span>
-                </a>
+            <div class="inline-flex items-center gap-1.5 bg-[#FAF6EE] border-2 border-[#1E2A22] rounded-full p-1.5">
+                <a href="https://wa.me/201278220294" target="_blank" class="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-[#1E2A22] rounded-full hover:bg-white transition">واتساب</a>
+                <button type="button" onclick="openBookingModal()" class="btn-flat-blue text-xs sm:text-sm font-black px-5 sm:px-6 py-2.5 rounded-full cursor-pointer">احجز استشارة مجانية</button>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- SERVICE DETAILS MODAL -->
 <div id="serviceDetailsModal" class="modal-overlay" onclick="handleOverlayClick(event)">
-    <div class="bg-white w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative flex flex-col">
-        <button type="button" onclick="closeServiceModal()" class="absolute top-5 left-5 w-9 h-9 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-sm transition z-20 cursor-pointer">
-            ✕
-        </button>
-        <div id="modalDetailsContent" class="modal-scroll flex-1 pr-1 pl-2 my-2 text-right">
-            <!-- DYNAMICALLY INJECTED DETAILS -->
-        </div>
+    <div class="bg-[#FAF6EE] w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 border-2 border-[#1E2A22] relative flex flex-col shadow-[8px_8px_0_0_#1E2A22]">
+        <button type="button" onclick="closeServiceModal()" class="absolute top-5 left-5 w-9 h-9 bg-white border-2 border-[#1E2A22] rounded-full flex items-center justify-center text-[#1E2A22] font-bold text-sm z-20 cursor-pointer">✕</button>
+        <div id="modalDetailsContent" class="modal-scroll flex-1 pr-1 pl-2 my-2 text-right"></div>
     </div>
 </div>
 
-<!-- CONSULTATION BOOKING MODAL -->
+<!-- BOOKING MODAL -->
 <div id="bookingModal" class="modal-overlay" onclick="handleBookingOverlayClick(event)">
-    <div class="bg-white w-full max-w-lg max-h-[90vh] rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 relative flex flex-col text-right">
-        <button type="button" onclick="closeBookingModal()" class="absolute top-5 left-5 w-9 h-9 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-bold text-sm transition z-20 cursor-pointer">
-            ✕
-        </button>
-
+    <div class="bg-[#FAF6EE] w-full max-w-lg max-h-[90vh] rounded-3xl p-6 sm:p-8 border-2 border-[#1E2A22] relative flex flex-col text-right shadow-[8px_8px_0_0_#1E2A22]">
+        <button type="button" onclick="closeBookingModal()" class="absolute top-5 left-5 w-9 h-9 bg-white border-2 border-[#1E2A22] rounded-full flex items-center justify-center text-[#1E2A22] font-bold text-sm z-20 cursor-pointer">✕</button>
         <div class="mb-5">
-            <h3 class="text-2xl font-black text-slate-900">احجز استشارة مجانية</h3>
-            <p class="text-xs text-slate-500 mt-1">يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.</p>
+            <h3 class="text-2xl font-black text-[#1E2A22]">احجز استشارة مجانية</h3>
+            <p class="text-xs text-[#1E2A22]/60 mt-1">يرجى تعبئة التفاصيل أدناه لتحديد الموعد المناسب لك ومناقشة أتمتة أعمالك.</p>
         </div>
-
         <form id="bookingForm" onsubmit="submitBookingForm(event)" class="modal-scroll flex-1 pr-1 pl-1 space-y-4">
-
             <div class="grid grid-cols-2 gap-3">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">تاريخ الاجتماع *</label>
-                    <input type="date" id="bookDate" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">تاريخ الاجتماع *</label>
+                    <input type="date" id="bookDate" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs font-medium text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">الوقت المناسب *</label>
-                    <input type="time" id="bookTime" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs font-medium text-slate-800 focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">الوقت المناسب *</label>
+                    <input type="time" id="bookTime" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs font-medium text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
             </div>
-
             <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">الاسم الكامل *</label>
-                <input type="text" id="bookName" placeholder="أدخل اسمك الكريم" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 focus:outline-none focus:border-[#0071e3]">
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">الاسم الكامل *</label>
+                <input type="text" id="bookName" placeholder="أدخل اسمك الكريم" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
             </div>
-
             <div class="grid grid-cols-2 gap-3">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">اسم الشركة *</label>
-                    <input type="text" id="bookCompany" placeholder="شركة..." required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">اسم الشركة *</label>
+                    <input type="text" id="bookCompany" placeholder="شركة..." required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1.5">المنصب الوظيفي *</label>
-                    <input type="text" id="bookJob" placeholder="مثال: مدير عام / مسؤول تقنية" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 focus:outline-none focus:border-[#0071e3]">
+                    <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">المنصب الوظيفي *</label>
+                    <input type="text" id="bookJob" placeholder="مثال: مدير عام / مسؤول تقنية" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] focus:outline-none focus:border-[#0071e3]">
                 </div>
             </div>
-
             <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">رقم الجوال *</label>
-                <input type="tel" id="bookPhone" placeholder="مثال: 00966500000000" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">رقم الجوال *</label>
+                <input type="tel" id="bookPhone" placeholder="مثال: 00966500000000" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
             </div>
-
             <div>
-                <label class="block text-xs font-bold text-slate-700 mb-1.5">البريد الإلكتروني *</label>
-                <input type="email" id="bookEmail" placeholder="name@company.com" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
+                <label class="block text-xs font-bold text-[#1E2A22]/80 mb-1.5">البريد الإلكتروني *</label>
+                <input type="email" id="bookEmail" placeholder="name@company.com" required class="w-full px-3.5 py-2.5 rounded-xl border-2 border-[#1E2A22]/20 bg-white text-xs text-[#1E2A22] text-left dir-ltr focus:outline-none focus:border-[#0071e3]">
             </div>
-
             <div class="pt-3">
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white font-black rounded-xl text-xs sm:text-sm shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2 cursor-pointer">
+                <button type="submit" class="w-full py-3.5 btn-flat-blue font-black rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                     <span>تأكيد وحجز الاستشارة عبر الواتس</span>
                 </button>
@@ -613,40 +407,37 @@
 </div>
 
 <!-- FAQ SECTION -->
-<section id="faq" class="py-24 px-4 bg-white border-t border-slate-200">
+<section id="faq" class="py-20 px-4">
     <div class="max-w-4xl mx-auto">
         <div class="mb-14 text-right">
-            <h2 class="text-3xl font-black text-slate-900">الأسئلة الشائعة</h2>
-            <p class="text-slate-500 text-sm mt-2">إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها</p>
+            <h2 class="text-3xl font-black text-[#1E2A22]">الأسئلة الشائعة</h2>
+            <p class="text-[#1E2A22]/60 text-sm mt-2">إليك إجابات لأكثر التساؤلات شيوعاً حول أنظمتنا وكيفية تطبيقها</p>
         </div>
-
         <div class="space-y-4">
-            <div class="bg-[#f8f9fb] rounded-2xl overflow-hidden border border-slate-200/60 transition-colors">
-                <button onclick="toggleFaq(1)" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between hover:bg-slate-200/50 transition">
+            <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(1)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
                     <span>ما الفرق بين الشات بوت التقليدي والذكاء الاصطناعي من Avenchie؟</span>
-                    <span id="faqIcon1" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-white border border-blue-100 text-[#0071e3] text-base font-medium flex items-center justify-center shadow-sm ms-4">+</span>
+                    <span id="faqIcon1" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns1" class="hidden p-5 pt-0 text-slate-500 text-sm leading-relaxed">
+                <div id="faqAns1" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
                     الشات بوت التقليدي يعتمد على خيارات محددة مسبقاً، بينما تعتمد أنظمتنا على نماذج الذكاء الاصطناعي التي تفهم اللغة الطبيعية للعميل وتستوعب الأسئلة المعقدة وترد بدقة وكأنها موظف بشري خبير.
                 </div>
             </div>
-
-            <div class="bg-[#f8f9fb] rounded-2xl overflow-hidden border border-slate-200/60 transition-colors">
-                <button onclick="toggleFaq(2)" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between hover:bg-slate-200/50 transition">
+            <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(2)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
                     <span>هل يمكن ربط النظام مع برنامج إدارة العملاء (CRM) الذي نستخدمه؟</span>
-                    <span id="faqIcon2" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-white border border-blue-100 text-[#0071e3] text-base font-medium flex items-center justify-center shadow-sm ms-4">+</span>
+                    <span id="faqIcon2" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns2" class="hidden p-5 pt-0 text-slate-500 text-sm leading-relaxed">
+                <div id="faqAns2" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
                     نعم، نربط كافة المنصات مع أشهر أنظمة الـ CRM مثل HubSpot, Zoho, Salesforce أو حتى الأنظمة الخاصة بشركتك عبر الـ API بكل سهولة.
                 </div>
             </div>
-
-            <div class="bg-[#f8f9fb] rounded-2xl overflow-hidden border border-slate-200/60 transition-colors">
-                <button onclick="toggleFaq(3)" class="w-full p-5 text-right font-bold text-slate-900 flex items-center justify-between hover:bg-slate-200/50 transition">
+            <div class="bg-white border-2 border-[#1E2A22] rounded-2xl overflow-hidden">
+                <button onclick="toggleFaq(3)" class="w-full p-5 text-right font-bold text-[#1E2A22] flex items-center justify-between transition">
                     <span>كم يستغرق وقت تجهيز النظام وإطلاقه لشركتنا؟</span>
-                    <span id="faqIcon3" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-white border border-blue-100 text-[#0071e3] text-base font-medium flex items-center justify-center shadow-sm ms-4">+</span>
+                    <span id="faqIcon3" class="faq-icon flex-shrink-0 w-7 h-7 rounded-full bg-[#FAF6EE] border-2 border-[#1E2A22] text-[#1E2A22] text-base font-medium flex items-center justify-center ms-4">+</span>
                 </button>
-                <div id="faqAns3" class="hidden p-5 pt-0 text-slate-500 text-sm leading-relaxed">
+                <div id="faqAns3" class="hidden p-5 pt-0 text-[#1E2A22]/60 text-sm leading-relaxed">
                     يستغرق العمل عادةً ما بين 3 إلى 7 أيام عمل فقط، تشمل مرحلة تدريب الذكاء الاصطناعي على بيانات شركتك، واختبار الربط لضمان أعلى جودة قبل التشغيل الفعلي.
                 </div>
             </div>
@@ -655,27 +446,23 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#14161C] text-slate-300 pt-16 pb-8 px-4">
+<footer class="bg-[#1E2A22] text-white/70 pt-16 pb-8 px-4">
     <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/15">
             <div class="md:col-span-2">
                 <div class="inline-block bg-white p-2.5 rounded-2xl mb-6">
                     <img src="logo.PNG?v=5" alt="Avenchie" class="h-10 w-auto">
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
-                    Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.
-                </p>
+                <p class="text-white/60 text-sm leading-relaxed max-w-sm">Avenchie — الحلول الذكية وأتمتة الأعمال المؤسسية لضمان النمو المستدام والكفاءة العالية.</p>
             </div>
-
             <div>
                 <h4 class="font-bold text-sm mb-4 text-white">الوصول السريع</h4>
-                <ul class="space-y-2.5 text-sm text-slate-400">
-                    <li><a href="#demo" class="hover:text-[#3B93F0] transition">التجربة التفاعلية</a></li>
-                    <li><a href="#services" class="hover:text-[#3B93F0] transition">الخدمات</a></li>
-                    <li><a href="#faq" class="hover:text-[#3B93F0] transition">الأسئلة الشائعة</a></li>
+                <ul class="space-y-2.5 text-sm text-white/60">
+                    <li><a href="#demo" class="hover:text-[#4da3ff] transition">التجربة التفاعلية</a></li>
+                    <li><a href="#services" class="hover:text-[#4da3ff] transition">الخدمات</a></li>
+                    <li><a href="#faq" class="hover:text-[#4da3ff] transition">الأسئلة الشائعة</a></li>
                 </ul>
             </div>
-
             <div>
                 <h4 class="font-bold text-sm mb-4 text-white">التواصل المباشر</h4>
                 <a href="https://wa.me/201278220294" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition text-sm font-bold flex items-center gap-2">
@@ -684,8 +471,7 @@
                 </a>
             </div>
         </div>
-
-        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
             <span>© 2026 Avenchie. جميع الحقوق محفوظة.</span>
             <span>تصميم مخصص للشركات العالمية.</span>
         </div>
@@ -694,15 +480,12 @@
 
 <!-- FLOATING WHATSAPP CHAT WIDGET (MIRNA) -->
 <div class="fixed bottom-5 left-5 z-50">
-    <div id="siteChatWindow" class="hidden-widget mb-3 w-[290px] sm:w-[320px] max-w-[85vw] bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
-
-        <div class="bg-gradient-to-l from-[#1a8cff] to-[#0064cc] p-3.5 text-white flex items-center justify-between">
+    <div id="siteChatWindow" class="hidden-widget mb-3 w-[290px] sm:w-[320px] max-w-[85vw] bg-[#FAF6EE] border-2 border-[#1E2A22] rounded-3xl overflow-hidden flex flex-col shadow-[6px_6px_0_0_#1E2A22]">
+        <div class="bg-[#0071e3] p-3.5 text-white flex items-center justify-between">
             <div class="flex items-center gap-2.5">
                 <div class="relative">
-                    <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white border-2 border-white/80 shadow-inner">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2a5 5 0 0 0-5 5v1a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v.5a3.5 3.5 0 0 1-6 0V7a3 3 0 0 1 3-3zm0 9c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5z"/>
-                        </svg>
+                    <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white border-2 border-white/80">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v1a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zm0 2a3 3 0 0 1 3 3v.5a3.5 3.5 0 0 1-6 0V7a3 3 0 0 1 3-3zm0 9c-4.42 0-8 2.24-8 5v2h16v-2c0-2.76-3.58-5-8-5z"/></svg>
                     </div>
                     <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-white rounded-full"></span>
                 </div>
@@ -713,28 +496,24 @@
             </div>
             <button onclick="toggleSiteChat()" class="text-white/80 hover:text-white text-base font-bold px-1">✕</button>
         </div>
-
-        <div class="p-3.5 bg-slate-50 space-y-3 text-xs leading-relaxed max-h-[220px] overflow-y-auto flex flex-col">
-            <div class="bg-white text-slate-800 p-3 rounded-2xl rounded-tr-none border border-slate-200 shadow-sm self-start text-xs">
+        <div class="p-3.5 bg-white space-y-3 text-xs leading-relaxed max-h-[220px] overflow-y-auto flex flex-col">
+            <div class="bg-[#FAF6EE] text-[#1E2A22] p-3 rounded-2xl rounded-tr-none border-2 border-[#1E2A22]/10 self-start text-xs">
                 مرحباً بك في منصة Avenchie! 👋 <br>أنا ميرنا، كيف يمكنني مساعدتك اليوم؟ يسعدنا تواصلك معنا مباشرة عبر الواتس للرد الفوري على كل استفساراتك.
             </div>
         </div>
-
-        <div class="p-3 bg-white border-t border-slate-100">
-            <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3 px-4 bg-gradient-to-br from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20 transition">
+        <div class="p-3 bg-[#FAF6EE] border-t-2 border-[#1E2A22]/10">
+            <a href="https://wa.me/201278220294" target="_blank" class="w-full py-3 px-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xs font-bold flex items-center justify-center gap-2 transition">
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
                 <span>تواصل مباشرة عبر الواتس</span>
             </a>
         </div>
     </div>
-
-    <button onclick="toggleSiteChat()" class="relative group bg-gradient-to-br from-[#1a8cff] to-[#0064cc] hover:from-[#2299ff] hover:to-[#0070e0] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-105">
+    <button onclick="toggleSiteChat()" class="relative group bg-[#0071e3] text-white p-3.5 rounded-full border-2 border-[#1E2A22] flex items-center justify-center transition-all hover:scale-105 shadow-[4px_4px_0_0_#1E2A22]">
         <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-400 border-2 border-white rounded-full"></span>
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
     </button>
 </div>
 
-<!-- JAVASCRIPT LOGIC -->
 <script>
 /* HEADER SCROLL STATE */
 const siteHeader = document.getElementById('siteHeader');
